@@ -433,7 +433,7 @@ const DeskTopMenu = () => {
                 <Link href="/about">ABOUT US</Link>
               </li>
               <li>
-                  <Link href="/others/blogs">Blogs</Link>
+                  <Link href="/others/blogs">BLOGS</Link>
                 </li>
 
               <li>
