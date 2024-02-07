@@ -1,0 +1,12 @@
+node_modules/
+package-lock.json/
+.next/
+*.zip
+
+
+.env
+.env*
+.env.local
+.env.development
+.env.production
+.vercel

@@ -1,0 +1,25 @@
+/* businessGraph.module.css */
+
+.graphContainer {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+  }
+  
+  .graph {
+    display: flex;
+    align-items: flex-end;
+    height: 100px;
+  }
+  
+  .bar {
+    flex: 1;
+    background-color: #3498db; /* Bar color, change as desired */
+    margin: 0 2px;
+    transition: height 0.5s ease-in-out;
+  }
+  
+  .bar:hover {
+    background-color: #2980b9; /* Bar color on hover, change as desired */
+  }
+  

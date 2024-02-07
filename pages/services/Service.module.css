@@ -1,0 +1,227 @@
+.topdiv{
+    /* background-color: blue; */
+    padding: 40px;
+    align-items: center;
+
+}
+.lowdiv{
+    /* background-color: yellow; */
+    /* background-color: aqua; */
+    padding-left: 10px;
+}
+.industrySection {
+    padding: 50px 0;
+  }
+  
+  .industryDescription {
+    font-size: calc(1vw + 1.1rem);
+    line-height: 1.6;
+    color: whitesmoke;
+    text-align: center;
+    margin: 5% 0;
+    margin-bottom: 10%;
+    font-weight: lighter;
+    background-attachment: blue;
+  }
+  
+  
+  .industryOptions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    margin-bottom: 5%;
+  }
+  
+  .industryLink {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .industryLink:hover {
+    transform: translateY(-5px);
+  }
+  
+  .industryImage {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+  
+  }
+  
+  .industryTitle {
+    font-size: 1.3rem;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  .cloud-engineering{
+    background-image: url('https://img.freepik.com/free-photo/concept-cyber-server-cloud-data-storage-cloudscape-digital-online-rack-service-global-network-database-backup-computer-safety-infrastructure-technology_90220-1336.jpg?w=996&t=st=1706543772~exp=1706544372~hmac=249b7a1dca79a1f3f591d1f7ed727535b141010e6c06dc7d6f76b53bb8bef7a5');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover; /* or 'contain' based on your preference */
+    background-attachment: fixed; /* Fixed background */
+    border: 2px solid #fff; /* Set the border width and color */
+    padding: 20px; /* Add padding to make text visible */
+    color: whitesmoke; /* Set text color */
+    background-color: rgba(0, 0, 0, 0.8)
+
+  }
+  
+  .data-engineering {
+    background-image: url('https://bairesdev.mo.cloudinary.net/blog/2023/02/diagramas-de-forex-y-lC3ADneas-ascendentes-del-mercado-de-valores-con-nC3BAmeros.jpg_s1024x1024wisk20cPwCrbnajVa9_uPHBfN2Tcpgu9sP_0GjRS_8wrYPrui4.jpg?tx=w_1200,q_auto');
+  
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover; /* or 'contain' based on your preference */
+    background-attachment: fixed; /* Fixed background */
+    border: 2px solid #fff; /* Set the border width and color */
+    padding: 20px; /* Add padding to make text visible */
+    color: whitesmoke; /* Set text color */
+    background-color: rgba(0, 0, 0, 0.8)}
+  
+  .generative-ai-and-ml {
+background-image: url('https://img.freepik.com/premium-photo/artificial-intelligence-concept-with-big-ai-letters-red-flash-dark-background_780608-8314.jpg?w=1060');
+
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover; /* or 'contain' based on your preference */
+    background-attachment: fixed; /* Fixed background */
+    border: 2px solid #fff; /* Set the border width and color */
+    padding: 20px; /* Add padding to make text visible */
+    color: whitesmoke; /* Set text color */
+    background-color: rgba(0, 0, 0, 0.8); /* Adjust the last value (0.8) for less transparency */
+}
+
+
+
+
+  
+
+  
+  .mobile-app-development {
+    background-image: url('https://t4.ftcdn.net/jpg/04/04/21/61/240_F_404216128_AzxvFH2p321asyRWiGfH9G7XmqLb8zl8.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover; /* or 'contain' based on your preference */
+    background-attachment: fixed; /* Fixed background */
+    border: 2px solid #fff; /* Set the border width and color */
+    padding: 20px; /* Add padding to make text visible */
+    color: whitesmoke; /* Set text color */
+    background-color: rgba(0, 0, 0, 0.8)
+    
+  }
+  
+  
+  .web-app-development {
+    background-image: url('https://img.freepik.com/free-vector/laptop-with-program-code-isometric-icon-software-development-programming-applications-dark-neon_39422-971.jpg?w=900&t=st=1706457823~exp=1706458423~hmac=42a7bf68b6abe74346d0141696476660d96ee115dc8488e1562c131017d48180');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover; /* or 'contain' based on your preference */
+    background-attachment: fixed; /* Fixed background */
+    border: 2px solid #fff; /* Set the border width and color */
+    padding: 20px; /* Add padding to make text visible */
+    color: whitesmoke; /* Set text color */
+    background-color: rgba(0, 0, 0, 0.8)}
+  
+  .bi-and-data-analytics {
+    background-image: url('https://media.licdn.com/dms/image/D4D12AQFq28Sm64HHMA/article-cover_image-shrink_720_1280/0/1698033702951?e=1712188800&v=beta&t=soYmZidB9-iN3wGRjbrbCfWMLpoVq20c-45dDIrylj0');
+  
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover; /* or 'contain' based on your preference */
+    background-attachment: fixed; /* Fixed background */
+    border: 2px solid #fff; /* Set the border width and color */
+    padding: 20px; /* Add padding to make text visible */
+    color: whitesmoke; /* Set text color */
+    background-color: rgba(0, 0, 0, 0.8)}
+  
+  
+  
+ 
+  
+  
+  
+  .professionalSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    margin: 0;
+    margin-top: -3%;
+    padding-bottom: 16%;
+    padding-top: 5%;
+  }
+  
+  .textContainer {
+    flex: 1;
+    margin-right: 0px;
+  }
+  
+  .sectionText {
+    font-size: calc(1vw + 1.5rem); /* Dynamic font size based on viewport width */
+    line-height: 1.6;
+    color: #333;
+    max-width: 70%;
+    margin: 0 auto; /* Centers the text horizontally */
+    text-align: center; /* Centers the text content */
+    font-weight: lighter;
+  }
+  
+  
+  
+  .imageContainer {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .sectionImage {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  @media screen and (max-width: 1000px) {
+    .imageContainer {
+      display: none;
+    }
+    .sectionText {
+      max-width: 100%;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .professionalSection {
+      padding-bottom: 25%;
+    }
+  }
+
+  @media (max-width: 991px) {
+    .industryLink {
+      margin-bottom: 20px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .industryLink {
+      text-align: center;
+    }
+  
+    .industryImage {
+      margin: 0 auto;
+    }
+  
+    .industryDescription {
+      text-align: center;
+    }
+  }
+  
