@@ -1,60 +1,43 @@
-// Blogs.js
-import { useState, useEffect } from "react";
-import { useRouter } from "next/router";
-import Layout from "@/layout";
-import styles from "./Blogs.module.css";
+// pages/blogs/index.js
 
-const Blogs = () => {
-  const [blogsData, setBlogsData] = useState([]);
-  const router = useRouter();
+import Blog from './blog';
 
-  useEffect(() => {
-    fetch(window.origin + "/api/blogs/blogs")
-      .then((response) => response.json())
-      .then((parsed) => {
-        setBlogsData(parsed);
-      })
-      .catch((error) => {
-        console.error("Error fetching Blogs:", error);
-      });
-  }, []);
+const BlogsPage = ({ blogs }) => (
+  <div>
+    <h1>Blogs</h1>
+    {blogs.map(blog => (
+      <Blog key={blog.sys.id} title={blog.fields.title} content={blog.fields.content} />
+    ))}
+  </div>
+);
 
-  const handleBlogClick = (slug) => {
-    router.push(`/others/blogs/[slug]`, `/others/blogs/${slug}`);
-  };
+export async function getStaticProps() {
+  try {
+    // Replace 'YOUR_ACCESS_TOKEN' with your actual access token
+    const accessToken = 'Ran701N8ENKFL4oOxD2SpeF6s8NGN9fEQeRGGtWZ6DM';
 
-  return (
-    <Layout>
-      <div className={styles.container}>
-        <h5 className={styles.blogsHeading}>Blogposts</h5>
-        <div className={styles.blogsList}>
-          {Array.isArray(blogsData) && blogsData.length > 0 ? (
-            blogsData.map((blog) => (
-              <div
-                key={blog.slug}
-                className={styles.blogCard}
-                onClick={() => handleBlogClick(blog.slug)}
-              >
-                {blog.coverImage && (
-                  <div className={styles.coverImage}>
-                    <img src={blog.coverImage} alt={blog.title} />
-                  </div>
-                )}
-                <div className={styles.blogDetails}>
-                  <h3 className={styles.blogTitle}>{blog.title}</h3>
-                  <p className={styles.blogMeta}>
-                    By {blog.author} | {blog.date}
-                  </p>
-                </div>
-              </div>
-            ))
-          ) : (
-            <p>No blog data available.</p>
-          )}
-        </div>
-      </div>
-    </Layout>
-  );
-};
+    // Replace the URL with your API endpoint
+    const apiUrl = 'https://cdn.contentful.com/spaces/0chql3dwavmp/entries?content_type=blogs&access_token=' + accessToken;
 
-export default Blogs;
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+
+    // Access the 'items' array in the response
+    const blogs = data.items || [];
+
+    return {
+      props: {
+        blogs,
+      },
+    };
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return {
+      props: {
+        blogs: [],
+      },
+    };
+  }
+}
+
+export default BlogsPage;
