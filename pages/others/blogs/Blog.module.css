@@ -1,70 +1,40 @@
-/* Blog.module.css */
+/* styles/Blog.module.css */
+.blogContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-bottom: 70px;
+}
 
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    margin-bottom: 100px;
+.coverImage {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.blogDetails {
+  margin-bottom: 20px;
+}
+
+.introduction {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.author,
+.publishedDate,
+.tags {
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+}
+
+.content {
+  line-height: 1.6;
+}
+
+/* Media Query for smaller screens */
+@media only screen and (max-width: 600px) {
+  .blogContainer {
+    padding: 10px;
   }
-  
-  .blogContent {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .blogHeader {
-    margin-bottom: 20px;
-  }
-  
-  .blogTitle {
-    font-size: 28px;
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
-  .blogMeta {
-    color: #777;
-  }
-  
-  .blogSection {
-    margin-bottom: 20px;
-  }
-  
-  .blogSection h2 {
-    font-size: 24px;
-    color: #3498db;
-    margin-bottom: 10px;
-  }
-  
-  .blogSection p {
-    color: #555;
-    line-height: 1.6;
-  }
-  
-  .backLink {
-    cursor: pointer;
-    color: #3498db;
-    font-weight: bold;
-    display: inline-block;
-    margin-top: 20px;
-    text-decoration: none;
-    transition: color 0.3s ease-in-out;
-  }
-  
-  .backLink:hover {
-    color: #2c3e50;
-  }
-  .sectionList {
-    list-style-type: disc;
-    margin-left: 20px;
-  }
-  .sectionImage {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 15px;
-  }
-  
+}

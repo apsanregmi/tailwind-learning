@@ -1,43 +1,53 @@
-// pages/blogs/index.js
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+import axios from 'axios';
+import BlogCard from '@/src/components/blogs/BlogCard';
+import styles from './Blogs.module.css'; 
+import Layout from '@/src/layout/Layout';
+import PageBanner from '@/src/components/PageBanner';
 
-import Blog from './blog';
+const Blogs = () => {
+  const [blogData, setBlogData] = useState([]);
 
-const BlogsPage = ({ blogs }) => (
-  <div>
-    <h1>Blogs</h1>
-    {blogs.map(blog => (
-      <Blog key={blog.sys.id} title={blog.fields.title} content={blog.fields.content} />
-    ))}
-  </div>
-);
-
-export async function getStaticProps() {
-  try {
-    // Replace 'YOUR_ACCESS_TOKEN' with your actual access token
-    const accessToken = 'Ran701N8ENKFL4oOxD2SpeF6s8NGN9fEQeRGGtWZ6DM';
-
-    // Replace the URL with your API endpoint
-    const apiUrl = 'https://cdn.contentful.com/spaces/0chql3dwavmp/entries?content_type=blogs&access_token=' + accessToken;
-
-    const response = await fetch(apiUrl);
-    const data = await response.json();
-
-    // Access the 'items' array in the response
-    const blogs = data.items || [];
-
-    return {
-      props: {
-        blogs,
-      },
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          'https://cdn.contentful.com/spaces/0chql3dwavmp/entries?access_token=Ran701N8ENKFL4oOxD2SpeF6s8NGN9fEQeRGGtWZ6DM'
+        );
+        setBlogData(response.data.items);
+      } catch (error) {
+        console.error('Error fetching data from Contentful:', error);
+      }
     };
-  } catch (error) {
-    console.error('Error fetching data:', error);
-    return {
-      props: {
-        blogs: [],
-      },
-    };
-  }
-}
 
-export default BlogsPage;
+    fetchData();
+  }, []);
+
+  return (
+    <Layout>
+      <PageBanner pageName={"Discover the latest Insights"} />
+    <div className={styles.blogsContainer}>
+      <div className={styles.blogList}>
+        {blogData.map((blog) => (
+          <Link key={blog.sys.id} href={`/others/blogs/${blog.sys.id}`} passHref>
+            <BlogCard
+              title={blog.fields.title}
+              introduction={blog.fields.introduction}
+              author={blog.fields.author}
+              publishedDate={blog.sys.createdAt}
+              tags={blog.fields.tags || []}
+              coverImage={{
+                url: blog.fields.coverImage?.fields?.file?.url || '',
+                description: blog.fields.coverImage?.fields?.description || '',
+              }}
+            />
+          </Link>
+        ))}
+      </div>
+    </div>
+    </Layout>
+  );
+};
+
+export default Blogs;

@@ -6,7 +6,6 @@ import Link from "next/link";
 import Slider from "react-slick";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import BlogCard from "@/src/components/carts/BlogCard";
 
 import Partner from "@/src/components/Partner";
 import SignupForm from "@/src/components/forms/SignupForm";
@@ -19,6 +18,7 @@ const Counter = dynamic(() => import("@/src/components/Counter"), {
 const Index = () => {
 
   console.log(process.env);
+  console.log("hello world", process.env);
   return (
 
     
@@ -29,7 +29,6 @@ const Index = () => {
           <div className="row align-items-center">
             <div className="col-lg-6 align-self-center">
               <div className="hero-content pt-50 pb-125 rpb-0 wow fadeInUp delay-0-4s">
-                <BlogCard/>
                 <h1>Cloud Pro AI</h1>
                 <br />
                 <h2 className="text-white">
