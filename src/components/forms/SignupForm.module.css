@@ -1,0 +1,124 @@
+
+
+.signupContainer {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #1890ff; /* Primary color */
+}
+
+.formItem {
+  margin-bottom: 20px;
+}
+
+.input,
+.linkedInInput {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.select {
+  width: 100%;
+}
+
+.checkbox,
+.agreeText {
+  font-size: 14px;
+  color: #555;
+}
+
+.linkedInLogo {
+  font-size: 24px;
+  color: #0077b5;
+  cursor: pointer;
+}
+
+.agreeCheckbox {
+  margin-right: 8px;
+}
+
+.privacyPolicyLink {
+  color: #1890ff;
+  cursor: pointer;
+}
+
+.registerButton {
+  width: 100%;
+  background-color: #1890ff;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.registerButton:hover {
+  background-color: #096dd9;
+}
+
+/* Additional Styles for New Fields */
+
+.checkboxLabel,
+.additionalFields label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.additionalFields {
+  margin-top: 20px;
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+}
+
+/* Responsive Styles */
+
+@media screen and (max-width: 600px) {
+  .signupContainer {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .formItem {
+    margin-bottom: 15px;
+  }
+
+  .title {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .input,
+  .select,
+  .linkedInInput {
+    padding: 8px;
+  }
+
+  .registerButton {
+    padding: 8px;
+  }
+
+  .agreeText {
+    font-size: 11px;
+  }
+}
+.agreeCheckbox {
+    margin-right: 8px; /* Adjust the margin as needed for proper alignment */
+  }
+  
+  .agreeText {
+    font-size: 12px;
+    color: #555;
+    vertical-align: middle; /* Align the text vertically with the checkbox */
+  }
