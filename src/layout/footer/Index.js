@@ -3,28 +3,28 @@ import Data from "../../jsonData/services.json";
 import { useState } from "react";
 
 const Footer = ({ showCtaSection = true }) => {
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await fetch("/api/newsletters", {
-        method: "POST",
+      const response = await fetch('/api/snowflake-newsletters', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({ email }),
       });
-      console.log(response);
+
       if (response.ok) {
-        alert("Email submitted successfully!");
+        alert('Email submitted successfully!');
       } else {
-        alert("Failed to submit email");
+        alert('Failed to submit email');
       }
     } catch (error) {
-      console.error("Error submitting email:", error);
-      alert("Some error occured, please check and try again");
+      console.error('Error submitting email:', error);
+      alert('Some error occurred, please check and try again');
     }
   };
 
@@ -101,21 +101,22 @@ const Footer = ({ showCtaSection = true }) => {
               <h4 className="footer-title">Newsletter</h4>
               <p>👍👍 Get connected with us</p>
               <form onSubmit={handleSubmit} action="#">
-                <label htmlFor="email">
-                  <i className="far fa-envelope" />
-                </label>
-                <input
-                  id="email"
-                  type="email"
-                  placeholder="contact@cloudproai.com"
-                  value={email}
-                  onChange={handleEmailChange}
-                  required
-                  style={{ color: "white" }}
-                />
+      <label htmlFor="email">
+        <i className="far fa-envelope" />
+      </label>
+      <input
+        id="email"
+        type="email"
+        placeholder="contact@cloudproai.com"
+        value={email}
+        onChange={handleEmailChange}
+        required
+        style={{ color: 'white' }}
+      />
 
-                <button type="submit">Sign Up</button>
-              </form>
+      <button type="submit">Sign Up</button>
+    </form>
+              
               <h5>Follow Us</h5>
               <div className="social-style-one">
                 {/* <a href="#">
