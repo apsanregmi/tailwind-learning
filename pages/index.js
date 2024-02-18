@@ -30,7 +30,6 @@ const Index = () => {
           <div className="row align-items-center">
             <div className="col-lg-6 align-self-center">
               <div className="hero-content pt-50 pb-125 rpb-0 wow fadeInUp delay-0-4s">
-                <Signup/>
                 <h1>Cloud Pro AI</h1>
                 <br />
                 <h2 className="text-white">
