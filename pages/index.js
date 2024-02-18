@@ -12,6 +12,7 @@ import Partner from "@/src/components/Partner";
 import SignupForm from "@/src/components/forms/SignupForm";
 import TechnologyUsed from "@/src/components/technologyused/TechnologyUsed";
 import { Col, Container, Figure, Row } from "react-bootstrap";
+import FeaturedProduct from "@/src/components/featured/FeaturedProduct";
 const Counter = dynamic(() => import("@/src/components/Counter"), {
   ssr: false,
 });
@@ -73,10 +74,9 @@ const Index = () => {
                 </div>
               </div>
             </div>
-            <div className="col-lg-6">
-              <div className="hero-images mt-50 wow fadeInLeft">
-                <img src="/assets/images/hero/hero-one.jpg" alt="Hero" />
-              </div>
+            <div className="col-lg-6" >
+              <FeaturedProduct/>
+              
             </div>
           </div>
         </div>

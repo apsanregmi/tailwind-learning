@@ -1,12 +1,11 @@
 // SignupForm.js
 
-import React, { useState } from 'react';
-import { Form, Input, Button, Checkbox, Select, Row, Col } from 'antd';
+import React, { useState, useEffect } from 'react';
 import { LinkedinOutlined } from '@ant-design/icons';
-import styles from './SignupForm.module.css'; // Make sure to import your CSS file
-import countryData from './countryData.json';
+import { Form, Input, Button, Checkbox, Select, Row, Col } from 'antd';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
+import styles from './SignupForm.module.css'; 
 
 const { Option } = Select;
 
@@ -14,15 +13,37 @@ const SignupForm = () => {
   const [form] = Form.useForm();
   const [value, setValue] = useState();
 
-  const onFinish = (values) => {
-    alert(JSON.stringify(values));
-    form.resetFields();
+  const onFinish = async (values) => {
+    try {
+      const response = await fetch('/api/snowflake-signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
+      });
+
+      if (response.ok) {
+        alert('Registration successful!');
+        form.resetFields();
+
+        router.push('cloudpro.ai/documents');
+      } else {
+        alert('Failed to register. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error registering user:', error);
+      alert('Some error occurred. Please try again.');
+    }
   };
 
   const handleCountryCodeChange = (value, option) => {
     const selectedCountry = option.data;
     form.setFieldsValue({ phone: `+${selectedCountry.code}` });
   };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className={styles.signupContainer}>
@@ -70,8 +91,8 @@ const SignupForm = () => {
         >
           <Input className={styles.input} placeholder="Company Name" />
         </Form.Item>
-        <Row gutter={16}>
-          <Col span={12}>
+       
+        
             <Form.Item
               className={styles.formItem}
               name="jobTitle"
@@ -81,11 +102,9 @@ const SignupForm = () => {
             >
               <Input className={styles.input} placeholder="Job Title" />
             </Form.Item>
-          </Col>
-          <Col span={12}>
-            
-          </Col>
-        </Row>
+          
+          
+        
         <Form.Item
               className={styles.formItem}
               name="phone"

@@ -247,6 +247,7 @@ input[type=radio] {
   margin: 0 auto;
   overflow: hidden;
   min-width: 300px;
+  
 }
 
 @media only screen and (min-width: 1200px) {
