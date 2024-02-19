@@ -47,7 +47,7 @@ export default async function handler(req, res) {
                         ],
                     });
 
-                    res.status(201).json({ message: 'Registration successful' });
+                    res.status(201).json({ message: 'Your Registration successful' });
                 } catch (error) {
                     console.error('Error executing query:', error);
                     res.status(500).json({ message: 'Error registering user', error: error.message });

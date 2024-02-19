@@ -12,36 +12,14 @@ const { Option } = Select;
 const SignupForm = () => {
   const [form] = Form.useForm();
   const [value, setValue] = useState();
-  // const onFinish = async (values) => {
-  //   try {
-  //     const response = await fetch('/api/snowflake-signup', {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //       body: JSON.stringify(values),
-  //     });
   
-  //     // Log the response to the console
-  //     console.log('Server response:', response);
-  
-  //     if (response.ok) {
-  //       alert('Registration successful!');
-  //       form.resetFields();
-  //       router.push('cloudpro.ai/documents');
-  //     } else {
-  //       alert('Failed to register. Please try again.');
-  //     }
-  //   } catch (error) {
-  //     console.error('Error during form submission:', error);
-  //     alert('Some error occurred. Please try again.');
-  //   }
-  // };
   
 
   const onFinish = async (values) => {
+
+    console.log(values);
     try {
-      const response = await fetch('/api/snowflake-signup', {
+      const response = await fetch('/api/signupform', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -50,18 +28,24 @@ const SignupForm = () => {
       });
 
       if (response.ok) {
+        console.log(JSON.stringify(values));
+
+
         alert('Registration successful!');
         form.resetFields();
+        console.log(body);
+        window.location.href = '/index';
 
-        router.push('cloudpro.ai/documents');
+
+        // router.push('cloudpro.ai/documents');
       } else {
-        alert('Failed to register. Please try again.');
+        // alert('Failed to register. Please try again.');
       }
     } catch (error) {
       console.error('heyyyyyyyyyyyyyyyyyyyyyyyyError during form submission:', error);
 
       
-      alert('Some error occurred. Please try again.');
+      // alert('Some error occurred. Please try again.');
     }
   };
 

@@ -9,7 +9,7 @@ const Footer = ({ showCtaSection = true }) => {
     e.preventDefault();
 
     try {
-      const response = await fetch('/api/snowflake-newsletters', {
+      const response = await fetch('/api/newsletters', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
