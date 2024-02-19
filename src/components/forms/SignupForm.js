@@ -12,6 +12,32 @@ const { Option } = Select;
 const SignupForm = () => {
   const [form] = Form.useForm();
   const [value, setValue] = useState();
+  // const onFinish = async (values) => {
+  //   try {
+  //     const response = await fetch('/api/snowflake-signup', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify(values),
+  //     });
+  
+  //     // Log the response to the console
+  //     console.log('Server response:', response);
+  
+  //     if (response.ok) {
+  //       alert('Registration successful!');
+  //       form.resetFields();
+  //       router.push('cloudpro.ai/documents');
+  //     } else {
+  //       alert('Failed to register. Please try again.');
+  //     }
+  //   } catch (error) {
+  //     console.error('Error during form submission:', error);
+  //     alert('Some error occurred. Please try again.');
+  //   }
+  // };
+  
 
   const onFinish = async (values) => {
     try {
@@ -32,7 +58,9 @@ const SignupForm = () => {
         alert('Failed to register. Please try again.');
       }
     } catch (error) {
-      console.error('Error registering user:', error);
+      console.error('heyyyyyyyyyyyyyyyyyyyyyyyyError during form submission:', error);
+
+      
       alert('Some error occurred. Please try again.');
     }
   };
@@ -112,7 +140,7 @@ const SignupForm = () => {
               required
               rules={[
                 { required: true, message: 'Please enter Phone No.' },
-                { pattern: /^\d{10}$/, message: 'Phone number should be 10 digits' },
+                // { pattern: /^\d{10}$/, message: 'Phone number should be 10 digits' },
               ]}
             >
               <PhoneInput
