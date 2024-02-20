@@ -15,9 +15,40 @@ const SignupForm = () => {
   
   
 
-  const onFinish = async (values) => {
+  // const onFinish = async (values) => {
 
-    console.log(values);
+  //   console.log(values);
+  //   try {
+  //     const response = await fetch('/api/signupform', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify(values),
+  //     });
+
+  //     if (response.ok) {
+  //       console.log(JSON.stringify(values));
+
+
+  //       alert('Registration successful!');
+  //       form.resetFields();
+  //       console.log(body);
+  //       window.location.href = '/index';
+
+
+  //       router.push('cloudpro.ai/documents');
+  //     } else {
+  //       // alert('Failed to register. Please try again.');
+  //     }
+  //   } catch (error) {
+  //     console.error('heyyyyyyyyyyyyyyyyyyyyyyyyError during form submission:', error);
+
+      
+  //     // alert('Some error occurred. Please try again.');
+  //   }
+  // };
+  const onFinish = async (values) => {
     try {
       const response = await fetch('/api/signupform', {
         method: 'POST',
@@ -27,27 +58,31 @@ const SignupForm = () => {
         body: JSON.stringify(values),
       });
 
+      const data = await response.json();
+
       if (response.ok) {
-        console.log(JSON.stringify(values));
-
-
-        alert('Registration successful!');
-        form.resetFields();
-        console.log(body);
-        window.location.href = '/index';
-
-
-        // router.push('cloudpro.ai/documents');
+        alert(data.message); // Display success message
+        window.location.href = '/others/blogs'; 
       } else {
-        // alert('Failed to register. Please try again.');
+        alert(data.message); // Display error message (e.g., duplicate email)
       }
     } catch (error) {
-      console.error('heyyyyyyyyyyyyyyyyyyyyyyyyError during form submission:', error);
-
-      
-      // alert('Some error occurred. Please try again.');
+      console.error('Error during form submission:', error);
+      alert('Some error occurred. Please try again.');
     }
   };
+
+
+
+
+
+
+
+
+
+
+
+
 
   const handleCountryCodeChange = (value, option) => {
     const selectedCountry = option.data;
@@ -154,7 +189,9 @@ const SignupForm = () => {
           </a>
         </Form.Item>
         <Form.Item className={styles.formItem}>
-  <Checkbox className={styles.agreeCheckbox} />
+  {/* <Checkbox className={styles.agreeCheckbox} /> */}
+
+  <Checkbox className={styles.agreeCheckbox} name="agreeCheckbox" required />
   <span className={styles.agreeText}>
     By submitting, I agree to the processing of my personal data by Cloud Pro AI
     in accordance with our Privacy Policy. I understand I can update my preferences at any time.
