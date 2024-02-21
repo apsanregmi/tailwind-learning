@@ -1,12 +1,10 @@
-// FeaturedProduct.js
-
 import React from 'react';
 import Link from 'next/link';
 import styles from './FeaturedProduct.module.css';
 
 const FeaturedProduct = () => {
   return (
-    <Link href="/signup">
+    <Link href="/signup" as="/signup?redirect=https://sales.easyshares.xyz" target='_blank'>
       <div className={styles.container}>
         <div className={styles.overlay}>
           <h3>Innovate Your Marketing Strategies</h3>

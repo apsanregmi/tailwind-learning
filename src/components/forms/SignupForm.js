@@ -6,13 +6,14 @@ import { Form, Input, Button, Checkbox, Select, Row, Col } from 'antd';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import styles from './SignupForm.module.css'; 
+import { useRouter } from 'next/router';
 
 const { Option } = Select;
 
 const SignupForm = () => {
   const [form] = Form.useForm();
   const [value, setValue] = useState();
-  
+  const router = useRouter();
   
 
   // const onFinish = async (values) => {
@@ -57,12 +58,19 @@ const SignupForm = () => {
         },
         body: JSON.stringify(values),
       });
-
+  
       const data = await response.json();
-
+  
       if (response.ok) {
         alert(data.message); // Display success message
-        window.location.href = '/others/blogs'; 
+  
+        // Retrieve the redirect parameter from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const redirectParam = urlParams.get('redirect');
+  
+        // Redirect to the specified link or a default link if no redirect parameter is present
+        const redirectLink = redirectParam || 'https://zsjdvui4dac9zhpf.public.blob.vercel-storage.com/Transforming%20Retail%20with%20cloudproAI%20a%20case%20study-K0uzLePL5UdKtC1MlIkZiksokioqCG.pdf';
+        window.location.href = redirectLink;
       } else {
         alert(data.message); // Display error message (e.g., duplicate email)
       }
@@ -71,6 +79,7 @@ const SignupForm = () => {
       alert('Some error occurred. Please try again.');
     }
   };
+  
 
 
 

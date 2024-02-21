@@ -42,7 +42,7 @@ const JeenaHead = () => {
       {/* Main Style */}
       <link rel="stylesheet" href="/assets/css/style.css" />
 
-      {/* <script
+      <script
         type="text/javascript"
         dangerouslySetInnerHTML={{
           __html: `
@@ -58,7 +58,7 @@ const JeenaHead = () => {
             })(window, document, "clarity", "script", "kxq69jmnxs");
           `,
         }}
-      /> */}
+      />
 
 
 {/* <!-- Google tag (gtag.js) --> */}
