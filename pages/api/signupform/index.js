@@ -59,7 +59,7 @@ export default async function handler(req, res) {
 
         // Handle duplicate email:
         if (existingUser) {
-          res.status(200).json({ message: 'You have already registered. Redirecting to PDF.' });
+          res.status(200).json({ message: 'You have already registered. Redirecting .' });
           // Consider adding logic to update existing user data if needed
         } else {
           // Create a new Signup instance
@@ -76,7 +76,7 @@ export default async function handler(req, res) {
           // Save the newSignup to the database
           await newSignup.save();
 
-          res.status(200).json({ message: 'Registration successful. Redirecting to PDF' });
+          res.status(200).json({ message: 'Registration successful. Redirecting ' });
         }
       } catch (error) {
         console.error('Error saving signup data:', error);

@@ -49,36 +49,36 @@ const SignupForm = () => {
   //     // alert('Some error occurred. Please try again.');
   //   }
   // };
-  const onFinish = async (values) => {
-    try {
-      const response = await fetch('/api/signupform', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(values),
-      });
-  
-      const data = await response.json();
-  
-      if (response.ok) {
-        alert(data.message); // Display success message
-  
-        // Retrieve the redirect parameter from the URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const redirectParam = urlParams.get('redirect');
-  
-        // Redirect to the specified link or a default link if no redirect parameter is present
-        const redirectLink = redirectParam || 'https://zsjdvui4dac9zhpf.public.blob.vercel-storage.com/Transforming%20Retail%20with%20cloudproAI%20a%20case%20study-K0uzLePL5UdKtC1MlIkZiksokioqCG.pdf';
-        window.location.href = redirectLink;
-      } else {
-        alert(data.message); // Display error message (e.g., duplicate email)
-      }
-    } catch (error) {
-      console.error('Error during form submission:', error);
-      alert('Some error occurred. Please try again.');
+ const onFinish = async (values) => {
+  try {
+    const response = await fetch('/api/snowflake-signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(values),
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      alert(data.message); 
+
+      
+      const urlParams = new URLSearchParams(window.location.search);
+      const redirectParam = urlParams.get('redirect');
+
+      
+      const redirectLink = redirectParam || 'https://zsjdvui4dac9zhpf.public.blob.vercel-storage.com/Transforming%20Retail%20with%20cloudproAI%20a%20case%20study-K0uzLePL5UdKtC1MlIkZiksokioqCG.pdf';
+      window.location.href = redirectLink;
+    } else {
+      alert(data.message); 
     }
-  };
+  } catch (error) {
+    console.error('Error during form submission:', error);
+    alert('Some error occurred. Please try again.');
+  }
+};
   
 
 
