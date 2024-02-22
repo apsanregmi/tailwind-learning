@@ -1,17 +1,19 @@
-// models/snowflake-signup.js
-
-import { connection } from '../utils/sdbConnect';
+import { connection, sdbConnect } from '../utils/sdbConnect';
 
 const Signup = {
   create: async (data) => {
     try {
+      // Ensure connection to Snowflake is established
+      await sdbConnect();
+
       const query = `
         INSERT INTO CLOUDPROAI_WEBSITE_ACTIVITY.SIGNUPFORM_SCHEMA.SIGNUP_DATA 
         (firstName, lastName, email, companyName, jobTitle, phone, subscribeNewsletter, createdAt)
         VALUES (?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
       `;
 
-      const statement = connection.execute({
+      // Execute the query using the connection object
+      const result = await connection.execute({
         sqlText: query,
         binds: [
           data.firstName,
@@ -24,8 +26,8 @@ const Signup = {
         ],
       });
 
-      // Execute the query
-      statement.execute();
+      
+      console.log('Signup created successfully:', result);
 
       return { success: true };
     } catch (error) {

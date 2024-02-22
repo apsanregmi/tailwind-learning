@@ -7,6 +7,7 @@ import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import styles from './SignupForm.module.css'; 
 import { useRouter } from 'next/router';
+import { Link, useHistory } from 'react-router-dom';
 
 const { Option } = Select;
 
@@ -203,7 +204,7 @@ const SignupForm = () => {
   <Checkbox className={styles.agreeCheckbox} name="agreeCheckbox" required />
   <span className={styles.agreeText}>
     By submitting, I agree to the processing of my personal data by Cloud Pro AI
-    in accordance with our Privacy Policy. I understand I can update my preferences at any time.
+    in accordance with our <a href='/privacy-policy' target='_blank'>Privacy Policy</a>. I understand I can update my preferences at any time.
   </span>
 </Form.Item>
         <Form.Item className={styles.formItem}>
