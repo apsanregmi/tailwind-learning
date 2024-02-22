@@ -50,40 +50,40 @@ const SignupForm = () => {
   //     // alert('Some error occurred. Please try again.');
   //   }
   // };
-  const onFinish = async (values) => {
-    try {
-      const response = await fetch('/api/snowflake-signup', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(values),
-      });
-  
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-  
-      const data = await response.json();
-      console.log('API Response:', data);
-  
-      if (data.success) {
-        alert(data.message);
-        
-        const urlParams = new URLSearchParams(window.location.search);
-        const redirectParam = urlParams.get('redirect');
-  
-        const redirectLink = redirectParam || 'https://zsjdvui4dac9zhpf.public.blob.vercel-storage.com/Transforming%20Retail%20with%20cloudproAI%20a%20case%20study-K0uzLePL5UdKtC1MlIkZiksokioqCG.pdf';
-        window.location.href = redirectLink;
-      } else {
-        alert(data.message || 'An error occurred. Please try again.');
-      }
-    } catch (error) {
-      console.error('Error during form submission:', error);
-      alert('An error occurred. Please try again.');
+ // Your client-side code where form submission occurs
+
+const onFinish = async (values) => {
+  try {
+    const response = await fetch('/api/snowflake-signup', { 
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(values),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
     }
-  };
-   
+
+    const data = await response.json();
+    console.log('API Response:', data);
+
+    if (data.success) {
+      alert(data.message || 'Signup created successfully.');
+      const urlParams = new URLSearchParams(window.location.search);
+      const redirectParam = urlParams.get('redirect');
+      const redirectLink = redirectParam || 'https://example.com/default-redirect'; // Update with your default redirect link
+      window.location.href = redirectLink;
+    } else {
+      alert(data.message || 'An error occurred. Please try again.');
+    }
+  } catch (error) {
+    console.error('Error during form submission:', error);
+    alert('An error occurred. Please try again.');
+  }
+};
+  
 
 
 

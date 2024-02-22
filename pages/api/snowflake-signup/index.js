@@ -1,8 +1,8 @@
 // pages/api/signup.js
 
 import { sdbConnect } from '@/utils/sdbConnect';
-
 import Signup from '@/models/snowflake-signup';
+
 const handler = async (req, res) => {
   try {
     console.log('Request Body:', req.body);
@@ -11,7 +11,7 @@ const handler = async (req, res) => {
 
     if (req.method === 'POST') {
       const result = await Signup.create(req.body);
-      res.status(201).json(result);
+      res.status(201).json({ success: true, message: 'Signup created successfully' });
     } else {
       res.status(405).json({ error: 'Method Not Allowed' });
     }
