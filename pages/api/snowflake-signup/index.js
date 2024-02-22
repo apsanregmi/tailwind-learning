@@ -3,9 +3,10 @@
 import { sdbConnect } from '@/utils/sdbConnect';
 
 import Signup from '@/models/snowflake-signup';
-
 const handler = async (req, res) => {
   try {
+    console.log('Request Body:', req.body);
+
     await sdbConnect();
 
     if (req.method === 'POST') {

@@ -50,37 +50,40 @@ const SignupForm = () => {
   //     // alert('Some error occurred. Please try again.');
   //   }
   // };
- const onFinish = async (values) => {
-  try {
-    const response = await fetch('/api/snowflake-signup', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(values),
-    });
-
-    const data = await response.json();
-
-    if (response.ok) {
-      alert(data.message); 
-
-      
-      const urlParams = new URLSearchParams(window.location.search);
-      const redirectParam = urlParams.get('redirect');
-
-      
-      const redirectLink = redirectParam || 'https://zsjdvui4dac9zhpf.public.blob.vercel-storage.com/Transforming%20Retail%20with%20cloudproAI%20a%20case%20study-K0uzLePL5UdKtC1MlIkZiksokioqCG.pdf';
-      window.location.href = redirectLink;
-    } else {
-      alert(data.message); 
-    }
-  } catch (error) {
-    console.error('Error during form submission:', error);
-    alert('Some error occurred. Please try again.');
-  }
-};
+  const onFinish = async (values) => {
+    try {
+      const response = await fetch('/api/snowflake-signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
+      });
   
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+  
+      const data = await response.json();
+      console.log('API Response:', data);
+  
+      if (data.success) {
+        alert(data.message);
+        
+        const urlParams = new URLSearchParams(window.location.search);
+        const redirectParam = urlParams.get('redirect');
+  
+        const redirectLink = redirectParam || 'https://zsjdvui4dac9zhpf.public.blob.vercel-storage.com/Transforming%20Retail%20with%20cloudproAI%20a%20case%20study-K0uzLePL5UdKtC1MlIkZiksokioqCG.pdf';
+        window.location.href = redirectLink;
+      } else {
+        alert(data.message || 'An error occurred. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error during form submission:', error);
+      alert('An error occurred. Please try again.');
+    }
+  };
+   
 
 
 
@@ -131,12 +134,32 @@ const SignupForm = () => {
           </Col>
         </Row>
         <Form.Item
-          className={styles.formItem}
-          name="email"
-          label="Company Email"
-          required
-          rules={[{ required: true, message: 'Please enter Company Email' }]}
-        >
+  className={styles.formItem}
+  name="email"
+  label="Company Email"
+  required
+  rules={[
+    { required: true, message: 'Please enter Company Email' },
+    {
+      type: 'email',
+      message: 'Please enter a valid email address',
+    },
+    ({getFieldValue}) => ({
+      validator(_, value) {
+        const blockedDomains = ['gmail.com', 'yahoo.com', 'hotmail.com']; 
+
+        const emailDomain = value.split('@')[1];
+
+        if (!blockedDomains.includes(emailDomain)) {
+          return Promise.resolve();
+        }
+
+        return Promise.reject('Please enter an email address with a valid company domain');
+      },
+    }),
+  ]}
+>
+
           <Input className={styles.input} type="email" placeholder="Company Email" />
         </Form.Item>
         <Form.Item
