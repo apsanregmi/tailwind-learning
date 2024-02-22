@@ -51,10 +51,9 @@ const SignupForm = () => {
   //   }
   // };
  // Your client-side code where form submission occurs
-
-const onFinish = async (values) => {
+ const onFinish = async (values) => {
   try {
-    const response = await fetch('/api/snowflake-signup', { 
+    const response = await fetch('/api/signupform', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -62,28 +61,27 @@ const onFinish = async (values) => {
       body: JSON.stringify(values),
     });
 
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-
     const data = await response.json();
-    console.log('API Response:', data);
 
-    if (data.success) {
-      alert(data.message || 'Signup created successfully.');
+    if (response.ok) {
+      alert(data.message); // Display success message
+
+      // Retrieve the redirect parameter from the URL
       const urlParams = new URLSearchParams(window.location.search);
       const redirectParam = urlParams.get('redirect');
-      const redirectLink = redirectParam || 'https://example.com/default-redirect'; // Update with your default redirect link
+
+      // Redirect to the specified link or a default link if no redirect parameter is present
+      const redirectLink = redirectParam || 'https://zsjdvui4dac9zhpf.public.blob.vercel-storage.com/Transforming%20Retail%20with%20cloudproAI%20a%20case%20study-K0uzLePL5UdKtC1MlIkZiksokioqCG.pdf';
       window.location.href = redirectLink;
     } else {
-      alert(data.message || 'An error occurred. Please try again.');
+      alert(data.message); // Display error message (e.g., duplicate email)
     }
   } catch (error) {
     console.error('Error during form submission:', error);
-    alert('An error occurred. Please try again.');
+    alert('Some error occurred. Please try again.');
   }
 };
-  
+
 
 
 
