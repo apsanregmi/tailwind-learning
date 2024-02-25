@@ -1,0 +1,67 @@
+/* Example: Improvements in CSS */
+
+/* Title and Description */
+.caseStudyTitle {
+    text-align: center;
+    font-size: 2.5rem;
+    padding: 5%;
+    padding-bottom: 3%;
+}
+
+.caseStudyDescription {
+    text-align: center;
+    font-size: 1.5rem;
+    padding-bottom: 5%;
+}
+
+/* Section Title */
+.sectionTitle {
+    background-image: url("https://i.pinimg.com/736x/98/32/36/983236a02e5d7e4d62d85c35445b6563.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.sectionTitleName {
+    font-size: 3rem;
+    color: #fff;
+}
+
+/* Section Content */
+.sectionContentDiv {
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    padding: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.sectionContent {
+    color: #000;
+    font-size: 1.5rem;
+    line-height: 2;
+    max-width: 95vw;
+    font-weight: lighter;
+    /* Adjust for readability */
+}
+
+/* Media Query Example */
+@media screen and (max-width: 768px) {
+
+    .sectionContentDiv,
+    .sectionTitle {
+        height: 50vh;
+        /* Adjust for smaller screens */
+    }
+
+    .sectionContent {
+        font-size: 1.3rem;
+    }
+}

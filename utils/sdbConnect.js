@@ -1,5 +1,4 @@
 // utils/sdbConnect.js
-
 import snowflake from 'snowflake-sdk';
 
 const SNOWFLAKE_CONFIG = {
@@ -9,17 +8,20 @@ const SNOWFLAKE_CONFIG = {
   warehouse: process.env.SNOWFLAKE_WAREHOUSE,
   database: process.env.SNOWFLAKE_DATABASE,
   schema: process.env.SNOWFLAKE_SCHEMA,
+  // Set autoCommit to true to commit changes immediately
+  autoCommit: true,
 };
 
-const connection = snowflake.createConnection(SNOWFLAKE_CONFIG);
+let connection;
 
 const sdbConnect = async () => {
   try {
-    if (connection.isUp()) {
-      console.log('Already connected to Snowflake');
-    } else {
+    if (!connection || !connection.isUp()) {
+      connection = snowflake.createConnection(SNOWFLAKE_CONFIG);
       await connection.connect();
       console.log('Connected to Snowflake');
+    } else {
+      console.log('Already connected to Snowflake');
     }
   } catch (error) {
     console.error('Error connecting to Snowflake:', error.message);

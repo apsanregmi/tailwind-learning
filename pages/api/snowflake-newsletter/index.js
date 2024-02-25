@@ -1,16 +1,14 @@
-import { dbConnect } from '../../../utils/dbConnect';
+// pages/api/snowflake-newsletter/index.js
+import Newsletter from "@/models/snowflake-newsletter";
 
 export default async function handler(req, res) {
-  await dbConnect();
-
   switch (req.method) {
     case 'GET':
       try {
-        // Fetch newsletters from Snowflake
-        const result = connection.execute({ sqlText: 'SELECT * FROM newsletter' });
-        const newsletters = result.fetchAll();
+        const newsletters = await Newsletter.findAll();
         res.status(200).json({ newsletters });
       } catch (error) {
+        console.error('Error fetching emails:', error);
         res.status(500).json({ message: 'Error fetching emails', error: error.message });
       }
       break;
@@ -18,11 +16,11 @@ export default async function handler(req, res) {
     case 'POST':
       try {
         const { email } = req.body;
-        const query = `INSERT INTO newsletter (email, subscribed_at) VALUES ('${email}', CURRENT_TIMESTAMP)`;
-        connection.execute({ sqlText: query });
+        const insertedRecord = await Newsletter.create(email);
 
-        res.status(201).json({ message: 'Email saved successfully' });
+        res.status(201).json({ message: 'Email saved successfully', insertedRecord });
       } catch (error) {
+        console.error('Error saving email:', error);
         res.status(500).json({ message: 'Error saving email', error: error.message });
       }
       break;

@@ -20,14 +20,14 @@ const Footer = ({ showCtaSection = true }) => {
       if (response.ok) {
         alert('Email submitted successfully!');
       } else {
-        alert('Failed to submit email');
+        console.error('Failed to submit email:', response.statusText);
+        alert('Failed to submit email. Check the console for details.');
       }
     } catch (error) {
       console.error('Error submitting email:', error);
       alert('Some error occurred, please check and try again');
     }
   };
-
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
