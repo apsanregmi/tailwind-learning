@@ -264,7 +264,7 @@ const Footer = ({ showCtaSection = true }) => {
                       </Link>
                     </li>*/}
                     <li>
-                      <Link legacyBehavior href="#">
+                      <Link legacyBehavior href="/others/all-events">
                         Events
                       </Link>
                     </li>

@@ -15,6 +15,7 @@ const Overlay = styled.div`
   align-items: center;
   justify-content: center;
   z-index: 1000;
+  overflow-y: auto; /* Make the overlay scrollable */
 `;
 
 const DetailsContainer = styled.div`
@@ -24,8 +25,9 @@ const DetailsContainer = styled.div`
   padding: 20px;
   width: 80%;
   max-width: 600px;
+  max-height: 80%; /* Set a maximum height for scrollability */
+  overflow-y: auto; /* Make the container scrollable */
 `;
-
 const Title = styled.h2`
   color: #333;
   font-size: 24px;
@@ -44,10 +46,36 @@ const Description = styled.p`
   margin-bottom: 15px;
 `;
 
+const SpeakersContainer = styled.div`
+  margin-bottom: 15px;
+`;
+
+const Speaker = styled.div`
+  margin-bottom: 10px;
+`;
+
+const SpeakerName = styled.span`
+  font-weight: bold;
+`;
+
+const AgendaContainer = styled.div`
+  margin-bottom: 15px;
+`;
+
+const AgendaItem = styled.div`
+  margin-bottom: 10px;
+`;
+
 const Guests = styled.p`
   color: #888;
   font-size: 16px;
   margin-bottom: 15px;
+`;
+
+const RegistrationLink = styled.a`
+  color: #007bff; // Bootstrap primary color
+  text-decoration: underline;
+  cursor: pointer;
 `;
 
 const CloseButton = styled.button`
@@ -89,7 +117,7 @@ const TwitterIcon = styled(FaTwitter)`
 `;
 
 const EventDetails = ({ event, onClose }) => {
-  const { title, date, location, description, guests } = event;
+  const { title, date, time, location, description, speakers, agenda, guests, registrationLink } = event;
   const shareUrl = window.location.href;
 
   return (
@@ -97,10 +125,39 @@ const EventDetails = ({ event, onClose }) => {
       <DetailsContainer>
         <Title>{title}</Title>
         <DateLocation>
-          {new Date(date).toLocaleDateString()} - {location}
+          {new Date(date).toLocaleDateString()} {time && `- ${time}`} - {location}
         </DateLocation>
         <Description>{description}</Description>
+
+        {speakers && speakers.length > 0 && (
+          <SpeakersContainer>
+            <h3>Speakers:</h3>
+            {speakers.map((speaker, index) => (
+              <Speaker key={index}>
+                <SpeakerName>{speaker.name}</SpeakerName>, {speaker.title} - {speaker.company}
+              </Speaker>
+            ))}
+          </SpeakersContainer>
+        )}
+
+        {agenda && agenda.length > 0 && (
+          <AgendaContainer>
+            <h3>Agenda:</h3>
+            {agenda.map((item, index) => (
+              <AgendaItem key={index}>
+                {item.time} - {item.activity}
+              </AgendaItem>
+            ))}
+          </AgendaContainer>
+        )}
+
         <Guests>Guests: {guests.join(', ')}</Guests>
+
+        {registrationLink && (
+          <p>
+            Registration: <RegistrationLink href={registrationLink} target="_blank" rel="noopener noreferrer">Register Now</RegistrationLink>
+          </p>
+        )}
 
         <ShareButtonContainer>
           <ShareButton>

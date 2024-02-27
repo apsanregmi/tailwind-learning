@@ -4,6 +4,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  margin-bottom: 70px;;
 }
 
 .eventCardsContainer {
@@ -37,6 +38,16 @@
 .eventCard p {
   color: #666;
   font-size: 14px;
+}
+
+.successfulEventsContainer {
+  margin-top: 40px;
+}
+
+.successfulEventsContainer h2 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
 /* Media query for responsiveness */

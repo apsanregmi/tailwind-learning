@@ -1,83 +1,77 @@
+[{
+  "id": 1,
+  "title": "AI Meetup: For Professionals, Investors & Founders",
+  "date": "2024-03-04",
+  "time": "",
+  "location": "Palo Alto, California",
+  "description": "Join us for an immersive AI experience at our exclusive meetup tailored for professionals, investors, and founders passionate about the future of artificial intelligence. This event is a unique opportunity to connect with industry experts, discover cutting-edge AI technologies, and explore potential collaborations in a dynamic and collaborative environment.",
+  "speakers": [
+    {
+      "name": "Nimesh Kuinkel",
+      "title": "CEO",
+      "company": "Cloud Pro AI"
+    },
+    {
+      "name": "Raju Adhikari",
+      "title": "Data Analyst",
+      "company": "Mangosoft Ltd."
+    }
+  ],
+  "agenda": [],
+  "guests": ["Nimesh Kuinkel", "Hari Mohan"],
+  "registrationLink": ""
+},
+{
+  "id": 2,
+  "title": "TechStartup Expo: AI and Cloud Innovations",
+  "date": "2024-02-15",
+  "time": "10:00 - 16:00",
+  "location": "Tech Expo Center, Silicon Valley",
+  "description": "Explore the forefront of technology at our TechStartup Expo featuring the latest innovations in AI and Cloud technologies. Join us for a day filled with insightful talks, startup showcases, and networking opportunities.",
+  "speakers": [
+    {
+      "name": "Dr. Sarah Johnson",
+      "title": "Chief AI Scientist",
+      "company": "InnoTech AI"
+    },
+    {
+      "name": "Alex Turner",
+      "title": "Founder and CEO",
+      "company": "CloudWiz Solutions"
+    }
+  ],
+  "agenda": [
+    {
+      "time": "10:00 - 10:30",
+      "activity": "Registration & Welcome Coffee"
+    },
+    {
+      "time": "10:30 - 11:15",
+      "activity": "Keynote Address: AI Revolution in Tech Startups"
+    },
+    {
+      "time": "11:15 - 12:00",
+      "activity": "Panel Discussion: Cloud Solutions for Startups"
+    },
+    {
+      "time": "12:00 - 13:00",
+      "activity": "Lunch & Networking"
+    },
+    {
+      "time": "13:00 - 14:00",
+      "activity": "Startup Showcases: AI and Cloud Tech Pioneers"
+    },
+    {
+      "time": "14:00 - 15:00",
+      "activity": "Tech Workshop: Building Scalable Cloud Applications"
+    },
+    {
+      "time": "15:00 - 16:00",
+      "activity": "Closing Remarks & Networking"
+    }
+  ],
+  "guests": ["John Doe", "Jane Smith", "Michael Lee"],
+  "registrationLink": "https://example.com/techstartup-expo-registration"
+}
 
-[
-  {
-    "id": 1,
-    "title": "Tech Conference 2024",
-    "date": "2024-03-01",
-    "location": "Virtual",
-    "description": "Join us for the latest in technology trends and innovations.",
-    "guests": ["John Doe", "Jane Smith", "Alice Johnson"]
-  },
-  {
-    "id": 2,
-    "title": "Product Launch - XYZ Corp",
-    "date": "2024-03-15",
-    "location": "City B Exhibition Center",
-    "description": "Be the first to witness the unveiling of our groundbreaking product.",
-    "guests": ["Bob Williams", "Charlie Brown"]
-  },
-  {
-    "id": 3,
-    "title": "Community Meetup",
-    "date": "2024-04-05",
-    "location": "Local Park",
-    "description": "A casual meetup for networking and community building. Bring your picnic!",
-    "guests": ["Eva Johnson", "Frank White", "Grace Davis"]
-  },
-  {
-    "id": 4,
-    "title": "Web Development Workshop",
-    "date": "2024-05-10",
-    "location": "Tech Hub",
-    "description": "Hands-on workshop for web developers. Learn the latest technologies and best practices.",
-    "guests": ["Alex Anderson", "Mia Miller"]
-  },
-  {
-    "id": 5,
-    "title": "Art Exhibition",
-    "date": "2024-06-20",
-    "location": "City Art Gallery",
-    "description": "Explore a diverse collection of contemporary art pieces.",
-    "guests": ["Sophie Turner", "Oliver Harris"]
-  },
-  {
-    "id": 6,
-    "title": "Fitness Challenge",
-    "date": "2024-07-15",
-    "location": "FitZone Gym",
-    "description": "Join our fitness challenge and achieve your health goals!",
-    "guests": ["Emma Brown"]
-  },
-  {
-    "id": 7,
-    "title": "Book Club Meeting",
-    "date": "2024-08-05",
-    "location": "Local Library",
-    "description": "Discussing the latest novel. All book lovers welcome!",
-    "guests": ["William Taylor", "Lily Evans"]
-  },
-  {
-    "id": 8,
-    "title": "Startup Pitch Night",
-    "date": "2024-09-12",
-    "location": "Innovation Hub",
-    "description": "Entrepreneurs pitch their innovative startup ideas. Investors and mentors welcome!",
-    "guests": ["David Robinson", "Emily Carter"]
-  },
-  {
-    "id": 9,
-    "title": "Family Fun Day",
-    "date": "2024-10-03",
-    "location": "City Park",
-    "description": "A day of fun activities for the whole family. Bring your picnic blankets!",
-    "guests": ["Johnson Family", "Smith Family"]
-  },
-  {
-    "id": 10,
-    "title": "Holiday Celebration",
-    "date": "2024-12-20",
-    "location": "Community Center",
-    "description": "Celebrate the holiday season with music, food, and joyous festivities.",
-    "guests": ["Santa Claus", "Rudolph the Red-Nosed Reindeer"]
-  }
 ]
