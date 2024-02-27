@@ -1,0 +1,83 @@
+
+[
+  {
+    "id": 1,
+    "title": "Tech Conference 2024",
+    "date": "2024-03-01",
+    "location": "Virtual",
+    "description": "Join us for the latest in technology trends and innovations.",
+    "guests": ["John Doe", "Jane Smith", "Alice Johnson"]
+  },
+  {
+    "id": 2,
+    "title": "Product Launch - XYZ Corp",
+    "date": "2024-03-15",
+    "location": "City B Exhibition Center",
+    "description": "Be the first to witness the unveiling of our groundbreaking product.",
+    "guests": ["Bob Williams", "Charlie Brown"]
+  },
+  {
+    "id": 3,
+    "title": "Community Meetup",
+    "date": "2024-04-05",
+    "location": "Local Park",
+    "description": "A casual meetup for networking and community building. Bring your picnic!",
+    "guests": ["Eva Johnson", "Frank White", "Grace Davis"]
+  },
+  {
+    "id": 4,
+    "title": "Web Development Workshop",
+    "date": "2024-05-10",
+    "location": "Tech Hub",
+    "description": "Hands-on workshop for web developers. Learn the latest technologies and best practices.",
+    "guests": ["Alex Anderson", "Mia Miller"]
+  },
+  {
+    "id": 5,
+    "title": "Art Exhibition",
+    "date": "2024-06-20",
+    "location": "City Art Gallery",
+    "description": "Explore a diverse collection of contemporary art pieces.",
+    "guests": ["Sophie Turner", "Oliver Harris"]
+  },
+  {
+    "id": 6,
+    "title": "Fitness Challenge",
+    "date": "2024-07-15",
+    "location": "FitZone Gym",
+    "description": "Join our fitness challenge and achieve your health goals!",
+    "guests": ["Emma Brown"]
+  },
+  {
+    "id": 7,
+    "title": "Book Club Meeting",
+    "date": "2024-08-05",
+    "location": "Local Library",
+    "description": "Discussing the latest novel. All book lovers welcome!",
+    "guests": ["William Taylor", "Lily Evans"]
+  },
+  {
+    "id": 8,
+    "title": "Startup Pitch Night",
+    "date": "2024-09-12",
+    "location": "Innovation Hub",
+    "description": "Entrepreneurs pitch their innovative startup ideas. Investors and mentors welcome!",
+    "guests": ["David Robinson", "Emily Carter"]
+  },
+  {
+    "id": 9,
+    "title": "Family Fun Day",
+    "date": "2024-10-03",
+    "location": "City Park",
+    "description": "A day of fun activities for the whole family. Bring your picnic blankets!",
+    "guests": ["Johnson Family", "Smith Family"]
+  },
+  {
+    "id": 10,
+    "title": "Holiday Celebration",
+    "date": "2024-12-20",
+    "location": "Community Center",
+    "description": "Celebrate the holiday season with music, food, and joyous festivities.",
+    "guests": ["Santa Claus", "Rudolph the Red-Nosed Reindeer"]
+  }
+]

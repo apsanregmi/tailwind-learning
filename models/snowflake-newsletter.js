@@ -5,7 +5,7 @@ const Newsletter = {
     try {
       await sdbConnect();
 
-      const sql = `
+      let sql = `
         SELECT *
         FROM CLOUDPROAI_WEBSITE_ACTIVITY.SIGNUPFORM_SCHEMA.NEWSLETTER;
       `;
@@ -22,7 +22,7 @@ const Newsletter = {
     try {
       await sdbConnect();
 
-      const sql = `
+      let sql = `
         INSERT INTO CLOUDPROAI_WEBSITE_ACTIVITY.SIGNUPFORM_SCHEMA.NEWSLETTER (email)
         VALUES (?);
       `;
