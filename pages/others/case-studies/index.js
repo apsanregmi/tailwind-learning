@@ -1,58 +1,37 @@
-import { useState, useEffect } from "react";
-import PageBanner from "@/components/PageBanner";
-import Layout from "@/layout";
-import { Container, Row, Col } from "react-bootstrap";
-import styles from "./CaseStudies.module.css";
-import Link from "next/link";
+// pages/others/case-studies/index.js
+import React from 'react';
+import { createClient } from 'contentful';
+import CaseStudyCard from '@/src/components/caseStudies/CaseStudyCard';
+import styles from './CaseStudies.module.css';
+import Layout from '@/src/layout/Layout';
+import PageBanner from '@/src/components/PageBanner';
 
-const CaseStudies = () => {
-  const [caseStudiesData, setCaseStudiesData] = useState([]);
+const client = createClient({
+  space: '0chql3dwavmp',
+  accessToken: '4Z7j49eqaFegh4UEMDl41-Fz9mcbrtF1H4XqJUclxpY',
+});
 
-  useEffect(() => {
-    console.log("useEffect is running ");
+export async function getStaticProps() {
+  const entries = await client.getEntries({ content_type: 'caseStudies' });
 
-    fetch(window.origin + "/api/case-studies/case-studies")
-      .then((response) => response.json())
-      .then((parsed) => {
-        setCaseStudiesData(parsed);
-      })
-      .catch((error) => {
-        console.error("Error fetching case studies:", error);
-      });
-  }, []);
+  return {
+    props: {
+      caseStudies: entries.items,
+    },
+  };
+}
 
+const CaseStudies = ({ caseStudies }) => {
   return (
     <Layout>
-      <PageBanner pageName={"Case Studies"} />
-      <Container className={styles.container}>
-        <h5 className={styles.caseStudiesHeading}>Case Studies</h5>
-        <Row>
-          {caseStudiesData.map((caseStudy) => (
-            <Col key={caseStudy.title} lg={4} md={6}>
-              <div className={styles.caseStudyCard}>
-                <div className={styles.caseStudyImage}>
-                  <h3 className={styles.cardTitle}>
-                    {caseStudy.title.length > 90
-                      ? `${caseStudy.title.slice(0, 90)}...`
-                      : caseStudy.title}
-                  </h3>
-                </div>
-                <div className={styles.content}>
-                  <p className={styles.description}>
-                    {caseStudy.description.length > 100
-                      ? `${caseStudy.description.slice(0, 100)}...`
-                      : caseStudy.description}
-                  </p>
-                  <Link href={`/others/case-studies/${caseStudy.slug}`}>
-                    {/* Removed wrapping <a> tag */}
-                      <span className={styles.learnMoreLink}>Learn More</span>
-                  </Link>
-                </div>
-              </div>
-            </Col>
-          ))}
-        </Row>
-      </Container>
+<PageBanner pageName={"Case Studies "} />
+    <div className={styles.caseStudiesContainer}>
+      <div className={styles.caseStudiesList}>
+        {caseStudies.map((caseStudy) => (
+          <CaseStudyCard key={caseStudy.sys.id} caseStudy={caseStudy} />
+        ))}
+      </div>
+    </div>
     </Layout>
   );
 };

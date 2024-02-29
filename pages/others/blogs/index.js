@@ -13,7 +13,7 @@ const Blogs = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          'https://cdn.contentful.com/spaces/0chql3dwavmp/entries?access_token=Ran701N8ENKFL4oOxD2SpeF6s8NGN9fEQeRGGtWZ6DM'
+          'https://cdn.contentful.com/spaces/0chql3dwavmp/entries?access_token=Ran701N8ENKFL4oOxD2SpeF6s8NGN9fEQeRGGtWZ6DM&content_type=blogs'
         );
         setBlogData(response.data.items);
       } catch (error) {

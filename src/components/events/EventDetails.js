@@ -117,8 +117,8 @@ const TwitterIcon = styled(FaTwitter)`
 `;
 
 const EventDetails = ({ event, onClose }) => {
-  const { title, date, time, location, description, speakers, agenda, guests, registrationLink } = event;
-  const shareUrl = window.location.href;
+  const { id, title, date, time, location, description, speakers, agenda, guests, registrationLink } = event;
+  const shareUrl = `${window.location.href}/${id}`;
 
   return (
     <Overlay>

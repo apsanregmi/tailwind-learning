@@ -1,59 +1,103 @@
-import { useState, useEffect } from "react";
-import PageBanner from "@/components/PageBanner";
-import Layout from "@/layout";
-import { Container, Row, Col } from "react-bootstrap";
-import styles from "./CaseStudy.module.css";
-import { useRouter } from 'next/router';
+// pages/others/case-studies/[slug].js
+import React from 'react';
+import { createClient } from 'contentful';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import styles from './CaseDetail.module.css';
+import PageBanner from '@/src/components/PageBanner';
+import Layout from '@/src/layout/Layout';
 
-const CaseStudy = () => {
-  const router = useRouter();
-  const { slug } = router.query;
-  const [caseStudy, setCaseStudy] = useState(null);
+const client = createClient({
+  space: '0chql3dwavmp',
+  accessToken: '4Z7j49eqaFegh4UEMDl41-Fz9mcbrtF1H4XqJUclxpY',
+});
 
-  useEffect(() => {
-    if (slug) {
-      fetch(window.origin + `/api/case-studies/getcase-study?slug=${slug}`)
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-          return response.json();
-        })
-        .then((parsed) => {
-          setCaseStudy(parsed);  // Fix: Correct function name
-        })
-        .catch((error) => {
-          console.error('Error fetching case study:', error);
-        });
+export async function getStaticPaths() {
+  const entries = await client.getEntries({ content_type: 'caseStudies' });
+
+  const paths = entries.items.map((caseStudy) => ({
+    params: { slug: caseStudy.fields.slug },
+  }));
+
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({ params }) {
+  const { slug } = params;
+  const entry = await client.getEntries({
+    content_type: 'caseStudies',
+    'fields.slug': slug,
+  });
+
+  return {
+    props: {
+      caseStudy: entry.items[0],
+    },
+  };
+}
+
+const CaseStudyDetail = ({ caseStudy }) => {
+  const {
+    title,
+    introducion,
+    challanges,
+    solution,
+    technologyStack,
+    impactAndResults,
+    conclusion,
+    callToAction,
+    clientInformation,
+    date,
+    author,
+    coverImage,
+  } = caseStudy.fields;
+
+  const renderRichText = (richText) => {
+    return documentToReactComponents(richText);
+  };
+
+  const renderDetailItem = (title, content) => {
+    if (!content) {
+      return null; 
     }
-  }, [slug]);
 
-  if (!caseStudy) {
-    return <p>Loading...</p>;
-
-  }
+    return (
+      <div className={styles.detailItem}>
+        <h3>{title}</h3>
+        {typeof content === 'string' ? <p>{content}</p> : renderRichText(content)}
+      </div>
+    );
+  };
 
   return (
     <Layout>
-      <PageBanner pageName={`${caseStudy.title.slice(0, 25)}...`} />
+      <h1 className={styles.title}>{title}</h1>
 
-
-      <Row>
-        <Col>
-          <h2 className={styles.caseStudyTitle}>{caseStudy.title}</h2>
-          <p className={styles.caseStudyDescription}>{caseStudy.description}</p>
-        </Col>
-      </Row>
-      {caseStudy.sections.map((section, index) => (
-        <Row key={index} className="mb-100">
-          <Col lg={12}>
-            <div className={styles.sectionTitle}><h6 className={styles.sectionTitleName}>{section.sectionTitle}</h6></div>
-            <div className={styles.sectionContentDiv}><h6 className={styles.sectionContent}>{section.content}</h6></div>
-          </Col>
-        </Row>
-      ))}
+      <div className={styles.caseStudyDetailContainer}>
+        {coverImage && (
+          <img
+            className={styles.image}
+            src={coverImage.fields.file.url}
+            alt={coverImage.fields.description}
+          />
+        )}
+        <div className={styles.details}>
+          {renderDetailItem('Introduction', introducion)}
+          {renderDetailItem('Challenges', challanges)}
+          {renderDetailItem('Solution', solution)}
+          {renderDetailItem('Technology Stack', technologyStack)}
+          {renderDetailItem('Impact and Results', impactAndResults)}
+          {renderDetailItem('Conclusion', conclusion)}
+          {renderDetailItem('Call to Action', callToAction)}
+          {renderDetailItem('Client Information', clientInformation)}
+          {/* {renderDetailItem('Date', date)} */}
+          {renderDetailItem('Author', author | date)}
+        </div>
+      </div>
     </Layout>
   );
 };
 
-export default CaseStudy;
+export default CaseStudyDetail;

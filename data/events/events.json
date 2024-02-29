@@ -19,7 +19,7 @@
   ],
   "agenda": [],
   "guests": ["Nimesh Kuinkel", "Hari Mohan"],
-  "registrationLink": ""
+  "registrationLink": "https://cloudpro.ai/signup"
 },
 {
   "id": 2,
@@ -71,7 +71,7 @@
     }
   ],
   "guests": ["John Doe", "Jane Smith", "Michael Lee"],
-  "registrationLink": "https://example.com/techstartup-expo-registration"
+  "registrationLink": "https://cloudpro.ai/signup"
 }
 
 ]
