@@ -5,13 +5,18 @@ import { animation } from "../utils";
 import Footer from "./footer/Index";
 import Header from "./header/Index";
 import ScrollTopButton from "./ScrollTopButton";
-const Layout = ({ children, header,showCtaSection  }) => {
+import Head from "next/head";
+const Layout = ({ children, header,showCtaSection,title }) => {
   useEffect(() => {
     animation();
   }, []);
+  const pageTitle = title || "Software, Data and AI | Innovative Cloud Solutions";
 
   return (
     <Fragment>
+      <Head>
+        <title>{pageTitle}</title>
+      </Head>
       <VideoPopup />
       <ImageView />
       <div className="page-wrapper">

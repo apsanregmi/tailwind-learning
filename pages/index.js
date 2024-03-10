@@ -24,7 +24,7 @@ const Index = () => {
   return (
 
     
-    <Layout header={1}>
+    <Layout header={1} title={"Software, Data and AI | Innovative Cloud Solutions"}>
       {/* Hero Section Start */}
       <section className="hero-area bgc-gray rel z-1">
         <div className="container">

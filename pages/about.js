@@ -13,7 +13,7 @@ const Counter = dynamic(() => import("@/src/components/Counter"), {
 
 const About = () => {
   return (
-    <Layout>
+    <Layout title={"About Us- CloudProAI"}>
       <PageBanner pageName={"About Us"} />
       <section className="about-area-five py-130 rpt-100 rpb-65 rel z-1">
         <div className="container">

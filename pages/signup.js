@@ -4,7 +4,7 @@ import Layout from '@/src/layout/Layout'
 
 const signup = () => {
   return (
-    <Layout>
+    <Layout title={"Registration- CloudProAI"}>
     <div>
 
         <Signup/>

@@ -34,7 +34,7 @@ const Events = () => {
   };
 
   return (
-    <Layout>
+    <Layout title={"All Events- CloudProAI"}>
       <div className={styles.eventsContainer}>
         <PageBanner pageName={"Discover Exciting Events"} />
 

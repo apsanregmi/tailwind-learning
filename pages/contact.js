@@ -4,7 +4,7 @@ import ContactForm from "@/components/forms/ContactForm"
 const Contact = () => {
 
   return (
-    <Layout>
+    <Layout title={"Contact- CloudProAI"}>
       <PageBanner pageName={"Contact Us"} />{" "}
       <section className="contact-page-info pt-130 rpt-100 pb-100 rpb-70 rel z-1">
         <div className="container">

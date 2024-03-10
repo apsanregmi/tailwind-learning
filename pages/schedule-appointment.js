@@ -19,7 +19,7 @@ const ScheduleAppointment = () => {
   }, []); // Run the effect only once when the component mounts
 
   return (
-    <Layout showCtaSection={false}>
+    <Layout showCtaSection={false} title={"Schedule Appointment- CloudProAI"}>
       <div
         className="calendly-inline-widget"
         data-url="https://calendly.com/contact-gck/30min"

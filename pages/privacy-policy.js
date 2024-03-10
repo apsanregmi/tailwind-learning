@@ -21,7 +21,7 @@ const PrivacyPolicy = () => {
   };
 
   return (
-    <Layout>
+    <Layout title={"Privacy Policy- CloudProAI"}>
     <div style={containerStyle}>
       <h2 style={headingStyle}>Privacy Policy</h2>
       <p>Last Updated: 2024/02/11</p>

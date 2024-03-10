@@ -25,7 +25,7 @@ const Blogs = () => {
   }, []);
 
   return (
-    <Layout>
+    <Layout title={"Blogs - CloudProAI"}>
       <PageBanner pageName={"Discover the latest Insights"} />
     <div className={styles.blogsContainer}>
       <div className={styles.blogList}>

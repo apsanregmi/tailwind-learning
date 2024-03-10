@@ -141,7 +141,7 @@ const Pricing = () => {
   ];
 
   return (
-    <Layout>
+    <Layout title={"Services - CloudProAI"}>
       <PageBanner pageName={"Services"} />
       <section className="price-plan-page-top pt-130 rpt-100 pb-100 rpb-70 rel z-1">
         <div className="container">

@@ -3,10 +3,11 @@ import Layout from "@/layout";
 import Link from "next/link";
 import { Container, Row, Col } from "react-bootstrap";
 import styles from './Industries.module.css';
+import Head from "next/head";
 
 const Industries = () => {
   return (
-    <Layout>
+    <Layout title={"Industries- CloudProAI"}>
       <PageBanner pageName={"Industries"} />
 
       <section className={styles.industrySection}>

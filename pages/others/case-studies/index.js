@@ -23,7 +23,7 @@ export async function getStaticProps() {
 
 const CaseStudies = ({ caseStudies }) => {
   return (
-    <Layout>
+    <Layout title={"Case Studies - CloudProAI"}>
 <PageBanner pageName={"Case Studies "} />
     <div className={styles.caseStudiesContainer}>
       <div className={styles.caseStudiesList}>
