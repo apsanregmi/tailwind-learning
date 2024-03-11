@@ -1,43 +1,4 @@
-// import dbConnect from '../../../utils/dbConnect';
-// import Signup from '../../../models/signupform';
 
-// export default async function handler(req, res) {
-//     await dbConnect();
-
-//     switch (req.method) {
-//         case 'POST':
-//             try {
-//                 const { firstName, lastName, email, companyName, jobTitle, phone, subscribeNewsletter } = req.body;
-
-//                 // Create a new Signup instance
-//                 const newSignup = new Signup({
-//                     firstName,
-//                     lastName,
-//                     email,
-//                     companyName,
-//                     jobTitle,
-//                     phone,
-//                     subscribeNewsletter,
-//                 });
-
-//                 // Save the newSignup to the database
-//                 await newSignup.save();
-
-//                 res.status(201).json({ message: 'Registration successful' });
-
-//                 // Redirect to Facebook using Next.js router
-//                 res.status(302).redirect('/index'); // Redirect to a "success" page or directly to Facebook
-//             } catch (error) {
-//                 console.error('Error saving signup data:', error);
-//                 res.status(500).json({ message: 'Error saving signup data', error: error.message });
-//             }
-//             break;
-
-//         default:
-//             res.status(405).json({ message: 'Method Not Allowed' });
-//             break;
-//     }
-// }
 
 
 
@@ -65,6 +26,7 @@ export default async function handler(req, res) {
           // Consider adding logic to update existing user data if needed
         } else {
           const ipAddress = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+          
           // Create a new Signup instance
           const newSignup = new Signup({
             firstName,
@@ -77,6 +39,8 @@ export default async function handler(req, res) {
             referralLink,
             ipAddress,
           });
+
+          console.log("referral Link is :", referralLink)
 
           // Save the newSignup to the database
           await newSignup.save();

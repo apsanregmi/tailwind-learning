@@ -45,10 +45,12 @@ const SignupSchema = new mongoose.Schema({
 
   referralLinks: {
     type: [String], // Array of referral links
-    default: [],   // Default value is an empty array
+    default: ["From Website"], 
   },
+
+
   ipAddress: {
-    type: String, // Assuming you want to store the IP address as a string
+    type: String,
   },
 
 });

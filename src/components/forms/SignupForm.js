@@ -14,13 +14,15 @@ const SignupForm = () => {
   const [form] = Form.useForm();
   const [value, setValue] = useState();
   const router = useRouter();
-  const referralLink = typeof window !== 'undefined' ? window.location.href : '';
+  const [referralLink, setReferralLink] = useState('');
+
+  
 
   const onFinish = async (values) => {
+    
     try {
-      // Include the referral link in the registration data
       const dataWithReferral = {
-        ...values,
+        ...values, 
         referralLink,
       };
 
@@ -35,7 +37,7 @@ const SignupForm = () => {
       const data = await response.json();
 
       if (response.ok) {
-        alert(data.message); // Display success message
+        alert(data.message); 
 
         // Retrieve the redirect parameter from the URL
         const urlParams = new URLSearchParams(window.location.search);
@@ -61,6 +63,8 @@ const SignupForm = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    setReferralLink(window.location.href);
+
   }, []);
 
   return (

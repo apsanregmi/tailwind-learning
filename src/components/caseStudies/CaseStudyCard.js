@@ -23,7 +23,8 @@ const CaseStudyCard = ({ caseStudy }) => {
       <div className={styles.caseStudyCardContent}>
         <h2 className={styles.caseStudyCardTitle}>{truncatedTitle}</h2>
         <p className={styles.caseStudyCardDateAuthor}>
-          Date: {date} | Author: {author}
+          Date: {date} ||<br></br>
+           Author: Cloud Pro AI
         </p>
         <p className={styles.caseStudyCardIntroduction}>{introduction}</p>
         <Link href={`/others/case-studies/${slug}`}>
