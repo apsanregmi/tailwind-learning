@@ -52,16 +52,19 @@ export default async function handler(req, res) {
   switch (req.method) {
     case 'POST':
       try {
-        const { firstName, lastName, email, companyName, jobTitle, phone, subscribeNewsletter } = req.body;
+            
+            const { firstName, lastName, email, companyName, jobTitle, phone, subscribeNewsletter,referralLink  } = req.body;
 
         // Check for existing email
         const existingUser = await Signup.findOne({ email });
 
         // Handle duplicate email:
         if (existingUser) {
+          await Signup.updateOne({ email }, { $addToSet: { referralLinks: referralLink } });
           res.status(200).json({ message: 'You have already registered. Redirecting .' });
           // Consider adding logic to update existing user data if needed
         } else {
+          const ipAddress = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
           // Create a new Signup instance
           const newSignup = new Signup({
             firstName,
@@ -71,6 +74,8 @@ export default async function handler(req, res) {
             jobTitle,
             phone,
             subscribeNewsletter,
+            referralLink,
+            ipAddress,
           });
 
           // Save the newSignup to the database

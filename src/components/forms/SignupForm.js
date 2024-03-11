@@ -14,15 +14,22 @@ const SignupForm = () => {
   const [form] = Form.useForm();
   const [value, setValue] = useState();
   const router = useRouter();
+  const referralLink = typeof window !== 'undefined' ? window.location.href : '';
 
   const onFinish = async (values) => {
     try {
+      // Include the referral link in the registration data
+      const dataWithReferral = {
+        ...values,
+        referralLink,
+      };
+
       const response = await fetch('/api/signupform', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(values),
+        body: JSON.stringify(dataWithReferral),
       });
 
       const data = await response.json();
@@ -47,7 +54,6 @@ const SignupForm = () => {
       alert('Some error occurred. Please try again.');
     }
   };
-
   const handleCountryCodeChange = (value, option) => {
     const selectedCountry = option.data;
     form.setFieldsValue({ phone: `+${selectedCountry.code}` });

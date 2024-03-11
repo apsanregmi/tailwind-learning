@@ -41,6 +41,16 @@ const SignupSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  
+
+  referralLinks: {
+    type: [String], // Array of referral links
+    default: [],   // Default value is an empty array
+  },
+  ipAddress: {
+    type: String, // Assuming you want to store the IP address as a string
+  },
+
 });
 
 // Create and export the model
