@@ -10,6 +10,8 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 
 const BlogCard = ({ title, introduction, author, publishedDate, coverImage }) => {
+
+  console.log('Hello this is coverimage ', coverImage);
   const formattedDate = isValid(new Date(publishedDate))
     ? format(new Date(publishedDate), 'MMMM d, yyyy')
     : '';
@@ -22,14 +24,15 @@ const BlogCard = ({ title, introduction, author, publishedDate, coverImage }) =>
 
   return (
     <Card className={styles.card}>
-      {/* {coverImage && coverImage.url && ( // Ensure coverImage exists and has a URL */}
+      {/* Render CardMedia only if coverImage has a url */}
+      {coverImage && coverImage.fields && coverImage.fields.file && coverImage.fields.file.url && (
         <CardMedia
           component="img"
           height="140"
-          image={coverImage.url}
-          alt={coverImage.description}
+          image={coverImage.fields.file.url}
+          alt={coverImage.description || "Blog cover image"}
         />
-       {/* )} */}
+      )}
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {title}
@@ -57,8 +60,11 @@ BlogCard.propTypes = {
   author: PropTypes.string.isRequired,
   publishedDate: PropTypes.string.isRequired,
   coverImage: PropTypes.shape({
-    url: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
+    fields: PropTypes.shape({
+      file: PropTypes.shape({
+        url: PropTypes.string.isRequired,
+      }),
+    }),
   }),
 };
 

@@ -19,8 +19,7 @@ const Counter = dynamic(() => import("@/src/components/Counter"), {
 
 const Index = () => {
 
-  console.log(process.env);
-  console.log("hello world", process.env);
+  
   return (
 
     

@@ -46,11 +46,7 @@ const Blogs = () => {
               </div>
             ))}
           </div>
-          <div className="mt-12 text-center">
-            <a href="#" className="inline-flex items-center text-sm font-semibold text-white transition-all duration-200 group hover:text-gray-200 hover:underline">
-              See all from our blog
-            </a>
-          </div>
+         
         </div>
       </section>
     </Layout>

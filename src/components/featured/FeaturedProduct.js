@@ -4,7 +4,7 @@ import styles from './FeaturedProduct.module.css';
 
 const FeaturedProduct = () => {
   return (
-    <Link href="/signup" as="/signup?redirect=https://zales.cloudpro.ai" target='_blank'>
+    <Link href="/auth/signup" as="/auth/signup?redirect=https://zales.cloudpro.ai" target='_blank'>
       <div className={styles.container}>
         <div className={styles.overlay}>
           <h3>Innovate Your Marketing Strategies</h3>
