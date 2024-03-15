@@ -1,0 +1,9 @@
+{
+  "routes": [
+    {
+      "src": "https://cloudproai.com/(.*)",
+      "status": 301,
+      "headers": { "Location": "https://cloudpro.ai/:splat" }
+    }
+  ]
+}

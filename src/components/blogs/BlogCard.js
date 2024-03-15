@@ -3,34 +3,51 @@ import PropTypes from 'prop-types';
 import { format, isValid } from 'date-fns';
 import styles from './BlogCard.module.css';
 
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+
 const BlogCard = ({ title, introduction, author, publishedDate, coverImage }) => {
   const formattedDate = isValid(new Date(publishedDate))
     ? format(new Date(publishedDate), 'MMMM d, yyyy')
     : '';
 
-  // Slice the description to 200 words
-  const slicedDescription =
+  // Slice the introduction to 200 words
+  const slicedIntroduction =
     introduction && typeof introduction === 'string'
       ? introduction.split(' ').slice(0, 200).join(' ')
-      : '';
-
-  const backgroundImageStyle = coverImage
-    ? { backgroundImage: `url(${coverImage.url})` }
-    : null;
+      : introduction;
 
   return (
-    <div className={styles.blogCard} style={backgroundImageStyle}>
-      <div className={styles.content}>
-        <h3 className={styles.blogTitle}>{title}</h3>
-        <p className={styles.description}>{slicedDescription}...</p>
+    <Card className={styles.card}>
+      {/* {coverImage && coverImage.url && ( // Ensure coverImage exists and has a URL */}
+        <CardMedia
+          component="img"
+          height="140"
+          image={coverImage.url}
+          alt={coverImage.description}
+        />
+       {/* )} */}
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          {title}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          {slicedIntroduction}
+        </Typography>
+      </CardContent>
+      <CardActions>
         <div className={styles.metadata}>
-          <p className={styles.author}>Author: {author}</p>
+          <p className={styles.author}> - {author}</p>
+          <br />
           {formattedDate && (
-            <time className={styles.publishedDate}>Published Date: {formattedDate}</time>
+            <time className={styles.publishedDate}>Date: {formattedDate}</time>
           )}
         </div>
-      </div>
-    </div>
+      </CardActions>
+    </Card>
   );
 };
 

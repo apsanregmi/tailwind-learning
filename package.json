@@ -11,9 +11,12 @@
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.19.4",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.0",
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-brands-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@mui/material": "^5.15.13",
     "@next/font": "13.1.2",
     "antd": "^5.14.1",
     "axios": "^1.6.7",
