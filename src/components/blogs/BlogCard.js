@@ -25,14 +25,14 @@ const BlogCard = ({ title, introduction, author, publishedDate, coverImage }) =>
   return (
     <Card className={styles.card}>
       {/* Render CardMedia only if coverImage has a url */}
-      {coverImage && coverImage.fields && coverImage.fields.file && coverImage.fields.file.url && (
+      
         <CardMedia
           component="img"
           height="140"
-          image={coverImage.fields.file.url}
+          image={coverImage.url}
           alt={coverImage.description || "Blog cover image"}
         />
-      )}
+      
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {title}
