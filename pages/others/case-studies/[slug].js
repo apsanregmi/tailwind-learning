@@ -73,6 +73,7 @@ const CaseStudyDetail = ({ caseStudy }) => {
 
   return (
     <Layout>
+      <PageBanner pageName={title} />
       <h1 className={styles.title}>{title}</h1>
 
       <div className={styles.caseStudyDetailContainer}>

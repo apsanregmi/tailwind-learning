@@ -2,6 +2,8 @@
 .caseStudiesContainer {
   padding: 20px;
   margin-bottom: 100px;
+  display: flex;
+  align-items: center;
 }
 
 .caseStudiesList {
@@ -15,34 +17,34 @@
   transition: transform 0.3s ease-in-out;
 }
 
-.caseStudiesList .caseStudyCard:hover {
+/* .caseStudiesList .caseStudyCard:hover {
   transform: scale(1.05);
-}
+} */
 
 /* Additional styles for the CaseStudyCard component */
-.caseStudyCard {
+/* .caseStudyCard {
   background-color: #fff;
   border: 1px solid #eaeaea;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+} */
 
-.caseStudyCard img {
+/* .caseStudyCard img {
   width: 100%;
-  height: 200px; /* Adjust the height as needed */
+  height: 200px; 
   object-fit: cover;
-}
+} */
 
 .caseStudyCardContent {
   padding: 20px;
 }
 
-.caseStudyCardTitle {
+/* .caseStudyCardTitle {
   font-size: 1.2em;
   font-weight: bold;
   margin-bottom: 10px;
-}
+} */
 
 .caseStudyCardDescription {
   color: #666;
