@@ -1,4 +1,3 @@
-// pages/others/case-studies/[slug].js
 import React from 'react';
 import { createClient } from 'contentful';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
@@ -58,43 +57,77 @@ const CaseStudyDetail = ({ caseStudy }) => {
     return documentToReactComponents(richText);
   };
 
-  const renderDetailItem = (title, content) => {
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      const rect = section.getBoundingClientRect();
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      window.scrollTo({
+        top: rect.top + scrollTop - 175, // Adjust the offset as needed
+        behavior: 'smooth',
+      });
+    }
+  };
+
+  const renderSectionLink = (title, id, content) => {
     if (!content) {
       return null; 
     }
 
     return (
-      <div className={styles.detailItem}>
-        <h3>{title}</h3>
-        {typeof content === 'string' ? <p>{content}</p> : renderRichText(content)}
-      </div>
+      <li key={id} className={styles.sectionLink} onClick={() => scrollToSection(id)}>
+        {title}
+      </li>
+    );
+  };
+
+  const renderSection = (title, content) => {
+    if (!content) {
+      return null; // Don't render the section if there's no content
+    }
+
+    return (
+      <section className={styles.section} id={title.toLowerCase().replace(/\s+/g, '-')}>
+        <h2>{title}</h2>
+        {renderRichText(content)}
+      </section>
     );
   };
 
   return (
     <Layout>
-      <PageBanner pageName={title} />
-      <h1 className={styles.title}>{title}</h1>
+      <PageBanner  pageTitle={title} bannerImage={coverImage.fields.file.url} />
+      {/* <h1 className={styles.title}>{title}</h1> */}
 
       <div className={styles.caseStudyDetailContainer}>
-        {coverImage && (
-          <img
-            className={styles.image}
-            src={coverImage.fields.file.url}
-            alt={coverImage.fields.description}
-          />
-        )}
-        <div className={styles.details}>
-          {renderDetailItem('Introduction', introducion)}
-          {renderDetailItem('Challenges', challanges)}
-          {renderDetailItem('Solution', solution)}
-          {renderDetailItem('Technology Stack', technologyStack)}
-          {renderDetailItem('Impact and Results', impactAndResults)}
-          {renderDetailItem('Conclusion', conclusion)}
-          {renderDetailItem('Call to Action', callToAction)}
-          {renderDetailItem('Client Information', clientInformation)}
-          {/* {renderDetailItem('Date', date)} */}
-          {renderDetailItem('Author', author | date)}
+        <div className={styles.sidebar}>
+          <div className={styles.centeredText}>
+          <div className={styles.sidebarTitle}>In this Case Study</div>
+          <ul className={styles.sectionList}>
+            {renderSectionLink('Introduction', 'introduction', introducion)}
+            {renderSectionLink('Challenges', 'challenges', challanges)}
+            {renderSectionLink('Solution', 'solution', solution)}
+            {renderSectionLink('Technology Stack', 'technology-stack', technologyStack)}
+            {renderSectionLink('Impact and Results', 'impact-and-results', impactAndResults)}
+            {renderSectionLink('Conclusion', 'conclusion', conclusion)}
+            {renderSectionLink('Call to Action', 'call-to-action', callToAction)}
+            {renderSectionLink('Client Information', 'client-information', clientInformation)}
+          </ul>
+        </div>
+        </div>
+        <div className={styles.content} >
+          {renderSection('Introduction', introducion)}
+          {renderSection('Challenges', challanges)}
+          {renderSection('Solution', solution)}
+          {renderSection('Technology Stack', technologyStack)}
+          {renderSection('Impact and Results', impactAndResults)}
+          {renderSection('Conclusion', conclusion)}
+          {renderSection('Call to Action', callToAction)}
+          {renderSection('Client Information', clientInformation)}
+          <section className={styles.section} id="author">
+            <h2>Author</h2>
+            {author}
+          </section>
         </div>
       </div>
     </Layout>

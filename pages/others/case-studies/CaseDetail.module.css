@@ -1,91 +1,82 @@
-/* styles/CaseStudyDetail.module.css */
+/* CaseDetail.module.css */
+
+/* Container for the entire case study detail */
 .caseStudyDetailContainer {
-    max-width: 800px;
-    text-align: center;
-    justify-content: center;
-    margin: 0 auto;
-    margin-bottom: 70px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    
-  }
-  .heading{
-    align-items: center;
-    text-align: center;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px; /* Adjust as needed */
+  overflow: auto; /* Important for proper sticky behavior */
+  height: 100vh; /* Set a height to the container */
+}
 
+
+/* Sidebar containing the navigation links */
+.sidebar {
+  flex: 0 0 40%; /* Sidebar takes 25% width */
+  padding: 20px;
+  position: sticky;
+  top: 0px; /* Stick the sidebar to the top after 40px */
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: static; /* Remove sticky on narrow screens */
   }
-  
-  .title {
-    color: #3498db;
+  .caseStudyDetailContainer {
     display: flex;
-    justify-content: center;
-    text-align: center;
-    font-size: 2.5em;
-
-
-
+    flex-direction: column; 
     
+  }
+}
 
+/* Content area */
+.content {
+  flex: 1; /* Content area takes 75% width */
+  padding: 20px;
+  padding-right: 20%;
+}
 
-    
+/* Centered text within the sidebar */
+.centeredText {
+  text-align: center; 
+}
 
+/* Title styling for the sidebar */
+.sidebarTitle {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
 
-    
+/* Style for the section list in the sidebar */
+.sectionList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
 
-  }
-  
-  .image {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  }
-  
-  .details {
+/* Styling for each section link */
+.sectionLink {
+  cursor: pointer;
+  padding: 8px 15px;
+  transition: background-color 0.3s ease;
+  border-radius: 4px;
+}
 
-    flex-wrap: wrap;
-  }
-  
-  .detailItem {
+.sectionLink:hover {
+  background-color: #e0e0e0; /* Lighter gray on hover */
+}
 
-    margin: 0 10px 20px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
-  }
-  
-  .detailItem:hover {
-    transform: translateY(-5px);
-    background-color: #f0f0f0;
-  }
-  
-  .detailItem h3 {
-    font-size: 1.8em;
-    margin-bottom: 10px;
-    color: #333;
-  }
-  
-  .detailItem p {
-    font-size: 1.1em;
-    color: #666;
-    text-align: left;
-    align-items: left;
-  }
-  
-  .detailItem a {
-    color: #3498db;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .detailItem a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Add more styles as needed */
-  
+.section {
+  margin-bottom: 40px; 
+}
+
+.section h2 {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+#author {
+  margin-bottom: 0; 
+}
