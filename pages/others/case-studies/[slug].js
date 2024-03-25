@@ -88,7 +88,7 @@ const CaseStudyDetail = ({ caseStudy }) => {
 
     return (
       <section className={styles.section} id={title.toLowerCase().replace(/\s+/g, '-')}>
-        <h2>{title}</h2>
+        <p className={styles.titleTypography}>{title}</p> {/* Apply typography class here */}
         {renderRichText(content)}
       </section>
     );
@@ -96,26 +96,26 @@ const CaseStudyDetail = ({ caseStudy }) => {
 
   return (
     <Layout>
-      <PageBanner  pageTitle={title} bannerImage={coverImage.fields.file.url} />
+      <PageBanner  pageTitle={title} bannerImage={coverImage.fields.file.url} pageName='CASE STUDY' />
       {/* <h1 className={styles.title}>{title}</h1> */}
 
       <div className={styles.caseStudyDetailContainer}>
         <div className={styles.sidebar}>
           <div className={styles.centeredText}>
-          <div className={styles.sidebarTitle}>In this Case Study</div>
-          <ul className={styles.sectionList}>
-            {renderSectionLink('Introduction', 'introduction', introducion)}
-            {renderSectionLink('Challenges', 'challenges', challanges)}
-            {renderSectionLink('Solution', 'solution', solution)}
-            {renderSectionLink('Technology Stack', 'technology-stack', technologyStack)}
-            {renderSectionLink('Impact and Results', 'impact-and-results', impactAndResults)}
-            {renderSectionLink('Conclusion', 'conclusion', conclusion)}
-            {renderSectionLink('Call to Action', 'call-to-action', callToAction)}
-            {renderSectionLink('Client Information', 'client-information', clientInformation)}
-          </ul>
+            <div className={styles.sidebarTitle}>In this Case Study</div>
+            <ul className={styles.sectionList}>
+              {renderSectionLink('Introduction', 'introduction', introducion)}
+              {renderSectionLink('Challenges', 'challenges', challanges)}
+              {renderSectionLink('Solution', 'solution', solution)}
+              {renderSectionLink('Technology Stack', 'technology-stack', technologyStack)}
+              {renderSectionLink('Impact and Results', 'impact-and-results', impactAndResults)}
+              {renderSectionLink('Conclusion', 'conclusion', conclusion)}
+              {renderSectionLink('Call to Action', 'call-to-action', callToAction)}
+              {renderSectionLink('Client Information', 'client-information', clientInformation)}
+            </ul>
+          </div>
         </div>
-        </div>
-        <div className={styles.content} >
+        <div className={styles.content}>
           {renderSection('Introduction', introducion)}
           {renderSection('Challenges', challanges)}
           {renderSection('Solution', solution)}
@@ -125,8 +125,8 @@ const CaseStudyDetail = ({ caseStudy }) => {
           {renderSection('Call to Action', callToAction)}
           {renderSection('Client Information', clientInformation)}
           <section className={styles.section} id="author">
-            <h2>Author</h2>
-            {author}
+            {/* <h2>Author</h2>
+            {author} */}
           </section>
         </div>
       </div>

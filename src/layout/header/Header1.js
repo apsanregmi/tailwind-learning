@@ -72,9 +72,9 @@ const Header1 = () => {
               {/* Main Menu End*/}
             </div>
             {/* Nav Search */}
-            <div className="nav-search py-10">
+            {/* <div className="nav-search py-10">
               <Search />
-            </div>
+            </div> */}
            
           </div>
         </div>

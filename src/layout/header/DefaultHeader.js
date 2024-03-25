@@ -35,33 +35,20 @@ const DefaultHeader = () => {
               {/* Main Menu End*/}
             </div>
             {/* Nav Search */}
-            <div className="nav-search ms-xl-auto py-10">
+            {/* <div className="nav-search ms-xl-auto py-10">
               <Search />
-            </div>
+            </div> */}
             {/* Menu Button */}
-            <div className="menu-btns">
+            {/* <div className="menu-btns">
               <Link legacyBehavior href="/schedule-appointment">
                 <a className="theme-btn">
                 Want a Pro? <br/>
  Schedule a Free Consultation  <i className="fas fa-long-arrow-right" />
                 </a>
               </Link>
-            </div>
+            </div> */}
             {/* Header Social */}
-            <div className="social-style-two">
-              <a href="#">
-                <i className="fab fa-facebook-f" />
-              </a>
-              <a href="#">
-                <i className="fab fa-twitter" />
-              </a>
-              <a href="#">
-                <i className="fab fa-instagram" />
-              </a>
-              <a href="https://www.linkedin.com/company/cloudproai/">
-                <i className="fab fa-linkedin-in" />
-              </a>
-            </div>
+            
           </div>
         </div>
       </div>

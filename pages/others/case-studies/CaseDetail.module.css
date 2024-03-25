@@ -1,82 +1,69 @@
-/* CaseDetail.module.css */
-
-/* Container for the entire case study detail */
 .caseStudyDetailContainer {
   display: flex;
-  justify-content: space-between;
-  margin-top: 40px; /* Adjust as needed */
-  overflow: auto; /* Important for proper sticky behavior */
-  height: 100vh; /* Set a height to the container */
+  margin-bottom: 70px;
 }
 
-
-/* Sidebar containing the navigation links */
 .sidebar {
-  flex: 0 0 40%; /* Sidebar takes 25% width */
-  padding: 20px;
+  width: 40%;
   position: sticky;
-  top: 0px; /* Stick the sidebar to the top after 40px */
+  top: 80px; /* Adjust as needed to accommodate the header */
+  height: calc(100vh - 200px); /* Ensure full viewport height minus header */
+  z-index: 10; /* Keep sidebar above content when sticky */
+  padding-left: 15%;
+  padding-top: 30px;
 }
 
-@media (max-width: 768px) {
-  .sidebar {
-    position: static; /* Remove sticky on narrow screens */
-  }
-  .caseStudyDetailContainer {
-    display: flex;
-    flex-direction: column; 
-    
-  }
-}
-
-/* Content area */
 .content {
-  flex: 1; /* Content area takes 75% width */
-  padding: 20px;
-  padding-right: 20%;
+  flex: 1;
+  padding-right: 20%; /* Adjust padding as needed */
+  overflow-y: auto;
+  padding-top:2%;
+  color:#514E4E;
 }
 
-/* Centered text within the sidebar */
-.centeredText {
-  text-align: center; 
-}
-
-/* Title styling for the sidebar */
+/* Sidebar title styling */
 .sidebarTitle {
-  font-size: 1.2em;
+  font-size: 18px;
   font-weight: bold;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
-/* Style for the section list in the sidebar */
+/* Section list styling */
 .sectionList {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
   margin: 0;
 }
 
-/* Styling for each section link */
+/* Section link styling */
 .sectionLink {
+  margin-bottom: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
   cursor: pointer;
-  padding: 8px 15px;
-  transition: background-color 0.3s ease;
-  border-radius: 4px;
 }
 
-.sectionLink:hover {
-  background-color: #e0e0e0; /* Lighter gray on hover */
-}
-
+/* Content section styling */
 .section {
-  margin-bottom: 40px; 
+  margin-bottom: 50px;
 }
 
-.section h2 {
-  font-size: 1.4em;
-  margin-bottom: 10px;
-  font-weight: bold;
+/* Scrollbar styling (optional) */
+.content::-webkit-scrollbar {
+  width: 10px;
 }
 
-#author {
-  margin-bottom: 0; 
+.content::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 5px;
+}
+/* Typography styles */
+.titleTypography {
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+  text-align: left;
+  color: black;
 }
