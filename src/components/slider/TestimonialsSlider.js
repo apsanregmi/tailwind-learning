@@ -42,110 +42,189 @@ export default class TestimonialsSlider extends Component {
           {...testimonialSlider}
           ref={(c) => (this.slider = c)}
           className="testimonial-slider"
+          infinite={true}
+          
         >
-          <div className="testimonial-item wow fadeInUp delay-0-2s">
-            <div className="image">
-              <img
-                src="assets/images/testimonials/testi-author5.jpg"
-                alt="Author"
-              />
-            </div>
-            <div className="content">
-              <div className="testi-header">
-                <h4>Excellent Works</h4>
-                <div className="ratting">
-                  <i className="fas fa-star" />
-                  <i className="fas fa-star" />
-                  <i className="fas fa-star" />
-                  <i className="fas fa-star" />
-                  <i className="fas fa-star-half-alt" />
-                </div>
-              </div>
-              <div className="testi-text">
-                CloudPro AI has been an invaluable partner in transforming our
-                business through their expertise in AI and ML. Their seamless
-                integration of cloud solutions and data engineering has elevated
-                our operational efficiency, and their exceptional web
-                development services have significantly enhanced our online
-                presence.
-              </div>
-              <div className="testi-footer">
-                <div className="icon">
-                  <i className="flaticon-quotation" />
-                </div>
-                <div className="title">
-                  <h4>Roshan D.</h4>
-                  <span className="designation">CTO, Fixez </span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="testimonial-item wow fadeInUp delay-0-4s">
-            <div className="content">
-              <div className="testi-header">
-                <h4>Excellent Works</h4>
-                <div className="ratting">
-                  <i className="fas fa-star" />
-                  <i className="fas fa-star" />
-                  <i className="fas fa-star" />
-                  <i className="fas fa-star" />
-                  <i className="fas fa-star-half-alt" />
-                </div>
-              </div>
-              <div className="testi-text">
-                Choosing Cloud Pro AI was a game-changer for our business. Their
-                unmatched proficiency in cloud data and AI has not only
-                streamlined our operations but propelled us into a new era of
-                competitiveness. A partnership with impact, delivering success
-                at every turn.
-              </div>
-              <div className="testi-footer">
-                <div className="icon">
-                  <i className="flaticon-quotation" />
-                </div>
-                <div className="title">
-                  <h4>Jose T. McMichael</h4>
-                  <span className="designation">Senior Manager</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="testimonial-item wow fadeInUp delay-0-6s">
-            <div className="image">
-              <img
-                src="assets/images/testimonials/testi-author4.jpg"
-                alt="Author"
-              />
-            </div>
-            <div className="content">
-              <div className="testi-header">
-                <h4>Excellent Works</h4>
-                <div className="ratting">
-                  <i className="fas fa-star" />
-                  <i className="fas fa-star" />
-                  <i className="fas fa-star" />
-                  <i className="fas fa-star" />
-                  <i className="fas fa-star-half-alt" />
-                </div>
-              </div>
-              <div className="testi-text">
-                At the forefront of technological innovation, redefines
-                excellence in cloud data and AI services. Their Cloud Pro AI
-                tailored solutions have empowered us to navigate the
-                complexities of the digital landscape with confidence, achieving
-                unprecedented results
-              </div>
-              <div className="testi-footer">
-                <div className="icon">
-                  <i className="flaticon-quotation" />
-                </div>
-                <div className="title">
-                  <h4>Andrew D. Bricker</h4>
-                  <span className="designation">CEO &amp; Founder</span>
-                </div>
-              </div>
-            </div>
-          </div>
+          <div class="testimonial-item wow fadeInUp delay-0-2s">
+  <div class="image">
+    <img src="https://contradagroup.com/wp-content/uploads/2013/11/dummy-person.jpg" alt="Author" />
+  </div>
+  <div class="content">
+    <div class="testi-header">
+      <h4>Revolutionizing Our Business</h4>
+      <div class="ratting">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
+      </div>
+    </div>
+    <div class="testi-text">
+      Cloud Pro AI has truly revolutionized our business with their expertise in AI and ML. Their seamless integration of cutting-edge cloud solutions and data engineering has elevated our operational efficiency to new heights. Thanks to their exceptional web development services, our online presence has experienced remarkable growth.
+    </div>
+    <div class="testi-footer">
+      <div class="icon">
+        <i class="flaticon-quotation"></i>
+      </div>
+      <div class="title">
+        <h4>Rachel T.</h4>
+        <span class="designation">Director of Technology, Luminate Industries</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="testimonial-item wow fadeInUp delay-0-4s">
+<div class="image">
+    <img src="https://i.gzn.jp/img/2022/03/29/ai-generated-faces-marketing-tactic-linkedin/00_m.jpg" alt="Author" />
+  </div>
+  <div class="content">
+    <div class="testi-header">
+      <h4>A Strategic Partner for Success</h4>
+      <div class="ratting">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
+      </div>
+    </div>
+    <div class="testi-text">
+      Choosing Cloud Pro AI has been a game-changer for our company. Their unparalleled proficiency in cloud data and AI has not only streamlined our operations but also propelled us into a new era of competitiveness. Their partnership has delivered success at every turn.
+    </div>
+    <div class="testi-footer">
+      <div class="icon">
+        <i class="flaticon-quotation"></i>
+      </div>
+      <div class="title">
+        <h4>David M.</h4>
+        <span class="designation">Chief Technology Officer, NovaTech Solutions</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="testimonial-item wow fadeInUp delay-0-6s">
+  <div class="image">
+    <img src="https://api.brusselstimes.com/wp-content/uploads/2019/05/vddriessche-c-stamp-media.jpg" alt="Author" />
+  </div>
+  <div class="content">
+    <div class="testi-header">
+      <h4>Empowering Innovation and Growth</h4>
+      <div class="ratting">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
+      </div>
+    </div>
+    <div class="testi-text">
+      Cloud Pro AI is at the forefront of technological innovation, redefining excellence in cloud data and AI services. Their tailored solutions have empowered us to navigate the complexities of the digital landscape with confidence, achieving unprecedented results.
+    </div>
+    <div class="testi-footer">
+      <div class="icon">
+        <i class="flaticon-quotation"></i>
+      </div>
+      <div class="title">
+        <h4>Emily R.</h4>
+        <span class="designation">CEO, Synthetix Technologies</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="testimonial-item wow fadeInUp delay-0-8s">
+<div class="image">
+    <img src="https://dims.apnews.com/dims4/default/1675109/2147483647/strip/true/crop/3000x2000+0+0/resize/599x399!/quality/90/?url=https%3A%2F%2Fstorage.googleapis.com%2Fafs-prod%2Fmedia%2F09dc41e4beda456aa6c1b8d8bbe36c3d%2F3000.jpeg" alt="Author" />
+  </div>
+  <div class="content">
+    <div class="testi-header">
+      <h4>Exceptional Service, Exceptional Results</h4>
+      <div class="ratting">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
+      </div>
+    </div>
+    <div class="testi-text">
+      Working with Cloud Pro AI has been an exceptional experience. Their expertise in AI and ML combined with their dedication to excellence has significantly impacted our business. They have not only met but exceeded our expectations, delivering results that have propelled our company forward.
+    </div>
+    <div class="testi-footer">
+      <div class="icon">
+        <i class="flaticon-quotation"></i>
+      </div>
+      <div class="title">
+        <h4>Michael P.</h4>
+        <span class="designation">Chief Innovation Officer, Nexus Innovations</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="testimonial-item wow fadeInUp delay-1s">
+  <div class="image">
+    <img src="https://static01.nyt.com/newsgraphics/2020/11/12/fake-people/4b806cf591a8a76adfc88d19e90c8c634345bf3d/fallbacks/mobile-05.jpg" alt="Author" />
+  </div>
+  <div class="content">
+    <div class="testi-header">
+      <h4>Transformative Solutions for Success</h4>
+      <div class="ratting">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
+      </div>
+    </div>
+    <div class="testi-text">
+      Cloud Pro AI has provided transformative solutions that have propelled our business to new heights of success. Their deep understanding of cloud architecture and data engineering, coupled with their innovative approach to AI, has allowed us to innovate and grow with confidence.
+    </div>
+    <div class="testi-footer">
+      <div class="icon">
+        <i class="flaticon-quotation"></i>
+      </div>
+      <div class="title">
+        <h4>Sarah L.</h4>
+        <span class="designation">Director of Operations, Spark Solutions</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="testimonial-item wow fadeInUp delay-1-2s">
+<div class="image">
+    <img src="https://static.generated.photos/vue-static/face-generator/landing/wall/12.jpg" alt="Author" />
+  </div>
+  <div class="content">
+    <div class="testi-header">
+    <h4>Innovative Partnerships, Exceptional Results</h4>
+  <div class="ratting">
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star-half-alt"></i>
+  </div>
+</div>
+<div class="testi-text">
+  Cloud Pro AI has been an invaluable partner in our journey towards digital transformation. Their innovative solutions and dedication to excellence have enabled us to stay ahead of the curve in a rapidly evolving technological landscape. With their support, we have achieved remarkable results and continue to drive innovation within our organization.
+</div>
+<div class="testi-footer">
+  <div class="icon">
+    <i class="flaticon-quotation"></i>
+  </div>
+  <div class="title">
+    <h4>John K.</h4>
+    <span class="designation">Chief Digital Officer, Quantum Dynamics</span>
+  </div>
+</div>
+</div>
+</div>
+
         </Slider>
       </Fragment>
     );
