@@ -5,37 +5,37 @@
 
 .sidebar {
   width: 40%;
-  position:-webkit-fixed ;
-  top: 80px; /* Adjust as needed to accommodate the header */
-  height: calc(100vh - 200px); /* Ensure full viewport height minus header */
-  z-index: 10; /* Keep sidebar above content when sticky */
+  position:sticky;
+  top: 80px; 
+  height: calc(100vh - 200px); 
+  z-index: 10; 
   padding-left: 15%;
   padding-top: 30px;
 }
 
 .content {
   flex: 1;
-  padding-right: 20%; /* Adjust padding as needed */
+  padding-right: 20%; 
   overflow-y: auto;
   padding-top:2%;
   color:#514E4E;
 }
 
-/* Sidebar title styling */
+
 .sidebarTitle {
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 20px;
 }
 
-/* Section list styling */
+
 .sectionList {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-/* Section link styling */
+
 .sectionLink {
   margin-bottom: 5px;
   padding: 10px;
@@ -44,12 +44,12 @@
   cursor: pointer;
 }
 
-/* Content section styling */
+
 .section {
   margin-bottom: 50px;
 }
 
-/* Scrollbar styling (optional) */
+
 .content::-webkit-scrollbar {
   width: 10px;
 }
@@ -66,4 +66,51 @@
   line-height: 28px;
   text-align: left;
   color: black;
+}
+@media screen and (max-width: 768px) {
+  .caseStudyDetailContainer {
+    flex-direction: column;
+    margin-bottom: 40px;
+    align-items: center;
+  }
+
+  .sidebar {
+    width: 100%;
+    position: static; 
+    height: auto; 
+    padding: 0 15px; 
+    margin-bottom: 20px;
+    
+    text-align: left;
+  }
+
+  .content {
+    flex: 1;
+    padding: 15px; 
+    overflow-y: auto;
+    padding-top: 0;
+    color: #514E4E;
+  }
+
+  .sidebarTitle {
+    font-size: 16px; 
+    margin-bottom: 15px; 
+  }
+
+  .sectionList {
+    margin-bottom: 10px; 
+  }
+
+  .sectionLink {
+    padding: 8px; 
+    border-radius: 3px; 
+  }
+
+  .section {
+    margin-bottom: 30px; 
+  }
+
+  .content::-webkit-scrollbar {
+    width: 8px; 
+  }
 }

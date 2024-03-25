@@ -3,6 +3,8 @@ import React from 'react';
 import Signup from '@/src/components/forms/SignupForm';
 import Layout from '@/src/layout/Layout';
 import styles from './Signup.module.css';
+import { SomeIcon } from '@ant-design/icons';
+
 
 const SignupPage = () => {
   return (
