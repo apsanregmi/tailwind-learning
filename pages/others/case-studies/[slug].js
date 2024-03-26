@@ -57,11 +57,20 @@ const CaseStudyDetail = ({ caseStudy }) => {
     coverImage,
   } = caseStudy.fields;
 
+ 
   const renderRichText = (richText) => {
     if (!richText || !richText.content) {
       return null;
     }
-    return documentToReactComponents(richText);
+  
+    return documentToReactComponents(richText, {
+      renderNode: {
+        'embedded-asset-block': (node) => {
+          const { url, description } = node.data.target.fields.file;
+          return <img src={url} alt={description} />;
+        },
+      },
+    });
   };
 
   const scrollToSection = (sectionId) => {
