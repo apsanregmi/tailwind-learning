@@ -1,5 +1,3 @@
-// CaseStudies.js
-
 import React from 'react';
 import { createClient } from 'contentful';
 import CaseStudyCard from '@/src/components/caseStudies/CaseStudyCard';
@@ -31,11 +29,11 @@ export async function getStaticProps() {
 const CaseStudies = ({ caseStudies }) => {
   return (
     <Layout title={"Case Studies - CloudProAI"}>
-      <PageBanner pageName={"Case Studies "} />
-      <div className={styles.caseStudiesContainer}>
-        <div className={styles.caseStudiesList}>
+      <PageBanner pageName={"Case Studies"} />
+      <div className={styles.container}>
+        <div className={styles.grid}>
           {caseStudies.map((caseStudy) => (
-            <div key={caseStudy.slug} className={styles.caseStudyCard}>
+            <div key={caseStudy.slug} className={styles.card}>
               <CaseStudyCard
                 title={caseStudy.title}
                 date={caseStudy.date}

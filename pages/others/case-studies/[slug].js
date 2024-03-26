@@ -38,6 +38,10 @@ export async function getStaticProps({ params }) {
 }
 
 const CaseStudyDetail = ({ caseStudy }) => {
+  if (!caseStudy) {
+    return <div>No case study found.</div>;
+  }
+
   const {
     title,
     introducion,
@@ -54,6 +58,9 @@ const CaseStudyDetail = ({ caseStudy }) => {
   } = caseStudy.fields;
 
   const renderRichText = (richText) => {
+    if (!richText || !richText.content) {
+      return null;
+    }
     return documentToReactComponents(richText);
   };
 
@@ -70,8 +77,8 @@ const CaseStudyDetail = ({ caseStudy }) => {
   };
 
   const renderSectionLink = (title, id, content) => {
-    if (!content) {
-      return null; 
+    if (!content || !content.content) {
+      return null;
     }
 
     return (
@@ -82,13 +89,13 @@ const CaseStudyDetail = ({ caseStudy }) => {
   };
 
   const renderSection = (title, content) => {
-    if (!content) {
-      return null; // Don't render the section if there's no content
+    if (!content || !content.content) {
+      return null;
     }
 
     return (
       <section className={styles.section} id={title.toLowerCase().replace(/\s+/g, '-')}>
-        <p className={styles.titleTypography}>{title}</p> {/* Apply typography class here */}
+        <p className={styles.titleTypography}>{title}</p>
         {renderRichText(content)}
       </section>
     );
@@ -96,8 +103,7 @@ const CaseStudyDetail = ({ caseStudy }) => {
 
   return (
     <Layout>
-      <PageBanner  pageTitle={title} bannerImage={coverImage.fields.file.url} pageName='CASE STUDY' />
-      {/* <h1 className={styles.title}>{title}</h1> */}
+      <PageBanner pageTitle={title} bannerImage={coverImage.fields.file.url} pageName='CASE STUDY' />
 
       <div className={styles.caseStudyDetailContainer}>
         <div className={styles.sidebar}>
