@@ -44,16 +44,14 @@ const CaseStudyDetail = ({ caseStudy }) => {
 
   const {
     title,
-    introducion,
-    challanges,
+    introduction,
+    challenges,
     solution,
     technologyStack,
     impactAndResults,
     conclusion,
     callToAction,
     clientInformation,
-    date,
-    author,
     coverImage,
   } = caseStudy.fields;
 
@@ -88,13 +86,13 @@ const CaseStudyDetail = ({ caseStudy }) => {
     );
   };
 
-  const renderSection = (title, content) => {
+  const renderSection = (title, content, id) => {
     if (!content || !content.content) {
       return null;
     }
 
     return (
-      <section className={styles.section} id={title.toLowerCase().replace(/\s+/g, '-')}>
+      <section className={styles.section} id={id}>
         <p className={styles.titleTypography}>{title}</p>
         {renderRichText(content)}
       </section>
@@ -110,8 +108,8 @@ const CaseStudyDetail = ({ caseStudy }) => {
           <div className={styles.centeredText}>
             <div className={styles.sidebarTitle}>In this Case Study</div>
             <ul className={styles.sectionList}>
-              {renderSectionLink('Introduction', 'introduction', introducion)}
-              {renderSectionLink('Challenges', 'challenges', challanges)}
+              {renderSectionLink('Introduction', 'introduction', introduction)}
+              {renderSectionLink('Challenges', 'challenges', challenges)}
               {renderSectionLink('Solution', 'solution', solution)}
               {renderSectionLink('Technology Stack', 'technology-stack', technologyStack)}
               {renderSectionLink('Impact and Results', 'impact-and-results', impactAndResults)}
@@ -122,18 +120,18 @@ const CaseStudyDetail = ({ caseStudy }) => {
           </div>
         </div>
         <div className={styles.content}>
-          {renderSection('Introduction', introducion)}
-          {renderSection('Challenges', challanges)}
-          {renderSection('Solution', solution)}
-          {renderSection('Technology Stack', technologyStack)}
-          {renderSection('Impact and Results', impactAndResults)}
-          {renderSection('Conclusion', conclusion)}
-          {renderSection('Call to Action', callToAction)}
-          {renderSection('Client Information', clientInformation)}
-          <section className={styles.section} id="author">
-            {/* <h2>Author</h2>
-            {author} */}
-          </section>
+          {renderSection('Introduction', introduction, 'introduction')}
+          {renderSection('Challenges', challenges, 'challenges')}
+          {renderSection('Solution', solution, 'solution')}
+          {renderSection('Technology Stack', technologyStack, 'technology-stack')}
+          {renderSection('Impact and Results', impactAndResults, 'impact-and-results')}
+          {renderSection('Conclusion', conclusion, 'conclusion')}
+          {renderSection('Call to Action', callToAction, 'call-to-action')}
+          {renderSection('Client Information', clientInformation, 'client-information')}
+          {/* <section className={styles.section} id="author">
+            <h2>Author</h2>
+            {author}
+          </section> */}
         </div>
       </div>
     </Layout>
