@@ -47,7 +47,11 @@ export default class TestimonialsSlider extends Component {
         >
           <div class="testimonial-item wow fadeInUp delay-0-2s">
   <div class="image">
-    <img src="https://contradagroup.com/wp-content/uploads/2013/11/dummy-person.jpg" alt="Author" />
+    {/* <img src="https://static.generated.photos/vue-static/face-generator/landing/wall/12.jpg" alt="Author" /> */}
+
+    <img src="
+    https://cdn.goodgallery.com/cf0ef39c-1c83-45f8-b905-c091160e555c/s/0800/2fpgxh16/female-professional-portrait-gray-backdrop.jpg" alt="Author" />
+
   </div>
   <div class="content">
     <div class="testi-header">
@@ -87,7 +91,8 @@ export default class TestimonialsSlider extends Component {
         <i class="fas fa-star"></i>
         <i class="fas fa-star"></i>
         <i class="fas fa-star"></i>
-        <i class="fas fa-star-half-alt"></i>
+        <i class="fas fa-star"></i>
+        {/* <i class="fas fa-star-half-alt"></i> */}
       </div>
     </div>
     <div class="testi-text">
@@ -107,7 +112,8 @@ export default class TestimonialsSlider extends Component {
 
 <div class="testimonial-item wow fadeInUp delay-0-6s">
   <div class="image">
-    <img src="https://api.brusselstimes.com/wp-content/uploads/2019/05/vddriessche-c-stamp-media.jpg" alt="Author" />
+    <img src="
+    https://img.freepik.com/free-photo/closeup-young-female-professional-making-eye-contact-against-colored-background_662251-651.jpg" alt="Author" />
   </div>
   <div class="content">
     <div class="testi-header">
@@ -117,7 +123,9 @@ export default class TestimonialsSlider extends Component {
         <i class="fas fa-star"></i>
         <i class="fas fa-star"></i>
         <i class="fas fa-star"></i>
-        <i class="fas fa-star-half-alt"></i>
+        <i class="far fa-star"></i>
+
+        {/* <i class="fas fa-star-half-alt"></i> */}
       </div>
     </div>
     <div class="testi-text">
@@ -177,7 +185,7 @@ export default class TestimonialsSlider extends Component {
         <i class="fas fa-star"></i>
         <i class="fas fa-star"></i>
         <i class="fas fa-star"></i>
-        <i class="fas fa-star-half-alt"></i>
+        <i class="far fa-star"></i>
       </div>
     </div>
     <div class="testi-text">
@@ -197,7 +205,8 @@ export default class TestimonialsSlider extends Component {
 
 <div class="testimonial-item wow fadeInUp delay-1-2s">
 <div class="image">
-    <img src="https://static.generated.photos/vue-static/face-generator/landing/wall/12.jpg" alt="Author" />
+    <img src="https://contradagroup.com/wp-content/uploads/2013/11/dummy-person.jpg" alt="Author" />
+
   </div>
   <div class="content">
     <div class="testi-header">

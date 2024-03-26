@@ -3,7 +3,7 @@
   margin-bottom: 70px; 
 }
 
-.sidebar {
+/* .sidebar {
   width: 40%;
   position: sticky;
   top: 110px; 
@@ -11,8 +11,19 @@
   padding-left: 15%;
   padding-top: 30px;
   height: auto;
-  overflow-y: auto; 
-}
+  overflow-y: auto;}  */
+  .sidebar {
+    width: 40%;/* Adjust sidebar width as needed */
+    position: -webkit-sticky;
+    padding-left: 15%;
+    padding-top: 30px;
+    top: 80px; /* Adjust according to your navbar height */
+    height: calc(100vh - 80px); /* Adjust for full height sidebar */
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds sidebar height */
+    background-color: yellow;
+  }
+  
+
 
 .content {
   flex: 1;
