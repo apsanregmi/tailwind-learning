@@ -18,35 +18,32 @@ const Counter = dynamic(() => import("@/src/components/Counter"), {
 });
 
 const Index = () => {
-
   console.log(process.env);
   console.log("hello world", process.env);
   return (
-
-    
     <Layout header={1}>
       {/* Hero Section Start */}
       <section className="hero-area bgc-gray rel z-1">
-        <div className="container pb-40">
+        <div className="container pb-70 pt-40">
           {/* <div className="row align-items-center"> */}
           <div>
             <div className="align-self-center">
               {/* <div className="hero-content pt-50 pb-125 rpb-0 wow fadeInUp delay-0-4s"> */}
               <div className=" pt-50 pb-125 rpb-0 wow fadeInUp delay-0-4s">
-                <h1 className="text-white pt-50 pb-30">Cloud Pro AI</h1>
-                <br />
-                <h2 className="text-white ">
+                {/* <h1 className="text-white pt-50 pb-30">Cloud Pro AI</h1> */}
+
+                <h2 className="text-white pb-50 ">
                   Data, AI and Software Cloud : Services Consultant
                 </h2>
 
-                <p className="tagline">
+                <p className="tagline pb-40">
                   <u>
                     Transform Your Vision into Reality with our Data-Driven
                     Intelligence, AI and Cutting-Edge Cloud Solutions
                   </u>
                 </p>
 
-                <p>
+                <p className=" pb-40">
                   We're Gen AI-Ready and Eager to Collaborate. Let's Assess Your
                   Business and Infrastructure Readiness for the Ultimate
                   Technological Leap.
@@ -510,29 +507,26 @@ const Index = () => {
           </div>
         </div>
       </section>
-      
 
       <div class="container">
-  <div class="row justify-content-center align-items-center"> 
-    <div class="col-12 col-md-8">
-      {/* <h2 class="text-center" style="color: #30f0b6;">Explore Our Products</h2> */}
-      {/* <h2 class="text-center" style="color: #30f0b6;">Explore Our Products</h2> */}
-      <h2 className="text-center" style={{ color: '#30f0b6' }}>Explore Our Products</h2>
+        <div class="row justify-content-center align-items-center">
+          <div class="col-12 col-md-8">
+            {/* <h2 class="text-center" style="color: #30f0b6;">Explore Our Products</h2> */}
+            {/* <h2 class="text-center" style="color: #30f0b6;">Explore Our Products</h2> */}
+            <h2 className="text-center" style={{ color: "#30f0b6" }}>
+              Explore Our Products
+            </h2>
 
-
-      
-
-      <div class="container mb-120">
-        <div class="row justify-content-center">
-          <div class="col-12 col-md-4">
-            <FeaturedProduct/>
+            <div class="container mb-120">
+              <div class="row justify-content-center">
+                <div class="col-12 col-md-4">
+                  <FeaturedProduct />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-  </div>
-
     </Layout>
   );
 };
