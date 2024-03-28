@@ -19,23 +19,25 @@ const Counter = dynamic(() => import("@/src/components/Counter"), {
 
 const Index = () => {
 
-  
+  console.log(process.env);
+  console.log("hello world", process.env);
   return (
 
     
-    <Layout header={1} title={"Software, Data and AI | Innovative Cloud Solutions"}>
+    <Layout header={1}>
       {/* Hero Section Start */}
       <section className="hero-area bgc-gray rel z-1">
-        <div className="container">
-          <div className="row align-items-center">
-            <div className="col-lg-6 align-self-center">
-              <div className="hero-content pt-50 pb-125 rpb-0 wow fadeInUp delay-0-4s">
-                <h1>Cloud Pro AI</h1>
+        <div className="container pb-40">
+          {/* <div className="row align-items-center"> */}
+          <div>
+            <div className="align-self-center">
+              {/* <div className="hero-content pt-50 pb-125 rpb-0 wow fadeInUp delay-0-4s"> */}
+              <div className=" pt-50 pb-125 rpb-0 wow fadeInUp delay-0-4s">
+                <h1 className="text-white pt-50 pb-30">Cloud Pro AI</h1>
                 <br />
-                <h2 className="text-white">
-                  Data, AI and Software Cloud Services Consultant
+                <h2 className="text-white ">
+                  Data, AI and Software Cloud : Services Consultant
                 </h2>
-                {/* <SignupForm/> */}
 
                 <p className="tagline">
                   <u>
@@ -73,10 +75,10 @@ const Index = () => {
                 </div>
               </div>
             </div>
-            <div className="col-lg-6" >
+            {/* <div className="col-lg-6" >
               <FeaturedProduct/>
               
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="hero-shapes">
@@ -474,7 +476,7 @@ const Index = () => {
         </Container>
       </section>
 
-      <section className="testimonials-area py-130 rpy-100 rel z-1">
+      <section className="testimonials-area pt-130 rpy-100 rel z-1">
         <div className="container">
           <div className="row align-items-center justify-content-between">
             <div className="col-xl-5 col-lg-6">
@@ -508,6 +510,29 @@ const Index = () => {
           </div>
         </div>
       </section>
+      
+
+      <div class="container">
+  <div class="row justify-content-center align-items-center"> 
+    <div class="col-12 col-md-8">
+      {/* <h2 class="text-center" style="color: #30f0b6;">Explore Our Products</h2> */}
+      {/* <h2 class="text-center" style="color: #30f0b6;">Explore Our Products</h2> */}
+      <h2 className="text-center" style={{ color: '#30f0b6' }}>Explore Our Products</h2>
+
+
+      
+
+      <div class="container mb-120">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-4">
+            <FeaturedProduct/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
     </Layout>
   );
 };

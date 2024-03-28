@@ -115,7 +115,7 @@ const CaseStudyDetail = ({ caseStudy }) => {
       <PageBanner pageTitle={title} bannerImage={coverImage.fields.file.url} pageName='CASE STUDY' />
 
       <div className={styles.caseStudyDetailContainer}>
-        <div className={`${styles.sidebar} ${styles.sticky}`}>
+        <div className={styles.sidebar}>
           <div className={styles.centeredText}>
             <div className={styles.sidebarTitle}>In this Case Study</div>
             <ul className={styles.sectionList}>

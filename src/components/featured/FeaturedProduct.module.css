@@ -1,8 +1,8 @@
-/* FeaturedProduct.module.css */
-
 .container {
     position: relative;
     overflow: hidden;
+    width: 200px; /* Adjust width as needed */
+    height: 200px; /* Adjust height as needed */
     border-radius: 8px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease-in-out;
@@ -32,7 +32,7 @@
 }
 
 .overlay h3 {
-    font-size: 2rem;
+    font-size: 1.5rem; /* Decreased font size */
     margin: 0;
     color: white;
     font-weight: bold;
@@ -50,7 +50,7 @@
 
 .secondaryText {
     margin-top: 10px;
-    font-size: 1.5rem;
+    font-size: 1.2rem; /* Decreased font size */
 }
 
 .coverImage {
@@ -63,5 +63,3 @@
 .container:hover .coverImage {
     transform: scale(1.1);
 }
-
-/* Add any additional styling you may need */
