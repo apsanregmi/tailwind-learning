@@ -538,28 +538,20 @@ const Index = () => {
         </div>
       </section>
 
-      <div class="container">
-        <div class="row justify-content-center align-items-center">
-          <div class="col-12 col-md-8">
-            {/* <h2 class="text-center" style="color: #30f0b6;">Explore Our Products</h2> */}
-            {/* <h2 class="text-center" style="color: #30f0b6;">Explore Our Products</h2> */}
-            <h2
-              className="sub-title  font-bold text-center mb-10 mt-10"
-              style={{ fontSize: "30px", color: "1b1f2e" }}
-            >
-              Explore Our Products
-            </h2>
+      <div class="container mx-auto">
+  <div class="flex justify-center items-center h-screen">
+    <div>
+      <h2 class="text-center font-black mb-10">Explore Our Products</h2>
 
-            <div class="container mb-120">
-              <div class="row justify-content-center">
-                <div class="col-12 col-md-4 items-center">
-                  <FeaturedProduct />
-                </div>
-              </div>
-            </div>
-          </div>
+      <div>
+        <div class="text-center">
+          <FeaturedProduct />
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
     </Layout>
   );
 };
