@@ -1,11 +1,13 @@
+// pages/index.js
 import React from 'react';
 
-const DemoPage = () => {
+const Home = () => {
   return (
-    <div>
-      <div className='bg-yellow-500 py-20 text-center font-bold text-yellow-900'>Hello World</div>
+    <div className="bg-yellow-600 p-10  ">
+      <h1 className="text-4xl text-blue text-center ">Welcome to my Tailwind CSS Next.js app!</h1>
+      <p className="text-center text-red-800 mt-4">Tailwind CSS is working!</p>
     </div>
   );
 };
 
-export default DemoPage;
+export default Home;

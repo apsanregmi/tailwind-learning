@@ -9,8 +9,11 @@ const TechnologyUsed = () => {
   return (
     <div>
       <Container>
-        <h2 className="text-center mb-4">Technology Used</h2>
-        <p>
+        <h2 className="sub-title  font-bold text-center mb-10" style={{ fontSize: "30px", color:"black"}}>
+          Technology Used
+            
+          </h2>
+        <p className="mb-8">
           Crafting Tomorrow with Today's Innovation: Elevate Your Experience
           Through the Power of Technology. 🚀✨ Now, let's explore the tech
           behind the magic with CloudProAI

@@ -2,10 +2,9 @@
   display: block;
 }
 
-/* styles/globals.css */
-/* @import 'tailwindcss/base';
+@import 'tailwindcss/base';
 @import 'tailwindcss/components';
-@import 'tailwindcss/utilities'; */
+@import 'tailwindcss/utilities';
 
 
 .main-menu li.dropdown2:hover > ul {

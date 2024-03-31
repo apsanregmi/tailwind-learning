@@ -24,7 +24,7 @@ const Index = () => {
     <Layout header={1}>
       {/* Hero Section Start */}
       <section className="hero-area bgc-gray rel z-1">
-        <div className="container pb-70 pt-40">
+        <div className="container">
           {/* <div className="row align-items-center"> */}
           <div>
             <div className="align-self-center">
@@ -32,18 +32,18 @@ const Index = () => {
               <div className=" pt-50 pb-125 rpb-0 wow fadeInUp delay-0-4s">
                 {/* <h1 className="text-white pt-50 pb-30">Cloud Pro AI</h1> */}
 
-                <h2 className="text-white pb-50 ">
-                  Data, AI and Software Cloud : Services Consultant
-                </h2>
+                <h1 className="text-4xl text-white text-left font-extrabold mb-10 mt-20  ">
+                  Data, AI and Software : Cloud Services Consultant
+                </h1>
 
-                <p className="tagline pb-40">
+                <p className="mb-20">
                   <u>
                     Transform Your Vision into Reality with our Data-Driven
                     Intelligence, AI and Cutting-Edge Cloud Solutions
                   </u>
                 </p>
 
-                <p className=" pb-40">
+                <p>
                   We're Gen AI-Ready and Eager to Collaborate. Let's Assess Your
                   Business and Infrastructure Readiness for the Ultimate
                   Technological Leap.
@@ -93,12 +93,21 @@ const Index = () => {
       </section>
       {/* Hero Section End */}
       {/* Partners Area start */}
-      <section className="partners-area mt-60 pt-150 pb-100 rmt-30 rpb-70 rel z-1">
+      <section className="partners-area mt-20  rmt-30 rpb-70 rel z-1">
         <div className="container">
-          <div className="section-title text-center mb-50 wow fadeInUp delay-0-2s">
-            <span className="sub-title mb-15">Global Partners</span>
-            <h2>Our Esteemed Partners - Guiding the Journey to Success</h2>
-            <p>
+          <div className="section-title text-center  wow fadeInUp delay-0-2s">
+            {/* <span className="sub-title mb-15 font-bold  ">Global Partners</span> */}
+            <span className="sub-title  font-bold" style={{ fontSize: "30px" }}>
+              Global Partners
+            </span>
+
+            <h2
+              className="pt-10 font-semibold pb-10"
+              style={{ fontSize: "25px" }}
+            >
+              Our Esteemed Partners - Guiding the Journey to Success
+            </h2>
+            <p className="mb-20">
               At Cloud Pro AI, we take pride in fostering meaningful and
               enduring partnerships. Our collaborative network consists of
               industry leaders, innovators, and visionaries who share our
@@ -229,7 +238,12 @@ const Index = () => {
             <div className="col-xl-4 col-md-6">
               <div className="section-title mb-60 wow fadeInUp delay-0-2s">
                 <span className="sub-title mb-15">Latest Services</span>
-                <h2>We Provide Best Cloud Services</h2>
+                <h2
+                  className="sub-title  font-bold"
+                  style={{ fontSize: "30px" }}
+                >
+                  We Provide Best Cloud Services
+                </h2>
               </div>
             </div>
             <div className="col-xl-4 col-md-6">
@@ -347,8 +361,13 @@ const Index = () => {
 
       <section className="work-process-area pt-130 pb-100 rpt-100 rpb-70 rel z-1">
         <div className="section-title text-center mb-70 wow fadeInUp delay-0-2s">
-          <span className="sub-title mb-15">Working Process</span>
-          <h2>Industry Best Practices to the Core</h2>
+          <span className="sub-title mb-15">Working Process</span> <br></br>
+          <h2
+            className="sub-title  font-bold"
+            style={{ fontSize: "30px", color: "black" }}
+          >
+            Industry Best Practices to the Core
+          </h2>
         </div>
         <div className="work-process-line text-center">
           <img src="assets/images/shapes/work-process-line.png" alt="line" />
@@ -431,31 +450,38 @@ const Index = () => {
       </section>
 
       <section className="services-area bgc-gray text-white p-30 pt-100 pb-100 rel z-1">
-        <h2 style={{ textAlign: "center" }}>Message From CEO</h2>
+        <h2
+          className="sub-title  text-white font-bold text-center mb-10"
+          style={{ fontSize: "30px", color: "black" }}
+        >
+          Message From CEO
+        </h2>
 
         <Container>
-          <Row>
+          <Row className="items-center">
             <Col lg={6} className="text-center">
-              <Figure>
-                <Figure.Image
-                  src="assets/images/team/member1.jpg"
-                  alt="CEO"
-                  roundedCircle
-                  fluid
-                  style={{ width: "40%", height: "40%%" }} // Adjust the size as needed
-                />
-              </Figure>
-              <h4 className="fw-lighter mt-30">Nimesh Kuinkel</h4>
-              <h4>CEO & Founder</h4>
-              <a href="https://www.linkedin.com/in/nimesh-kuinkel-78a622120/">
+              <div className="flex justify-center">
+                <Figure>
+                  <Figure.Image
+                    className="w-48 h-48 rounded-full mx-auto"
+                    src="assets/images/team/member1.jpg"
+                    alt="CEO"
+                    fluid
+                  />
+                </Figure>
+              </div>
+              <h4 className="font-light mt-6 mb-5">Nimesh Kuinkel</h4>
+              <h4 className="font-semibold text-gray-700 mb-3">CEO & Founder</h4>
+              <a
+                href="https://www.linkedin.com/in/nimesh-kuinkel-78a622120/"
+                className="text-blue-500"
+              >
                 <i className="fab fa-linkedin-in" />
               </a>
             </Col>
             <Col lg={6}>
-              <blockquote className="blockquote text-center mt-30"></blockquote>
-              <h6 className="fw-lighter" style={{ fontSize: "100%" }}>
-                {" "}
-                {/* Adjust the font size as needed */}
+              <blockquote className="blockquote text-center mt-6"></blockquote>
+              <p className="font-light text-lg text-white-800">
                 With over a decade of experience in the IT industry, I bring a
                 wealth of knowledge in diverse domains to my role. My focus is
                 on innovation, especially in harnessing Data and AI
@@ -466,8 +492,8 @@ const Index = () => {
                 emphasize creativity and technical excellence, constantly
                 pushing the boundaries in AI and software development. This
                 approach fosters a culture where breakthroughs are not just
-                possible, but expected
-              </h6>
+                possible, but expected.
+              </p>
             </Col>
           </Row>
         </Container>
@@ -480,7 +506,11 @@ const Index = () => {
               <div className="testimonial-left-part rmb-85 wow fadeInLeft delay-0-2s">
                 <div className="section-title mb-45">
                   <span className="sub-title mb-15">Our Testimonials</span>
-                  <h2>What Our Experts Say About Business Use Cases</h2>
+
+                  <h2 className="sub-title  font-bold text-center mb-10" style={{ fontSize: "30px", color:"black"}}>
+                  What Our Experts Say About Business Use Cases
+            
+          </h2>
                 </div>
                 <TestimonialsSlider2 />
               </div>
@@ -513,13 +543,16 @@ const Index = () => {
           <div class="col-12 col-md-8">
             {/* <h2 class="text-center" style="color: #30f0b6;">Explore Our Products</h2> */}
             {/* <h2 class="text-center" style="color: #30f0b6;">Explore Our Products</h2> */}
-            <h2 className="text-center" style={{ color: "#30f0b6" }}>
+            <h2
+              className="sub-title  font-bold text-center mb-10 mt-10"
+              style={{ fontSize: "30px", color: "1b1f2e" }}
+            >
               Explore Our Products
             </h2>
 
             <div class="container mb-120">
               <div class="row justify-content-center">
-                <div class="col-12 col-md-4">
+                <div class="col-12 col-md-4 items-center">
                   <FeaturedProduct />
                 </div>
               </div>

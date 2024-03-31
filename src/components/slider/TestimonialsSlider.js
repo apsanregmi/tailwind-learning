@@ -334,7 +334,7 @@ const TestimonialsSlider2 = () => {
         className="testi-content-slider"
       >
         <div className="testi-content-item">
-          <h4>Scalable Infrastructure for E-Commerce</h4>
+          <h4 className="font-bold mb-4">Scalable Infrastructure for E-Commerce</h4>
           <p>
             Help e-commerce businesses seamlessly handle fluctuating workloads
             by providing a scalable and flexible cloud infrastructure. Ensure
@@ -347,7 +347,7 @@ const TestimonialsSlider2 = () => {
           </div>
         </div>
         <div className="testi-content-item">
-          <h4>Agile Software Development with DevOps</h4>
+          <h4 className="font-bold mb-4">Agile Software Development with DevOps</h4>
           <p>
             Accelerate software development cycles by implementing a cloud-based
             DevOps strategy. Enable continuous integration, deployment, and
@@ -360,7 +360,7 @@ const TestimonialsSlider2 = () => {
           </div>
         </div>
         <div className="testi-content-item">
-          <h4>Hybrid Cloud for Financial Services:</h4>
+          <h4 className="font-bold mb-4">Hybrid Cloud for Financial Services:</h4>
           <p>
             Cater to the financial industry's need for a hybrid cloud model,
             combining on-premises and cloud solutions. Offer secure and
@@ -373,7 +373,7 @@ const TestimonialsSlider2 = () => {
           </div>
         </div>
         <div className="testi-content-item">
-          <h4>Cybersecsurity Services for Small Businesse</h4>
+          <h4 className="font-bold mb-4">Cybersecsurity Services for Small Businesse</h4>
           <p>
             Address the cybersecurity needs of small businesses by offering
             cloud-based security solutions. Provide threat detection, data
@@ -386,7 +386,7 @@ const TestimonialsSlider2 = () => {
           </div>
         </div>
         <div className="testi-content-item">
-          <h4>Data Analytics and Business Intelligence:</h4>
+          <h4 className="font-bold mb-4">Data Analytics and Business Intelligence:</h4>
           <p>
             Empower businesses to gain actionable insights from their data.
             Offer cloud-based data analytics solutions for real-time reporting,
@@ -399,7 +399,7 @@ const TestimonialsSlider2 = () => {
           </div>
         </div>
         <div className="testi-content-item">
-          <h4>Machine Learning for Predictive Maintenance:</h4>
+          <h4 className="font-bold mb-4">Machine Learning for Predictive Maintenance:</h4>
           <p>
             Implement machine learning algorithms on the cloud to predict
             equipment failures and schedule proactive maintenance. Help
