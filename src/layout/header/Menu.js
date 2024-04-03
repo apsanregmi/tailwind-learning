@@ -299,11 +299,11 @@ const DeskTopMenu = () => {
       <div className="navbar-header">
         <div className="mobile-logo">
           <Link href="/">
-            <img
+            {/* <img
               src="assets/images/logos/cloudpro.png"
               alt="Logo"
               title="Logo"
-            />
+            /> */}
           </Link>
         </div>
         {/* Toggle Button */}
@@ -320,9 +320,9 @@ const DeskTopMenu = () => {
       </div>
       <div className="navbar-collapse collapse clearfix">
         <ul className="navigation clearfix">
-          <li>
+          {/* <li>
             <a href="/">CLOUD PRO AI</a>
-          </li>
+          </li> */}
           <li className="dropdown">
             <a href="/services">SERVICES</a>
             <ul>

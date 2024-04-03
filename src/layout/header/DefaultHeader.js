@@ -14,7 +14,7 @@ const DefaultHeader = () => {
       <div className="header-upper bg-white">
         <div className="container-fluid clearfix">
           <div className="header-inner rel d-flex align-items-center">
-            <div className="logo-outer">
+            <div className="logo-outer" style={{ paddingLeft: '25%', paddingBottom:'10px', marginRight: '-20%' }}> 
               <div className="logo">
                 <Link legacyBehavior href="/index">
                   <a>

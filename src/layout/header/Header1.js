@@ -51,7 +51,7 @@ const Header1 = () => {
       <div className="header-upper bgc-black">
         <div className="container clearfix">
           <div className="header-inner rel d-flex align-items-center">
-            <div className="logo-outer">
+            <div className="logo-outer" style={{ paddingLeft: '25%', marginRight: '-20%' }}> 
               <div className="logo">
                 <Link legacyBehavior href="/">
                 <a>
@@ -67,19 +67,13 @@ const Header1 = () => {
               </div>
             </div>
             <div className="nav-outer mx-auto clearfix">
-              {/* Main Menu */}
               <Menu />
-              {/* Main Menu End*/}
             </div>
-            {/* Nav Search */}
-            {/* <div className="nav-search py-10">
-              <Search />
-            </div> */}
+            
            
           </div>
         </div>
       </div>
-      {/*End Header Upper*/}
     </header>
   );
 };
