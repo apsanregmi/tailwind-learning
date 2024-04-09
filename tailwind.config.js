@@ -8,6 +8,9 @@ module.exports = {
     "./src/layout/header/Menu.js",
     "./src/layout/header/DefaultHeader.js",
     "./pages/services/index.js",
+    "./src/components/services/ServicesList.js",
+
+
 
     // './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
