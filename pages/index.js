@@ -21,7 +21,7 @@ const Index = () => {
   console.log(process.env);
   console.log("hello world", process.env);
   return (
-    <Layout header={1}>
+    <Layout header={8}>
       {/* Hero Section Start */}
       <section className="hero-area bgc-gray rel z-1">
         <div className="container">

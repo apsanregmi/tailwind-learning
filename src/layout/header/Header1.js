@@ -7,7 +7,7 @@ const Header1 = () => {
     
   } 
   return (
-    <header className="main-header header-one menu-white" onMouseOver={handleMouseOver}>
+    <header className="bg-white" onMouseOver={handleMouseOver}>
       <div className="header-top-wrap bgc-gray">
         <div className="container">
           <div className="header-top">

@@ -1,31 +1,38 @@
-import React from 'react';
-import { Breadcrumbs, Link, Typography } from '@mui/material';
-import styles from './PageBanner.module.css'; // Import CSS module for PageBanner styles
+import React from "react";
 
-const PageBanner = ({ pageName, pageTitle, bannerImage }) => {
-  const backgroundImage = bannerImage ? `url(${bannerImage})` : "url(/assets/images/background/banner.jpg)";
-
+const PageBanner = ({ title, subtitle }) => {
   return (
-    <section
-      className={`page-banner-area bgs-cover py-135 rpy-100 ${styles.container}`}
-      style={{
-        backgroundImage: backgroundImage,
-      }}
-    >
-      <div className="container">
-        <Breadcrumbs aria-label="breadcrumb" className="mb-3" style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
-          <div className='text-#02AFEF' >
-            <Link href="/index" color="#02AFEF">Home /</Link>
+    <div className="bg-[#0C2126] flex justify-start items-center h-fit pb-16 pt-14">
+      <div className="md:container mx-28 py-24 px-6 flex w-1/2 md:pt-3/4 ">
+        <div className="max-w-2xl mx-2">
+          <h1 className="text-4xl lg:text-4xl text-white font-bold mb-8">
+            {title}
+          </h1>
+          <p className="text-xl lg:text-xl text-white leading-relaxed max-w-xl space-x-3">
+            {subtitle}
+          </p>
+          <div className="flex">
+            <li className="pt-12 flex-col sm:block">
+              <a className="hover:text-gray-200 md:pb-6 w-fit " href="/contact">
+                <button className="bg-[#EDFF6C]  hover:bg-yellow-700 text-black font-bold py-2 px-4 rounded">
+                  Contact Us
+                </button>
+              </a>
+            </li>
+            <li>
+              <p className="font-normal text-white text-xl flex-col pt-14 ml-16 cursor-pointer hover:underline">
+                
+                Book a Free Call
+                <span className="ml-2 cursor-pointer font-extrabold"> ↗</span>
+              </p>
+              <div>
+                
+              </div>
+            </li>
           </div>
-          <Typography color="#02AFEF" style={{ marginTop: '5px', marginLeft:'-8px'}}>{pageName}</Typography>
-        </Breadcrumbs>
-        <div className="banner-inner text-white text-left" style={{ marginTop: 'auto' }}>
-          <Typography variant="h3" className="page-title">
-            {pageTitle ? pageTitle : pageName}
-          </Typography>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
