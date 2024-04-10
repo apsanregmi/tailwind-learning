@@ -5,7 +5,8 @@ import Logolist from "@/src/components/others/Logolist";
 import Image from "next/image";
 import Link from "next/link";
 import ServicesList from "@/src/components/services/ServicesList";
-
+import ServiceCard from "@/src/components/services/ServiceCard";
+import ServiceCardLarge from "@/src/components/services/ServiceCardLarge";
 const index = () => {
   return (
     <div>
@@ -17,177 +18,68 @@ const index = () => {
       <container className="bg-white mt-8">
         <Logolist />
       </container>
-      <div className="bg-main container grid grid-cols-1 sm:grid-cols-2">
+      <div className=" container grid grid-cols-1 sm:grid-cols-2">
         <div className="weProvide">
           <h1 className="text-bold  text-3xl m-4 lg:text-5xl">
             We Provide Best Cloud Services
           </h1>
         </div>
       </div>
+      <div className="serviceContainer grid grid-rows-2 gap-4">
+        <div className="container grid lg:grid-cols-12 gap-5">
+          <div className="left lg:col-span-4">
+            <ServiceCard
+              title="Cloud Engineering Services"
+              description="Cloud engineering services encompass the strategic planning, implementation, and management"
+              position="left-96"
+              image="/assets/cloudLogo.svg"
+              link="/services/cloudengineering"
+              
+            ></ServiceCard>
+          </div>
+          <div className="right lg:col-span-8 ">
+            <ServiceCardLarge
+              title="Generative AI And ML"
+              description="Unlock the Power of Intelligent Creation with CloudPro AI In the era of data-driven innovation, Generative Artificial Intelligence (AI)"
+              position="left-96"
+              image="/assets/group2493.svg"
+              link="/services/generativeaiandml"
 
-      <div className="bg-main container grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-4 mx-auto">
-        <div className="left bg-white md:col-span-4 md:m-4 grid-cols-2 rounded-md shadow cursor-pointer">
-          <div className="flex flex-col items-center bg-polka h-1/2 p-10 w-auto">
-            <Image
-              src="/assets/cloudlogo.svg"
-              width={240}
-              height={240}
-              alt="Logo"
-              className="block cursor-pointer"
-            />
-          </div>
-          <div className="bottom grid-rows-3  md:gap-4 h-1/2">
-            <div className="title font-bold text-2xl text-black lg:text-4xl m-4">
-              Cloud Engineering Services
-            </div>
-            <div className="details m-4">
-              Cloud engineering services encompass the strategic planning,
-              implementation, and management
-            </div>
-            <div className=" m-4 md:grid grid-cols-2">
-              <div className="bg"></div>
-              <div className="button flex justify-end h-12">
-                {" "}
-                <Link href="/cloudengineering" legacyBehavior>
-                  <a className="bg-gray-100 hover:bg-blue-500  font-semibold hover:text-white py-2 px-4  hover:border-transparent rounded-md">
-                    View More
-                  </a>
-                  </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="left bg-white md:col-span-8 md:m-4 grid-cols-2 rounded-md shadow cursor-pointer">
-        <div className="bottom grid-rows-2  md:gap-4 h-1/2">
-              <div className=" m-4 md:grid grid-cols-2">
-                <div className="bg">
-                  <h1 className="title font-bold text-2xl text-black lg:text-4xl">
-                    Generative AI and ML
-                  </h1>
-                </div>
-                <div className="button flex justify-end h-12">
-                  {" "}
-                  <button class="bg-gray-100 hover:bg-blue-500  font-semibold hover:text-white py-2 px-4  hover:border-transparent rounded-md">
-                    View More
-                  </button>
-                </div>
-              </div>
-              <div className="details m-4">
-              Unlock the Power of Intelligent Creation with CloudPro AI In the era of data-driven innovation, Generative Artificial Intelligence (AI)
-              </div>
-            </div>
-            <div className="flex flex-col items-center bg-polka h-1/2 p-10">
-              <Image
-                src="/assets/group2493.svg"
-                width={360}
-                height={350}
-                alt="Logo"
-                className="block cursor-pointer"
-              />
-            </div>
+              
+            ></ServiceCardLarge>
           </div>
         </div>
 
-
-        
-
-        
-      <div className="thirdrow container grid grid-cols-1 md:grid-cols-3 gap-2 bg-main">
-        <div>
-          <div className="left bg-white md:col-span-4 md:m-4 grid-cols-2 rounded-md shadow cursor-pointer">
-            <div className="bottom grid-rows-2  md:gap-4 h-1/2">
-              <div className=" m-4 md:grid grid-cols-2">
-                <div className="bg">
-                  <h1 className="title font-bold text-2xl text-black lg:text-4xl">
-                    Data Engineering{" "}
-                  </h1>
-                </div>
-                <div className="button flex justify-end h-12">
-                  {" "}
-                  <button class="bg-gray-100 hover:bg-blue-500  font-semibold hover:text-white py-2 px-4  hover:border-transparent rounded-md">
-                    View More
-                  </button>
-                </div>
-              </div>
-              <div className="details m-4">
-                Data engineering services encompass the design, development, and
-                management of robust data architecture
-              </div>
-            </div>
-            <div className="flex flex-col items-center bg-polka h-1/2 p-10">
-              <Image
-                src="/assets/group2494.svg"
-                width={360}
-                height={350}
-                alt="Logo"
-                className="block cursor-pointer"
-              />
-            </div>
+        <div className="  2ndrow-3column container grid lg:grid-cols-12 gap-5">
+          <div className="left lg:col-span-4">
+            <ServiceCard
+              title="Data Engineering"
+              description="Data engineering services encompass the design, development, and management of robust data architecture"
+              position="left-96"
+              image="/assets/group2494.svg"
+              
+            ></ServiceCard>
           </div>
-        </div>
-        <div>
-          <div className="left bg-white md:col-span-4 md:m-4 grid-cols-2 rounded-md shadow cursor-pointer">
-            <div className="flex flex-col items-center bg-polka h-1/2 p-10">
-              <div className=" m-4 md:grid grid-cols-2">
-                <div className="bg"></div>
-                <div className="button flex justify-end items-right h-12">
-                  {" "}
-                  <button class="bg-gray-100 hover:bg-blue-500  font-semibold hover:text-white py-2 px-4  hover:border-transparent rounded-md">
-                    View More
-                  </button>
-                </div>
-              </div>
+          <div className="right lg:col-span-4 ">
+            <ServiceCard
+              title="Generative AI And ML"
+              description="Unlock the Power of Intelligent Creation with CloudPro AI In the era of data-driven innovation, Generative Artificial Intelligence (AI)"
+              position="left-96"
+              image="/assets/group2495.svg"
 
-              <Image
-                src="/assets/group2495.svg"
-                width={270}
-                height={240}
-                alt="Logo"
-                className="block cursor-pointer"
-              />
-            </div>
-            <div className="bottom grid-rows-3  md:gap-4 h-1/2">
-              <div className="title font-bold text-2xl text-black lg:text-4xl m-4">
-                BI & Data Analytics
-              </div>
-              <div className="details m-4">
-                Business Intelligence (BI) and Data Analytics services are
-                critical for organizations aiming to harness the power of data.
-              </div>
-            </div>
+            ></ServiceCard>
           </div>
-        </div>
+          <div className="right lg:col-span-4 ">
+            <ServiceCard
+              title="Generative AI And ML"
+              description="Unlock the Power of Intelligent Creation with CloudPro AI In the era of data-driven innovation, Generative Artificial Intelligence (AI)"
+              position="left-96"
+              image="/assets/group102.svg"
 
-        <div>
-          <div className="left bg-white md:col-span-4 md:m-4 grid-cols-2 rounded-md shadow cursor-pointer">
-            <div className="bottom grid-rows-3  md:gap-4 h-1/2">
-              <div className="title font-bold text-2xl text-black lg:text-4xl m-4">
-                AI Powered Web/APP Development
-              </div>
-              <div className="details m">
-                -4 In the ever-evolving AI landscape, web applications stand as
-                the cornerstone of innovation, offering dynamic and.
-              </div>
-              <div className="button flex justify-end mt-8 pr-16">
-                {" "}
-                <button class="bg-gray-100 hover:bg-blue-500  font-semibold hover:text-white py-2 px-4  hover:border-transparent rounded-md">
-                  View More
-                </button>
-              </div>
-            </div>
-            <div className="flex flex-col items-center bg-polka h-1/2 p-10">
-              <Image
-                src="/assets/group102.svg"
-                width={250}
-                height={240}
-                alt="Logo"
-                className="block cursor-pointer"
-              />
-            </div>
+            ></ServiceCard>
           </div>
         </div>
       </div>
-
       <ServicesList />
     </div>
   );

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const ServicesList = () => {
   return (
-    <div className="container bg-main">
+    <div className="container bg-gray-50">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 space-y-5">
         <div className="bg-white shadow border-emerald-950" >
           <Image
