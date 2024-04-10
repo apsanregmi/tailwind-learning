@@ -9,6 +9,9 @@ module.exports = {
     "./src/layout/header/DefaultHeader.js",
     "./pages/services/index.js",
     "./src/components/services/ServicesList.js",
+    "./pages/services/generativeaiandml.js",
+    
+
 
 
 
