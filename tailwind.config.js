@@ -9,7 +9,10 @@ module.exports = {
     "./src/layout/header/DefaultHeader.js",
     "./pages/services/index.js",
     "./src/components/services/ServicesList.js",
-    "./pages/services/generativeaiandml.js",
+    "./src/components/services/PercentageSection.js",
+    "./pages/services/generativeaiandml/index.js",
+    "./src/components/others/ImageWithText.js"
+
     
 
 
@@ -47,3 +50,10 @@ module.exports = {
   },
   plugins: [],
 };
+
+// <div className="col-span-5">
+//           
+//         </div>
+//         <div className="col-span-7">
+//           
+//         </div>
