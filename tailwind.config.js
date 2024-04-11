@@ -11,12 +11,9 @@ module.exports = {
     "./src/components/services/ServicesList.js",
     "./src/components/services/PercentageSection.js",
     "./pages/services/generativeaiandml/index.js",
-    "./src/components/others/ImageWithText.js"
-
+    "./src/components/others/ImageWithText.js",
+    "./src/components/others/Discover.js",
     
-
-
-
 
     // './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],

@@ -7,6 +7,7 @@ import Image from "next/image";
 import PercentageSection from "@/src/components/services/PercentageSection";
 import ImageWithText from "@/src/components/others/ImageWithText";
 import ServiceCard from "@/src/components/services/ServiceCard";
+import Discover from "@/src/components/others/Discover";
 // import Link from "next/link";
 const Index = () => {
   const [services, setServices] = useState([]);
@@ -280,6 +281,7 @@ const Index = () => {
             </div>
           </div>
         </div>
+        <Discover/>
       </div>
     </Layout>
   );
