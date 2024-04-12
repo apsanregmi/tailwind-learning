@@ -18,9 +18,9 @@ const index = () => {
         <container className="bg-white mt-8">
           <Logolist />
         </container>
-        <div className=" container grid grid-cols-1 sm:grid-cols-2">
-          <div className="weProvide mt-4 mb-3">
-            <h1 className="text-bold  text-3xl m-4 lg:text-5xl">
+        <div className=" container grid grid-cols-1 md:grid-cols-12">
+          <div className="weProvide mt-4 mb-3 col-span-4">
+            <h1 className="text-bold  text-3xl m-4 md:text-3xl xxl:text-5xl">
               We Provide Best Cloud Services
             </h1>
           </div>
@@ -32,7 +32,7 @@ const index = () => {
                 title="Cloud Engineering Services"
                 description="Cloud engineering services encompass the strategic planning, implementation, and management"
                 position="left-96"
-                image="/assets/cloudLogo.svg"
+                image="/assets/cloudlogo.svg"
                 link="/services/cloudengineering"
               ></ServiceCard>
             </div>

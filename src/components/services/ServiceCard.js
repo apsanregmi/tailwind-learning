@@ -16,7 +16,7 @@ const ServiceCard = ({ title, description, position, image, link }) => {
           </div>
         </div>
         <div className="bottom  row-span-6">
-          <div className="title font-bold text-2xl text-black lg:text-4xl m-4">
+          <div className="title font-bold text-2xl text-black md:2xl xxl:text-4xl m-4">
             <h1>{title}</h1>
           </div>
           <div className="text-base m-4">
