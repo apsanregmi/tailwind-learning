@@ -3,10 +3,16 @@ import Image from 'next/image';
 
 const ImageWithText = ({ imageUrl, text }) => {
   return (
-    <div className="relative">
-      <Image src={imageUrl} width={295} height={400} />
-      <p className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-10 text-white p-4">{text}</p>
-    </div>
+   
+<figure class="relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0">
+  <a href="#">
+    <img class="rounded-lg" src={imageUrl} alt="image description"/>
+  </a>
+  <figcaption class="absolute px-4 text-lg text-white bottom-6">
+      <p>{text}</p>
+  </figcaption>
+</figure>
+
   );
 };
 

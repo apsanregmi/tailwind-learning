@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import PageBanner from "@/components/PageBanner";
 import Layout from "@/layout";
+import PageBannerRev from "@/src/components/PageBannerRev";
 import { JeenaAccordion2 } from "@/src/components/JeenaAccordion";
 import Image from "next/image";
 import PercentageSection from "@/src/components/services/PercentageSection";
@@ -28,7 +28,7 @@ const Index = () => {
 
   return (
     <Layout>
-      <PageBanner
+      <PageBannerRev
         title="SERVICES/ GENERATIVE AI AND ML"
         subtitle="GENERATIVE AI APPLICATIONS"
       />
