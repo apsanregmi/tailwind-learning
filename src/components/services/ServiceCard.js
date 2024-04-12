@@ -4,13 +4,12 @@ import Link from "next/link";
 const ServiceCard = ({ title, description, position, image, link }) => {
   return (
     <div className="container ">
-      <div className="grid  gap-1 hover:bg-red-200 cursor-pointer w-[30rem] ">
+      <div className="grid  gap-1  cursor-pointer  ">
         <div className="top bg-polka flex justify-center p-6 pt-8  px-12 row-span-3">
           <div>
-            <Image
+            <img
               src={image}
-              width={500}
-              height={240}
+              
               alt="Logo"
               className="block cursor-pointer"
             />

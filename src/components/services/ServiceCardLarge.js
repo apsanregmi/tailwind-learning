@@ -26,10 +26,9 @@ const ServiceCardLarge = ({ title, description, position, link}) => {
         <div className="top bg-polka flex justify-center items- p-6 pt-8  px-12 row-span-5">
 
           <div className="pt-16">
-            <Image
+            <img
               src="/assets/group2493.svg"
-              width={500}
-              height={240}
+             
               alt="Logo"
               className="block cursor-pointer"
             />
