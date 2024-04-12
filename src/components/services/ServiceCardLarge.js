@@ -4,9 +4,9 @@ import Link from "next/link";
 const ServiceCardLarge = ({ title, description, position, link}) => {
   return (
     <div className="container ">
-      <div className="grid  gap-1  cursor-pointer w-auto   ">
+      <div className="flex  gap-4 cursor-pointer w-auto   ">
         
-        <div className="bottom row-span-2">
+        <div className="bottom ">
           <div className="title font-bold text-2xl text-black md:text-3xl xxl:text-4xl m-4">
             <h1>{title}</h1>
             
@@ -23,7 +23,7 @@ const ServiceCardLarge = ({ title, description, position, link}) => {
           </div>
           
         </div>
-        <div className="top bg-polka flex justify-center items- p-6 pt-8  px-12 row-span-4">
+        <div className="top bg-polka flex justify-center  px-12 ">
 
           <div className="pt-16">
             <img

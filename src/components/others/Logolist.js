@@ -7,7 +7,7 @@ const Logolist = () => {
        <div className="flex justify-center items-center py-5">
         <div className="logoList">
           <img
-            src="/assets/logolist.svg"
+            src="/assets/logoList.svg"
             // width={1200}
             // height={200}
             alt="Logo"
