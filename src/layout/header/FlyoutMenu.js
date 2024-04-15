@@ -1,30 +1,28 @@
 // FlyoutMenu.js
 
 import React from 'react';
-import { servicesData, productsData } from './data';
 
-const FlyoutMenu = ({ showFlyout, setShowFlyout, category }) => {
-  const data = category === 'Services' ? servicesData : productsData;
+const FlyoutMenu = ({ showFlyout, setShowFlyout, category, data, onSelectCategory, className }) => {
+  const handleClick = (category) => {
+    onSelectCategory(category);
+    setShowFlyout(false);
+  };
 
   return (
-    showFlyout && (
-      <div className="fixed top-14 left-0 right-o bg-white p-4 z-50 shadow-lg rounded-t-lg w-full">
-        <div className="max-w-7xl mx-auto grid grid-cols-3 gap-8">
-          {Object.entries(data).map(([category, items]) => (
-            <div key={category}>
-              <h3 className="text-black font-bold mb-2">{category}</h3>
-              <ul className="space-y-2">
-                {items.map(item => (
-                  <li key={item.id}>
-                    <a href={item.link} className="text-black hover:text-yellow-300">{item.title}</a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
+    <div className={className}>
+      <div className="flex flex-col items-start w-full">
+        {data[category].map((service, index) => (
+          <a
+            key={index}
+            href={service.link}
+            onClick={() => handleClick(service.title)}
+            className="text-white hover:text-gray-300 py-1 px-4 block w-full"
+          >
+            {service.title}
+          </a>
+        ))}
       </div>
-    )
+    </div>
   );
 };
 

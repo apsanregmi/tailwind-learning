@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import FlyoutMenu from './FlyoutMenu';
+import { servicesData, productsData } from './data'; // Importing updated data
 
 const DefaultHeader = () => {
   const [showServicesFlyout, setShowServicesFlyout] = useState(false);
@@ -87,7 +88,7 @@ const DefaultHeader = () => {
                   showFlyout={showServicesFlyout}
                   setShowFlyout={setShowServicesFlyout}
                   category="Services"
-                  subCategories={['Category 1', 'Category 2', 'Category 3']} // Example subcategories
+                  data={servicesData}
                   onSelectCategory={handleCategoryClick}
                   className="absolute top-full left-0 z-50 bg-black"
                 />
@@ -106,7 +107,7 @@ const DefaultHeader = () => {
                   showFlyout={showProductsFlyout}
                   setShowFlyout={setShowProductsFlyout}
                   category="Products"
-                  subCategories={['Category A', 'Category B', 'Category C']} // Example subcategories
+                  data={productsData}
                   onSelectCategory={handleCategoryClick}
                   className="absolute top-full left-0 z-50 bg-black"
                 />
