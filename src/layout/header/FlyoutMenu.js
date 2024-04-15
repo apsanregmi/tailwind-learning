@@ -1,54 +1,31 @@
-import React from 'react';
-import { Fragment } from 'react';
-import { services, products } from '../header/data';
+// FlyoutMenu.js
 
-function FlyoutMenu() {
+import React from 'react';
+import { servicesData, productsData } from './data';
+
+const FlyoutMenu = ({ showFlyout, setShowFlyout, category }) => {
+  const data = category === 'Services' ? servicesData : productsData;
+
   return (
-    <div className="absolute left-0 mt-2 w-72 origin-top-left bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-      {/* Services Section */}
-      <div className="py-1">
-        <h3 className="text-sm font-medium leading-6 text-gray-500 px-4">Services</h3>
-        <div className="mt-1">
-          {services.map((service, index) => (
-            <div key={index}>
-              <button
-                className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 focus:outline-none"
-                onClick={() => console.log(`${service.name} clicked`)} // Add click handler for service
-              >
-                {service.name}
-              </button>
-              <div className="mt-1">
-                {service.subServices.map((subService, subIndex) => (
-                  <a
-                    key={subIndex}
-                    href={subService.href}
-                    className="block w-full text-left px-8 py-2 text-sm text-gray-600 hover:bg-gray-100 focus:outline-none"
-                  >
-                    {subService.name}
-                  </a>
+    showFlyout && (
+      <div className="fixed top-14 left-0 right-0 bg-white p-4 z-50 shadow-lg rounded-t-lg ">
+        <div className="max-w-7xl mx-auto grid grid-cols-3 gap-8">
+          {Object.entries(data).map(([category, items]) => (
+            <div key={category}>
+              <h3 className="text-black font-bold mb-2">{category}</h3>
+              <ul className="space-y-2">
+                {items.map(item => (
+                  <li key={item.id}>
+                    <a href={item.link} className="text-black hover:text-yellow-300">{item.title}</a>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           ))}
         </div>
       </div>
-      {/* Products Section */}
-      <div className="py-1">
-        <h3 className="text-sm font-medium leading-6 text-gray-500 px-4">Products</h3>
-        <div className="mt-1">
-          {products.map((product, index) => (
-            <a
-              key={index}
-              href={product.href}
-              className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 focus:outline-none"
-            >
-              {product.name}
-            </a>
-          ))}
-        </div>
-      </div>
-    </div>
+    )
   );
-}
+};
 
 export default FlyoutMenu;

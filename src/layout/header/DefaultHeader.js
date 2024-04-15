@@ -1,30 +1,62 @@
 // DefaultHeader.js
-import React from 'react';
-import MegaMenu from './MegaMenu';
+
+import React, { useState } from 'react';
+import FlyoutMenu from './FlyoutMenu';
 
 const DefaultHeader = () => {
+  const [showServicesFlyout, setShowServicesFlyout] = useState(false);
+  const [showProductsFlyout, setShowProductsFlyout] = useState(false);
+
+  const handleServicesHover = () => {
+    setShowServicesFlyout(true);
+    setShowProductsFlyout(false);
+  };
+
+  const handleProductsHover = () => {
+    setShowServicesFlyout(false);
+    setShowProductsFlyout(true);
+  };
+
   return (
-    <nav className="relative bg-white border-b-2 border-gray-300 text-gray-900">
-      <div className="container mx-auto flex justify-between">
-        <div className="relative block p-4 lg:p-6 text-xl text-blue-600 font-bold">Logo</div>
-        <ul className="flex">
-          <li className="hoverable hover:bg-blue-800 hover:text-white">
-            <a href="#" className="relative block py-6 px-4 lg:p-6 text-sm lg:text-base font-bold">Services</a>
-            <MegaMenu />
-          </li>
-          <li className="hoverable hover:bg-blue-800 hover:text-white">
-            <a href="#" className="relative block py-6 px-4 lg:p-6 text-sm lg:text-base font-bold">Products</a>
-            <MegaMenu />
-          </li>
-          <li className="hoverable hover:bg-blue-800 hover:text-white">
-            <a href="#" className="relative block py-6 px-4 lg:p-6 text-sm lg:text-base font-bold">Blogs</a>
-            <MegaMenu />
-          </li>
-          <li className="hoverable hover:bg-blue-800 hover:text-white">
-            <a href="#" className="relative block py-6 px-4 lg:p-6 text-sm lg:text-base font-bold">Contact Us</a>
-            <MegaMenu />
-          </li>
-        </ul>
+    <nav className="bg-black p-4">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="flex justify-between items-center">
+          {/* Logo */}
+          <div>
+            <a href="#" className="text-white text-xl font-bold">Cloud ProAI</a>
+          </div>
+          {/* Navigation Links */}
+          <div className="hidden md:flex space-x-4">
+            <div
+              className="relative group"
+              onMouseEnter={handleServicesHover}
+              onMouseLeave={() => setShowServicesFlyout(false)}
+            >
+              <a href="#" className="text-white hover:text-gray-300">Services</a>
+              {/* Services Flyout Menu */}
+              <FlyoutMenu 
+                showFlyout={showServicesFlyout} 
+                setShowFlyout={setShowServicesFlyout} 
+                category="Services" 
+              />
+            </div>
+            <div
+              className="relative group"
+              onMouseEnter={handleProductsHover}
+              onMouseLeave={() => setShowProductsFlyout(false)}
+            >
+              <a href="#" className="text-white hover:text-gray-300">Products</a>
+              {/* Products Flyout Menu */}
+              <FlyoutMenu 
+                showFlyout={showProductsFlyout} 
+                setShowFlyout={setShowProductsFlyout} 
+                category="Products" 
+              />
+            </div>
+            <a href="#" className="text-white hover:text-gray-300">Case Study</a>
+            <a href="#" className="text-white hover:text-gray-300">About us</a>
+          </div>
+        </div>
       </div>
     </nav>
   );
