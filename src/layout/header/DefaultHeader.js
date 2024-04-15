@@ -1,12 +1,14 @@
 // DefaultHeader.js
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import FlyoutMenu from './FlyoutMenu';
 
 const DefaultHeader = () => {
   const [showServicesFlyout, setShowServicesFlyout] = useState(false);
   const [showProductsFlyout, setShowProductsFlyout] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const flyoutMenuRef = useRef(null);
 
   const handleServicesHover = () => {
     if (!isMobileMenuOpen) {
@@ -26,6 +28,9 @@ const DefaultHeader = () => {
     if (isMobileMenuOpen) {
       setShowServicesFlyout(!showServicesFlyout);
       setShowProductsFlyout(false);
+    } else {
+      setShowServicesFlyout(true);
+      setShowProductsFlyout(false);
     }
   };
 
@@ -33,17 +38,42 @@ const DefaultHeader = () => {
     if (isMobileMenuOpen) {
       setShowServicesFlyout(false);
       setShowProductsFlyout(!showProductsFlyout);
+    } else {
+      setShowServicesFlyout(false);
+      setShowProductsFlyout(true);
     }
   };
 
   const toggleMobileMenu = () => {
-    // Close any open flyout menus
-    setShowServicesFlyout(false);
-    setShowProductsFlyout(false);
-
-    // Toggle the mobile menu
     setIsMobileMenuOpen(!isMobileMenuOpen);
+    setShowServicesFlyout(false); // Close services flyout menu when toggling mobile menu
+    setShowProductsFlyout(false); // Close products flyout menu when toggling mobile menu
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (flyoutMenuRef.current && !flyoutMenuRef.current.contains(event.target)) {
+        setShowServicesFlyout(false);
+        setShowProductsFlyout(false);
+      }
+    };
+
+    const handleScroll = () => {
+      if (isMobileMenuOpen) {
+        setIsMobileMenuOpen(false);
+        setShowServicesFlyout(false);
+        setShowProductsFlyout(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('scroll', handleScroll);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('scroll', handleScroll);
+    };
+  }, [isMobileMenuOpen]);
 
   return (
     <nav className="bg-black p-4">
@@ -69,9 +99,10 @@ const DefaultHeader = () => {
               onMouseLeave={() => setShowServicesFlyout(false)}
               onClick={handleServicesClick}
             >
-              <a href="/services" className="text-white hover:text-gray-300">Services</a>
+              <a href="#" className="text-white hover:text-gray-300">Services</a>
               {/* Services Flyout Menu */}
               <FlyoutMenu 
+                ref={flyoutMenuRef}
                 showFlyout={showServicesFlyout} 
                 setShowFlyout={setShowServicesFlyout} 
                 category="Services" 
@@ -83,9 +114,10 @@ const DefaultHeader = () => {
               onMouseLeave={() => setShowProductsFlyout(false)}
               onClick={handleProductsClick}
             >
-              <a href="/products" className="text-white hover:text-gray-300">Products</a>
+              <a href="#" className="text-white hover:text-gray-300">Products</a>
               {/* Products Flyout Menu */}
               <FlyoutMenu 
+                ref={flyoutMenuRef}
                 showFlyout={showProductsFlyout} 
                 setShowFlyout={setShowProductsFlyout} 
                 category="Products" 
@@ -98,10 +130,20 @@ const DefaultHeader = () => {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="md:hidden block mt-4">
-            <a href="/services" onClick={handleServicesClick} className="block text-white py-2 hover:text-gray-300">Services</a>
-            {showServicesFlyout && <FlyoutMenu showFlyout={showServicesFlyout} setShowFlyout={setShowServicesFlyout} category="Services" />}
-            <a href="/products" onClick={handleProductsClick} className="block text-white py-2 hover:text-gray-300">Products</a>
-            {showProductsFlyout && <FlyoutMenu showFlyout={showProductsFlyout} setShowFlyout={setShowProductsFlyout} category="Products" />}
+            <div
+              className="relative group"
+              onClick={handleServicesClick}
+            >
+              <a href="#" className="block text-white py-2 hover:text-gray-300">Services</a>
+              {showServicesFlyout && <FlyoutMenu ref={flyoutMenuRef} showFlyout={showServicesFlyout} setShowFlyout={setShowServicesFlyout} category="Services" />}
+            </div>
+            <div
+              className="relative group"
+              onClick={handleProductsClick}
+            >
+              <a href="#" className="block text-white py-2 hover:text-gray-300">Products</a>
+              {showProductsFlyout && <FlyoutMenu ref={flyoutMenuRef} showFlyout={showProductsFlyout} setShowFlyout={setShowProductsFlyout} category="Products" />}
+            </div>
             <a href="/others/case-studies" className="block text-white py-2 hover:text-gray-300">Case Study</a>
             <a href="/about" className="block text-white py-2 hover:text-gray-300">About us</a>
           </div>
