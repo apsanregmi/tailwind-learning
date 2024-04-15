@@ -1,11 +1,12 @@
 // DefaultHeader.js
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import FlyoutMenu from './FlyoutMenu';
 
 const DefaultHeader = () => {
   const [showServicesFlyout, setShowServicesFlyout] = useState(false);
   const [showProductsFlyout, setShowProductsFlyout] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const flyoutMenuRef = useRef(null);
@@ -24,23 +25,9 @@ const DefaultHeader = () => {
     }
   };
 
-  const handleServicesClick = () => {
-    if (isMobileMenuOpen) {
-      setShowServicesFlyout(!showServicesFlyout);
-      setShowProductsFlyout(false);
-    } else {
-      setShowServicesFlyout(true);
-      setShowProductsFlyout(false);
-    }
-  };
-
-  const handleProductsClick = () => {
-    if (isMobileMenuOpen) {
-      setShowServicesFlyout(false);
-      setShowProductsFlyout(!showProductsFlyout);
-    } else {
-      setShowServicesFlyout(false);
-      setShowProductsFlyout(true);
+  const handleCategoryClick = (category) => {
+    if (!isMobileMenuOpen) {
+      setSelectedCategory(category);
     }
   };
 
@@ -48,6 +35,7 @@ const DefaultHeader = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
     setShowServicesFlyout(false); // Close services flyout menu when toggling mobile menu
     setShowProductsFlyout(false); // Close products flyout menu when toggling mobile menu
+    setSelectedCategory(null); // Reset selected category when toggling mobile menu
   };
 
   useEffect(() => {
@@ -63,6 +51,7 @@ const DefaultHeader = () => {
         setIsMobileMenuOpen(false);
         setShowServicesFlyout(false);
         setShowProductsFlyout(false);
+        setSelectedCategory(null);
       }
     };
 
@@ -76,12 +65,55 @@ const DefaultHeader = () => {
   }, [isMobileMenuOpen]);
 
   return (
-    <nav className="bg-black p-4">
+    <nav className="bg-black p-4 relative">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div>
             <a href="/" className="text-white text-xl font-bold">Cloud ProAI</a>
+          </div>
+          {/* Navigation Links */}
+          <div className={`hidden md:flex space-x-4 ${isMobileMenuOpen ? 'hidden' : 'block'}`}>
+            <div
+              className="relative group"
+              onMouseEnter={handleServicesHover}
+              onMouseLeave={() => setShowServicesFlyout(false)}
+            >
+              <a href="#" className="text-white hover:text-gray-300">Services</a>
+              {/* Services Flyout Menu */}
+              {showServicesFlyout && (
+                <FlyoutMenu
+                  ref={flyoutMenuRef}
+                  showFlyout={showServicesFlyout}
+                  setShowFlyout={setShowServicesFlyout}
+                  category="Services"
+                  subCategories={['Category 1', 'Category 2', 'Category 3']} // Example subcategories
+                  onSelectCategory={handleCategoryClick}
+                  className="absolute top-full left-0 z-50 bg-black"
+                />
+              )}
+            </div>
+            <div
+              className="relative group"
+              onMouseEnter={handleProductsHover}
+              onMouseLeave={() => setShowProductsFlyout(false)}
+            >
+              <a href="#" className="text-white hover:text-gray-300">Products</a>
+              {/* Products Flyout Menu */}
+              {showProductsFlyout && (
+                <FlyoutMenu
+                  ref={flyoutMenuRef}
+                  showFlyout={showProductsFlyout}
+                  setShowFlyout={setShowProductsFlyout}
+                  category="Products"
+                  subCategories={['Category A', 'Category B', 'Category C']} // Example subcategories
+                  onSelectCategory={handleCategoryClick}
+                  className="absolute top-full left-0 z-50 bg-black"
+                />
+              )}
+            </div>
+            <a href="/others/case-studies" className="text-white hover:text-gray-300">Case Study</a>
+            <a href="/about" className="text-white hover:text-gray-300">About us</a>
           </div>
           {/* Mobile Menu Button */}
           <div className="md:hidden">
@@ -91,59 +123,10 @@ const DefaultHeader = () => {
               </svg>
             </button>
           </div>
-          {/* Navigation Links */}
-          <div className={`hidden md:flex space-x-4 ${isMobileMenuOpen ? 'hidden' : 'block'}`}>
-            <div
-              className="relative group"
-              onMouseEnter={handleServicesHover}
-              onMouseLeave={() => setShowServicesFlyout(false)}
-              onClick={handleServicesClick}
-            >
-              <a href="#" className="text-white hover:text-gray-300">Services</a>
-              {/* Services Flyout Menu */}
-              <FlyoutMenu 
-                ref={flyoutMenuRef}
-                showFlyout={showServicesFlyout} 
-                setShowFlyout={setShowServicesFlyout} 
-                category="Services" 
-              />
-            </div>
-            <div
-              className="relative group"
-              onMouseEnter={handleProductsHover}
-              onMouseLeave={() => setShowProductsFlyout(false)}
-              onClick={handleProductsClick}
-            >
-              <a href="#" className="text-white hover:text-gray-300">Products</a>
-              {/* Products Flyout Menu */}
-              <FlyoutMenu 
-                ref={flyoutMenuRef}
-                showFlyout={showProductsFlyout} 
-                setShowFlyout={setShowProductsFlyout} 
-                category="Products" 
-              />
-            </div>
-            <a href="/others/case-studies" className="text-white hover:text-gray-300">Case Study</a>
-            <a href="/about" className="text-white hover:text-gray-300">About us</a>
-          </div>
         </div>
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="md:hidden block mt-4">
-            <div
-              className="relative group"
-              onClick={handleServicesClick}
-            >
-              <a href="#" className="block text-white py-2 hover:text-gray-300">Services</a>
-              {showServicesFlyout && <FlyoutMenu ref={flyoutMenuRef} showFlyout={showServicesFlyout} setShowFlyout={setShowServicesFlyout} category="Services" />}
-            </div>
-            <div
-              className="relative group"
-              onClick={handleProductsClick}
-            >
-              <a href="#" className="block text-white py-2 hover:text-gray-300">Products</a>
-              {showProductsFlyout && <FlyoutMenu ref={flyoutMenuRef} showFlyout={showProductsFlyout} setShowFlyout={setShowProductsFlyout} category="Products" />}
-            </div>
             <a href="/others/case-studies" className="block text-white py-2 hover:text-gray-300">Case Study</a>
             <a href="/about" className="block text-white py-2 hover:text-gray-300">About us</a>
           </div>

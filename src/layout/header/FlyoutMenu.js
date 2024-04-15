@@ -8,7 +8,7 @@ const FlyoutMenu = ({ showFlyout, setShowFlyout, category }) => {
 
   return (
     showFlyout && (
-      <div className="fixed top-14 left-0  bg-white p-4 z-50 shadow-lg rounded-t-lg">
+      <div className="fixed top-14 left-0 right-o bg-white p-4 z-50 shadow-lg rounded-t-lg w-full">
         <div className="max-w-7xl mx-auto grid grid-cols-3 gap-8">
           {Object.entries(data).map(([category, items]) => (
             <div key={category}>
