@@ -2,7 +2,8 @@
 
 export const servicesData = {
   "Cloud Engineering": {
-    image: "cloud_engineering.jpg", // Example image URL
+    image: "cloud_engineering.jpg",
+    link:"/services/cloudengineering",
     services: [
       { id: 1, title: "Data Platform Engineering", link: "#" },
       { id: 2, title: "Data Lakes & Warehouses", link: "#" },
@@ -15,7 +16,9 @@ export const servicesData = {
     ]
   },
   "Data Engineering": {
-    image: "data_engineering.jpg", // Example image URL
+    image: "data_engineering.jpg",
+    link:"/services/dataengineering",
+     // Example image URL
     services: [
       { id: 1, title: "Data Lakes & Warehouses", link: "#" },
       { id: 2, title: "Data Pipelining", link: "#" },
@@ -24,7 +27,9 @@ export const servicesData = {
     ]
   },
   "Generative AI and ML": {
-    image: "generative_ai_ml.jpg", // Example image URL
+    image: "generative_ai_ml.jpg", 
+    link:"/services/generativeaiandml",
+    // Example image URL
     services: [
       { id: 1, title: "AI Chatbot Services", link: "#" },
       { id: 2, title: "Generative AI Apps", link: "#" },
@@ -38,6 +43,8 @@ export const servicesData = {
 
 export const productsData = {
   "Marketing Products": {
+    link:"/products/marketing",
+    
     image: "cloud_engineering.jpg", // Example image URL
     services: [
       { id: 1, title: "Data Platform Engineering", link: "#" },
@@ -52,6 +59,8 @@ export const productsData = {
   },
   "Business Products": {
     image: "data_engineering.jpg", // Example image URL
+    link:"/products/marketing",
+
     services: [
       { id: 1, title: "Data Lakes & Warehouses", link: "#" },
       { id: 2, title: "Data Pipelining", link: "#" },
@@ -61,6 +70,8 @@ export const productsData = {
   },
   "Sales Tools": {
     image: "generative_ai_ml.jpg", // Example image URL
+    link:"/products/marketing",
+
     services: [
       { id: 1, title: "AI Chatbot Services", link: "#" },
       { id: 2, title: "Generative AI Apps", link: "#" },
