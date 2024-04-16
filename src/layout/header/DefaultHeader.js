@@ -57,7 +57,9 @@ const DefaultHeader = () => {
   return (
     <nav className={`bg-black p-4 fixed top-0 left-0 right-0 z-50 ${isScrolled ? 'shadow-md' : ''}`}>
       <div className="max-w-7xl mx-auto px-4">
-        <div className="flex gap-60 items-center pl-56">
+        {/* <div className="flex lg:gap-10 items-center justify-between lg:justify-stretch lg:pl-56"> */}
+        <div className="flex lg:gap-52 items-center justify-between lg:justify-stretch lg:pl-56">
+
           <div>
             <a href="/" className="text-white text-xl font-bold">Cloud ProAI</a>
           </div>
