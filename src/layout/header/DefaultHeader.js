@@ -1,5 +1,3 @@
-// DefaultHeader.js
-
 import React, { useState, useRef, useEffect } from 'react';
 import FlyoutMenu from './FlyoutMenu';
 
@@ -79,7 +77,7 @@ const DefaultHeader = () => {
               onMouseEnter={handleServicesHover}
               onMouseLeave={() => setShowServicesFlyout(false)}
             >
-              <a href="#" className="text-white hover:text-gray-300">Services</a>
+              <a href="/services" className="text-white hover:text-gray-300">Services</a>
               {/* Services Flyout Menu */}
               {showServicesFlyout && (
                 <FlyoutMenu
@@ -98,7 +96,7 @@ const DefaultHeader = () => {
               onMouseEnter={handleProductsHover}
               onMouseLeave={() => setShowProductsFlyout(false)}
             >
-              <a href="#" className="text-white hover:text-gray-300">Products</a>
+              <a href="/products" className="text-white hover:text-gray-300">Products</a>
               {/* Products Flyout Menu */}
               {showProductsFlyout && (
                 <FlyoutMenu
@@ -127,6 +125,50 @@ const DefaultHeader = () => {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="md:hidden block mt-4">
+            <div
+              className="relative group"
+              onClick={() => {
+                setShowServicesFlyout(true);
+                setShowProductsFlyout(false);
+                toggleMobileMenu(); // Close mobile menu after clicking on Services
+              }}
+            >
+              <a href="/services" className="block text-white py-2 hover:text-gray-300">Services</a>
+              {/* Services Flyout Menu */}
+              {showServicesFlyout && (
+                <FlyoutMenu
+                  ref={flyoutMenuRef}
+                  showFlyout={showServicesFlyout}
+                  setShowFlyout={setShowServicesFlyout}
+                  category="Services"
+                  subCategories={['Category 1', 'Category 2', 'Category 3']} // Example subcategories
+                  onSelectCategory={handleCategoryClick}
+                  className="absolute top-full left-0 z-50 bg-black"
+                />
+              )}
+            </div>
+            <div
+              className="relative group"
+              onClick={() => {
+                setShowServicesFlyout(false);
+                setShowProductsFlyout(true);
+                toggleMobileMenu(); // Close mobile menu after clicking on Products
+              }}
+            >
+              <a href="/products" className="block text-white py-2 hover:text-gray-300">Products</a>
+              {/* Products Flyout Menu */}
+              {showProductsFlyout && (
+                <FlyoutMenu
+                  ref={flyoutMenuRef}
+                  showFlyout={showProductsFlyout}
+                  setShowFlyout={setShowProductsFlyout}
+                  category="Products"
+                  subCategories={['Category A', 'Category B', 'Category C']} 
+                  onSelectCategory={handleCategoryClick}
+                  className="absolute top-full left-0 z-50 bg-black"
+                />
+              )}
+            </div>
             <a href="/others/case-studies" className="block text-white py-2 hover:text-gray-300">Case Study</a>
             <a href="/about" className="block text-white py-2 hover:text-gray-300">About us</a>
           </div>
