@@ -14,13 +14,13 @@ const ServiceCardLarge = ({ title, description, position, link}) => {
           <div className="pl-4">
             <p> {description}</p>
           </div>
-          <div className=" w-fit p-4 relative  bottom-44 left-96 ml-48">
+          {/* <div className=" w-fit p-4 relative  bottom-44 left-96 ml-48">
             <Link href={link} legacyBehavior>
               <a className="bg-gray-100 hover:bg-blue-500  font-semibold hover:text-white py-2 px-4  hover:border-transparent rounded-md block">
                 View More
               </a>
             </Link>
-          </div>
+          </div> */}
           
         </div>
         <div className="top bg-polka flex justify-center  px-12 ">

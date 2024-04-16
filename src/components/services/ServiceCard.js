@@ -22,13 +22,13 @@ const ServiceCard = ({ title, description, position, image, link }) => {
           <div className="text-base m-4">
             <p> {description}</p>
           </div>
-          <div className=" w-fit p-4 relative  bottom-0 left-72">
+          {/* <div className=" w-fit p-4 relative  bottom-0 left-72">
             <Link href="/services/dataengineering" passHref legacyBehavior>
               <a className="bg-gray-100 hover:bg-blue-500  font-semibold hover:text-white py-2 px-4  hover:border-transparent rounded-md block">
                 View More
               </a>
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
