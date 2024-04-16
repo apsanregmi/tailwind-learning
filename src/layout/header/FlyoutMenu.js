@@ -10,8 +10,8 @@ const FlyoutMenu = ({ showFlyout, setShowFlyout, category }) => {
         <div className="max-w-7xl mx-auto grid grid-cols-3 gap-8">
           {Object.entries(data).map(([categoryName, categoryData]) => (
             <div key={categoryName} className="flex flex-col items-center">
-              <div className="flex flex-row">
-              <div className="mb-4 bg-[#E7F96A]">
+              <div className="flex flex-row space-x-4">
+              <div className="mb-4 bg-[#E7F96A] w-64 rounded-sm border-solid border-1">
                 <img
                   src="
               \assets\images\services\clodudengineering\cloudEngineering.svg
@@ -26,12 +26,12 @@ const FlyoutMenu = ({ showFlyout, setShowFlyout, category }) => {
               
 
               </div>
-              <ul className="space-y-2 ">
+              <ul className="space-y-2  ">
                 {categoryData.services.map((service) => (
                   <li key={service.id}>
                     <a
                       href={service.link}
-                      className="text-black hover:text-yellow-300"
+                      className="text-black hover:text-yellow-300 ml-28"
                     >
                       {service.title}
                     </a>

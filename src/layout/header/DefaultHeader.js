@@ -106,7 +106,7 @@ const DefaultHeader = () => {
                   showFlyout={showProductsFlyout}
                   setShowFlyout={setShowProductsFlyout}
                   category="Products"
-                  subCategories={['Category A', 'Category B', 'Category C']} // Example subcategories
+                  subCategories={['Category A', 'Category B', 'Category C']} 
                   onSelectCategory={handleCategoryClick}
                   className="absolute top-full left-0 z-50 bg-black"
                 />
