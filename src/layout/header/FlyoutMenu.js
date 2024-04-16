@@ -1,28 +1,48 @@
-// FlyoutMenu.js
+import React from "react";
+import { servicesData, productsData } from "./data";
 
-import React from 'react';
-
-const FlyoutMenu = ({ showFlyout, setShowFlyout, category, data, onSelectCategory, className }) => {
-  const handleClick = (category) => {
-    onSelectCategory(category);
-    setShowFlyout(false);
-  };
+const FlyoutMenu = ({ showFlyout, setShowFlyout, category }) => {
+  const data = category === "Services" ? servicesData : productsData;
 
   return (
-    <div className={className}>
-      <div className="flex flex-col items-start w-full">
-        {data[category].map((service, index) => (
-          <a
-            key={index}
-            href={service.link}
-            onClick={() => handleClick(service.title)}
-            className="text-white hover:text-gray-300 py-1 px-4 block w-full"
-          >
-            {service.title}
-          </a>
-        ))}
+    showFlyout && (
+      <div className="fixed top-14 left-0 right-0 bg-white p-4 z-50 shadow-lg rounded-t-lg w-full rounded-lg mx-10">
+        <div className="max-w-7xl mx-auto grid grid-cols-3 gap-8">
+          {Object.entries(data).map(([categoryName, categoryData]) => (
+            <div key={categoryName} className="flex flex-col items-center">
+              <div className="flex flex-row">
+              <div className="mb-4 bg-[#E7F96A]">
+                <img
+                  src="
+              \assets\images\services\clodudengineering\cloudEngineering.svg
+                
+                "
+                  alt={categoryName}
+                  className="w-full h-auto"
+                />
+              </div>
+
+              <h3 className="text-black font-bold mb-2">{categoryName}</h3>
+              
+
+              </div>
+              <ul className="space-y-2 ">
+                {categoryData.services.map((service) => (
+                  <li key={service.id}>
+                    <a
+                      href={service.link}
+                      className="text-black hover:text-yellow-300"
+                    >
+                      {service.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    )
   );
 };
 
