@@ -1,118 +1,54 @@
 import React from "react";
-import Image from "next/image";
 
 const ServicesList = () => {
   return (
-    <div className="container bg-gray-50">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 space-y-5">
-        <div className="bg-white shadow border-emerald-950" >
-          <Image
-            src="/assets/images/services/servicesList/Frame88.svg"
-            width={240}
-            height={240}
-            alt="Logo"
-            className="block cursor-pointer"
-          />
-        </div>
-        <div className="bg-white shadow border-emerald-950">
-          {" "}
-          <Image
-            src="/assets/images/services/servicesList/Frame89.svg"
-            width={240}
-            height={240}
-            alt="Logo"
-            className="block cursor-pointer"
-          />
-        </div>
-        <div className="bg-white shadow border-emerald-950">
-          {" "}
-          <Image
-            src="/assets/images/services/servicesList/Frame91.svg"
-            width={240}
-            height={240}
-            alt="Logo"
-            className="block cursor-pointer"
-          />
-        </div >
-        <div className="bg-white shadow border-emerald-950">
-          <Image
-            src="/assets/images/services/servicesList/Frame92.svg"
-            width={240}
-            height={240}
-            alt="Logo"
-            className="block cursor-pointer"
-          />
-        </div>
-      </div >
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 ">
-        <div className="bg-white shadow border-emerald-950">
-          <Image
-            src="/assets/images/services/servicesList/Frame88.svg"
-            width={240}
-            height={240}
-            alt="Logo"
-            className="block cursor-pointer"
-          />
-        </div>
-        <div className="bg-white shadow border-emerald-950">
-          {" "}
-          <Image
-            src="/assets/images/services/servicesList/Frame88.svg"
-            width={240}
-            height={240}
-            alt="Logo"
-            className="block cursor-pointer"
-          />
-        </div>
-        <div className="bg-white shadow border-emerald-950">
-          <Image
-            src="/assets/images/services/servicesList/Frame88.svg"
-            width={240}
-            height={240}
-            alt="Logo"
-            className="block cursor-pointer"
-          />
+    // <div className=" container flex flex-col items-center justify-center   lg:place-items-start md:flex bg-green-100">
+    <div className=" container flex flex-col items-center justify-center   lg:place-items-start md:flex md:flex-wrap bg-green-100">
+
+
+      <div className="service m-4 px-4 flex bg-yellow-300 rounded-lg shadow-md h-auto text-center ">
+        <div className="service-icon text-3xl">🛡️</div>
+        <div className="service-description py-2">AI Implementation Services</div>
+      </div>
+      <div className="service m-4 px-4 flex bg-white rounded-lg shadow-md h-auto text-center">
+        <div className="service-icon text-3xl">🧠</div>
+        <div className="service-description py-2">Deep Learning Services</div>
+      </div>
+      <div className="service m-4 px-4 flex bg-white rounded-lg shadow-md h-auto text-center">
+        <div className="service-icon text-3xl">🧊</div>
+        <div className="service-description py-2">Generative AI</div>
+      </div>
+      <div className="service m-4 px-4 flex bg-white rounded-lg shadow-md h-auto text-center">
+        <div className="service-icon text-3xl">🏢</div>
+        <div className="service-description py-2">Cloud Architecture Consulting</div>
+      </div>
+      <div className="service m-4 px-4 flex bg-white rounded-lg shadow-md h-auto text-center">
+        <div className="service-icon text-3xl">💧</div>
+        <div className="service-description py-2">
+          Cloud Data Lakes and Warehouses
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-        <div className="bg-white shadow border-emerald-950">
-          <Image
-            src="/assets/images/services/servicesList/Frame88.svg"
-            width={240}
-            height={240}
-            alt="Logo"
-            className="block cursor-pointer"
-          />
+      <div className="service m-4 px-4 flex bg-white rounded-lg shadow-md h-auto text-center">
+        <div className="service-icon text-3xl">💰</div>
+        <div className="service-description py-2">
+          Cost Optimizations and Maintenance
         </div>
-        <div className="bg-white shadow border-emerald-950">
-          {" "}
-          <Image
-            src="/assets/images/services/servicesList/Frame89.svg"
-            width={240}
-            height={240}
-            alt="Logo"
-            className="block cursor-pointer"
-          />
-        </div>
-        <div className="bg-white shadow border-emerald-950">
-          {" "}
-          <Image
-            src="/assets/images/services/servicesList/Frame91.svg"
-            width={240}
-            height={240}
-            alt="Logo"
-            className="block cursor-pointer"
-          />
-        </div>
-        <div className="bg-white shadow border-emerald-950">
-          <Image
-            src="/assets/images/services/servicesList/Frame92.svg"
-            width={240}
-            height={240}
-            alt="Logo"
-            className="block cursor-pointer"
-          />
-        </div>
+      </div>
+      <div className="service m-4 px-4 flex bg-white rounded-lg shadow-md h-auto text-center">
+        <div className="service-icon text-3xl">🔢</div>
+        <div className="service-description py-2">Big Data Analytics Solutions</div>
+      </div>
+      <div className="service m-4 px-4 flex bg-white rounded-lg shadow-md h-auto text-center">
+        <div className="service-icon text-3xl">🔣</div>
+        <div className="service-description py-2">Data Mining Solutions</div>
+      </div>
+      <div className="service m-4 px-4 flex bg-white rounded-lg shadow-md h-auto text-center">
+        <div className="service-icon text-3xl">📊</div>
+        <div className="service-description py-2">Data Visualization</div>
+      </div>
+      <div className="service m-4 px-4 flex bg-white rounded-lg shadow-md h-auto text-center">
+        <div className="service-icon text-3xl">🔎</div>
+        <div className="service-description py-2">Predictive Analysis Solutions</div>
       </div>
     </div>
   );
