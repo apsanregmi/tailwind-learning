@@ -93,8 +93,6 @@ const DefaultHeader = () => {
                   showFlyout={showServicesFlyout}
                   setShowFlyout={setShowServicesFlyout}
                   category="Services"
-                  subCategories={["Category 1", "Category 2", "Category 3"]}
-                  onSelectCategory={handleCategoryClick}
                   className={`absolute top-28 left-64 z-50 bg-black transition-opacity duration-300 ${
                     showServicesFlyout ? "opacity-100" : "opacity-0"
                   } ${isScrolled ? "opacity-100" : "opacity-0"}`}
@@ -115,8 +113,6 @@ const DefaultHeader = () => {
                   showFlyout={showProductsFlyout}
                   setShowFlyout={setShowProductsFlyout}
                   category="Products"
-                  subCategories={["Category A", "Category B", "Category C"]}
-                  onSelectCategory={handleCategoryClick}
                   className={`absolute top-full left-0 z-50 bg-black transition-opacity duration-300 ${
                     showProductsFlyout ? "opacity-100" : "opacity-0"
                   } ${isScrolled ? "opacity-100" : "opacity-0"}`}
@@ -174,7 +170,7 @@ const DefaultHeader = () => {
                 href="/services"
                 className="block text-white  hover:text-gray-300"
               >
-                Services 
+                Services
               </a>
               {showServicesFlyout && (
                 <FlyoutMenu
@@ -202,7 +198,7 @@ const DefaultHeader = () => {
                 href="/products"
                 className="block text-white  hover:text-gray-300"
               >
-                Products 
+                Products
               </a>
               {showProductsFlyout && (
                 <FlyoutMenu

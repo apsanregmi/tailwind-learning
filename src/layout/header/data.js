@@ -11,7 +11,7 @@ export const servicesData = {
       { id: 4, title: "Architecture Consulting", link: "#" },
       { id: 5, title: "Cloud Test Engineering", link: "#" },
       { id: 6, title: "Cloud Ops", link: "#" },
-      { id: 7, title: "Cloud Ops", link: "#" },
+      // { id: 7, title: "Cloud Ops", link: "#" },
       { id: 8, title: "Private Cloud", link: "#" },
     ]
   },
@@ -53,7 +53,7 @@ export const productsData = {
       { id: 4, title: "Architecture Consulting", link: "#" },
       { id: 5, title: "Cloud Test Engineering", link: "#" },
       { id: 6, title: "Cloud Ops", link: "#" },
-      { id: 7, title: "Cloud Ops", link: "#" },
+      // { id: 7, title: "Cloud Ops", link: "#" },
       { id: 8, title: "Private Cloud", link: "#" },
     ]
   },
