@@ -6,7 +6,7 @@ const FlyoutMenu = ({ showFlyout, setShowFlyout, category }) => {
 
   return (
     showFlyout && (
-      <div className="fixed top-16 left-0 right-0 bg-white p-4 z-50 shadow-lg rounded-t-lg w-full rounded-lg mx-10">
+      <div className="fixed top-16 left-0 right-0 bg-white p-4 z-50 shadow-lg rounded-t-lg w-full rounded-lg mx-10 ">
         <div className="max-w-7xl mx-auto grid grid-cols-3 gap-8">
           {Object.entries(data).map(([categoryName, categoryData]) => (
             <div key={categoryName} className="flex flex-col items-center">
