@@ -58,8 +58,8 @@ const DefaultHeader = () => {
   return (
     <nav
       className={`bg-[#071518] p-4 fixed top-0 left-0 right-0 z-50 ${
-        isScrolled || isMobileMenuOpen ? "shadow-md" : ""
-      }`}
+        isScrolled || isMobileMenuOpen ? "shadow-md" : "" 
+      }`} 
     >
       <div className="max-w-7xl mx-auto px-4">
         {!isScrolled && !isMobileMenuOpen && (
@@ -85,7 +85,7 @@ const DefaultHeader = () => {
               onMouseLeave={() => setShowServicesFlyout(false)}
             >
               <a href="/services" className="text-white hover:text-gray-300  ">
-                Services
+                Services ▼
               </a>
               {showServicesFlyout && (
                 <FlyoutMenu
@@ -107,7 +107,7 @@ const DefaultHeader = () => {
               onMouseLeave={() => setShowProductsFlyout(false)}
             >
               <a href="/products" className="text-white hover:text-gray-300 ">
-                Products
+                Products ▼
               </a>
               {showProductsFlyout && (
                 <FlyoutMenu
