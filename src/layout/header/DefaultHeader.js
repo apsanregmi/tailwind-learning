@@ -57,7 +57,7 @@ const DefaultHeader = () => {
 
   return (
     <nav
-      className={`bg-[#071518] p-4 fixed top-0 left-0 right-0 z-50 ${
+      className={`bg-[#071518] p-4 relative top-0 left-0 right-0 z-50 ${
         isScrolled || isMobileMenuOpen ? "shadow-md" : "" 
       }`} 
     >
