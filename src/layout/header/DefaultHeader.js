@@ -57,9 +57,9 @@ const DefaultHeader = () => {
 
   return (
     <nav
-      className={`bg-[#071518] p-4 relative top-0 left-0 right-0 z-50 ${
-        isScrolled || isMobileMenuOpen ? "shadow-md" : "" 
-      }`} 
+      className={`bg-[#071518] p-4 fixed top-0 left-0 right-0 z-50  ${
+        isScrolled || isMobileMenuOpen ? "shadow-md" : ""
+      }`}
     >
       <div className="max-w-7xl mx-auto px-4">
         {!isScrolled && !isMobileMenuOpen && (
@@ -68,7 +68,7 @@ const DefaultHeader = () => {
           </div>
         )}
 
-        <div className="flex lg:gap-52 items-center justify-between lg:justify-stretch lg:pl-56 ">
+        <div className="flex lg:gap-52 items-center justify-between lg:justify-stretch lg:pl-56 relative">
           <div>
             <a href="/" className="text-white text-xl font-bold">
               Cloud ProAI
@@ -95,7 +95,7 @@ const DefaultHeader = () => {
                   category="Services"
                   subCategories={["Category 1", "Category 2", "Category 3"]}
                   onSelectCategory={handleCategoryClick}
-                  className={`absolute top-full left-0 z-50 bg-black transition-opacity duration-300 ${
+                  className={`absolute top-28 left-64 z-50 bg-black transition-opacity duration-300 ${
                     showServicesFlyout ? "opacity-100" : "opacity-0"
                   } ${isScrolled ? "opacity-100" : "opacity-0"}`}
                 />
@@ -174,7 +174,7 @@ const DefaultHeader = () => {
                 href="/services"
                 className="block text-white  hover:text-gray-300"
               >
-                Services
+                Services 
               </a>
               {showServicesFlyout && (
                 <FlyoutMenu
@@ -202,7 +202,7 @@ const DefaultHeader = () => {
                 href="/products"
                 className="block text-white  hover:text-gray-300"
               >
-                Products
+                Products 
               </a>
               {showProductsFlyout && (
                 <FlyoutMenu

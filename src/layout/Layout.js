@@ -23,7 +23,11 @@ const Layout = ({ children, header,showCtaSection,title }) => {
         {/* Preloader */}
         {/* <Preloader /> */}
         <Header header={header} />
+        <div className="pt-24">
         {children}
+
+
+        </div>
         {/* footer area start */}
         <Footer showCtaSection={showCtaSection} />
         {/* footer area end */}

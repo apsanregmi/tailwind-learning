@@ -13,6 +13,7 @@ module.exports = {
     "./pages/services/generativeaiandml/index.js",
     "./src/components/others/ImageWithText.js",
     "./src/components/others/Discover.js",
+    "./src/layout/Layout.js"
     
 
     // './src/app/**/*.{js,ts,jsx,tsx,mdx}',
