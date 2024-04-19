@@ -7,6 +7,7 @@ import ServicesList from "@/src/components/services/ServicesList";
 import ServiceCard from "@/src/components/services/ServiceCard";
 import ServiceCardLarge from "@/src/components/services/ServiceCardLarge";
 import Layout from "@/src/layout/Layout";
+import Industries from "@/src/components/Industries/Industries";
 const index = () => {
   return (
     <Layout>
@@ -75,6 +76,10 @@ const index = () => {
           </div>
         </div>
         <ServicesList />
+        <div className="mt-14">
+        <Industries />
+
+        </div>
       </div>
     </Layout>
   );
