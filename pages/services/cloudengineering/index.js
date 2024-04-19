@@ -30,10 +30,10 @@ const Index = () => {
   return (
     <Layout>
       <PageBannerRev
-        title="SERVICES/ CLOUD ENGINEERING"
+        title="SERVICES/ GENERATIVE AI AND ML"
         subtitle="GENERATIVE AI APPLICATIONS"
       />
-      <div className="mb-36 justify-center">
+      <div className=" justify-center">
         <div className="container grid grid-cols-1 md:grid-cols-9 gap-4 mt-14 justify-center">
           <div className="left  col-span-5">
             <h1 className="text-4xl font-bold p-4">
@@ -44,7 +44,7 @@ const Index = () => {
               advanced cloud engineering services, we empower businesses to
               harness the full potential of the cloud. Explore our range of
               solutions designed to elevate your operations and propel you
-              towards success.
+              towards success
             </p>{" "}
           </div>
           <div className="right  col-span-4">
@@ -64,7 +64,7 @@ const Index = () => {
             <div className="top  grid grid-cols-1 md:grid-cols-2 ">
               <div className="cols">
                 <h1 className="text-4xl font-bold p-4">
-                  Reliable Cloud Service Operations and Maintenance  
+                  Reliable Cloud Service Operations and Maintenance
                 </h1>
 
                 <p className="p-4 justify-right">
@@ -78,6 +78,7 @@ const Index = () => {
               <div className="hidden"></div>
             </div>
             <hr></hr>
+
             <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
               <PercentageSection
                 percent="70%"
@@ -126,40 +127,75 @@ const Index = () => {
                   of AI apps within your business operations.
                 </span> */}
               </p>
+              <h1 className="text-4xl font-bold p-4">
+                {" "}
+                Data Services Best Practices on Cloud
+              </h1>
 
               <p class="font-inter text-base font-normal leading-6 text-left pt-8">
+                Unlock the true value of your data with our cloud-based data
+                services. Our experts guide you through secure and efficient
+                data handling, transforming raw data into strategic assets.
+                Leverage our expertise to make informed decisions and stay ahead
+                of the competition.
+              </p>
+              {/* <p class="font-inter text-base font-normal leading-6 text-left pt-8">
                 Understanding the unique challenges and opportunities each
                 business faces, Cloud Pro AI offers bespoke solutions to
                 automate content creation, streamline product design, or enhance
                 customer interactions, driving substantial improvements in
                 efficiency, customer satisfaction, and overall growth.
-              </p>
-              <p class="font-inter text-base font-normal leading-6 text-left pt-8">
-                Understanding the unique challenges and opportunities each
-                business faces, Cloud Pro AI offers bespoke solutions to
-                automate content creation, streamline product design, or enhance
-                customer interactions, driving substantial improvements in
-                efficiency, customer satisfaction, and overall growth.
-              </p>
+              </p> */}
             </div>
             <div className="hidden lg:col-span-2"></div>
           </div>
         </div>
+
+        <section className="mt-28 container">
+          <h2 className="text-3xl font-bold mb-8">Our Services</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Service Card 1 */}
+            <ServiceCard
+              title=" 
+
+              Information Governance in the Cloud "
+              description="Navigate the complexities of information governance in the cloud with confidence. Our comprehensive strategies ensure compliance, data privacy, and security. Trust us to safeguard your valuable information and meet regulatory requirements without compromise. ."
+              image="/assets/group2493.svg"
+              
+            />
+            
+
+            {/* Service Card 2 */}
+            <ServiceCard
+              title=" Seamless On-Prem to Cloud Migrations "
+              description="Experience a seamless transition from on-premises to the cloud with our specialized migration services. Minimize downtime and maintain productivity as we securely and swiftly move your operations to the cloud. Embrace the future without missing a beat."
+              // image="/assets/images/group2493.svg"
+              image="/assets/group2493.svg"
+
+            />
+            {/* Service Card 3 */}
+            <ServiceCard
+              title="Innovative Serverless Architecture"
+              description="Discover the benefits of serverless architecture and unleash your development potential. Our expertise in implementing serverless solutions allows you to focus on application development and innovation. Let us handle the underlying infrastructure for a truly scalable and agile environment. "
+              image="/assets/group2493.svg"
+            />
+          </div>
+        </section>
 
         <div className="bg-[#0C2126] pt-10">
           <div className=" container ImageSection col-span-1 row-span-8 mt-28 ">
             <div className="top  grid grid-cols-1 md:grid-cols-2 ">
               <div className="cols">
                 <h1 className="text-4xl text-white font-bold p-4">
-                  Data Services Best Practices on Cloud
+                  Your Cloud Journey, Amplified by Expertise
                 </h1>
 
                 <p className="p-4 justify-right text-white">
-                  Unlock the true value of your data with our cloud-based data
-                  services. Our experts guide you through secure and efficient
-                  data handling, transforming raw data into strategic assets.
-                  Leverage our expertise to make informed decisions and stay
-                  ahead of the competition.
+                  Embark on a transformative cloud journey with our advanced
+                  cloud engineering services. Experience the advantages of
+                  cutting-edge technology and industry-leading expertise
+                  tailored to your unique requirements. Collaborate with us to
+                  unlock new possibilities for your business.
                 </p>
               </div>
               <div className="hidden"></div>
@@ -189,23 +225,22 @@ const Index = () => {
         <div className="container grid grid-cols-1 md:grid-cols-9 gap-4 mt-14 justify-center">
           <div className="left  col-span-5">
             <h1 className="text-4xl font-bold p-4">
-              Information Governance in the Cloud
+            Empower Your Business with Cloud Pro AI: Unlock the Potential of Cloud Computing
             </h1>
+            {/* <p className="p-4 justify-right">
+              Embark on a transformative cloud journey with our advanced cloud
+              engineering services. Experience the advantages of cutting-edge
+              technology and industry-leading expertise tailored to your unique
+              requirements. Collaborate with us to unlock new possibilities for
+              your business.
+            </p> */}
             <p className="p-4 justify-right">
-              Navigate the complexities of information governance in the cloud
-              with confidence. Our comprehensive strategies ensure compliance,
-              data privacy, and security. Trust us to safeguard your valuable
-              information and meet regulatory requirements without compromise.
+              Ready to elevate your business in the cloud? Contact us at [phone
+              number] or [email] to schedule a consultation. Let our expertise
+              guide you towards a future fueled by the power of cloud computing.
             </p>
-            <h1 className="text-4xl font-bold p-4">
-              Seamless On-Prem to Cloud Migrations
-            </h1>
-            <p className="p-4 justify-right">
-              Experience a seamless transition from on-premises to the cloud
-              with our specialized migration services. Minimize downtime and
-              maintain productivity as we securely and swiftly move your
-              operations to the cloud. Embrace the future without missing a
-              beat.
+            <p>
+            At Cloud Pro AI, we are passionate about enabling businesses to thrive in the cloud. Our comprehensive range of services ensures reliability, cost optimization, data empowerment, governance, seamless migrations, and innovative architectures. Take the next step towards cloud success and connect with us today. 
             </p>
           </div>
           <div className="right  col-span-4">
@@ -219,35 +254,68 @@ const Index = () => {
             </div>
           </div>
         </div>
-        <div className="ServicesFooter container grid grid-cols-1 xl:grid-cols-3 pt-16">
+        <div className="ServicesFooter container grid grid-cols-1 xl:grid-cols-3 pt-16 mb-10">
           <div>
             <ServiceCard
-              title="Cloud Engineering"
+              title="Cloud Engineering Services"
               description="Unlock the Power of Intelligent Creation with CloudPro AI In the era of data-driven innovation, Generative Artificial Intelligence (AI)"
               position="left-96"
-              image="/assets/cloudlogo.svg"
+              image="/assets/cloudLogo.svg"
               link="/services/generativeaiandml"
             ></ServiceCard>
+            <div className="pr-16 pl-10 ">
+              <h1 className="text-2xl font-bold">Private Cloud</h1>
+              <p className="">
+                Explore the transformative realm of AI Chatbot Services, where
+                artificial intelligence meets seamless communication.
+              </p>
+            </div>
           </div>
-          <div className="grid grid-rows-3">
+          <div className="grid grid-rows-3 gap-4">
+            <div className="pr-16 pl-10 ">
+              <h1 className="text-2xl font-bold">Data Olatform Engineering</h1>
+              <p className="">
+                Explore the transformative realm of AI Chatbot Services, where
+                artificial intelligence meets seamless communication.
+              </p>
+            </div>
             <div className="pr-16 pl-10">
-            <h4 className="widget-title">Services Category</h4>
-                  <ul>
-                    {services.map((service) => (
-                      <div key={service.slug}>
-                        <li>
-                          <Link
-                            href={`/services/cloudengineering/${service.slug}`}
-                          >
-                            {service.title}
-                          </Link>
-                        </li>
-
-                        {/* <p>{service.description.slice(0.10)}</p> */}
-                      </div>
-                    ))}
-                  </ul>
-              </div>
+              <h1 className="text-2xl font-bold">Cloud Data Lakes and Warehousing</h1>
+              <p className="">
+                Explore the transformative realm of AI Chatbot Services, where
+                artificial intelligence meets seamless communication.
+              </p>
+            </div>
+            <div className="pr-16 pl-10">
+              <h1 className="text-2xl font-bold">Application Modernization</h1>
+              <p className="">
+                Explore the transformative realm of AI Chatbot Services, where
+                artificial intelligence meets seamless communication.
+              </p>
+            </div>
+          </div>
+          <div className=" grid grid-rows-3">
+            <div className="pr-16 pl-10">
+              <h1 className="text-2xl font-bold">Architecture Consulting</h1>
+              <p className="">
+                Explore the transformative realm of AI Chatbot Services, where
+                artificial intelligence meets seamless communication.
+              </p>
+            </div>
+            <div className="pr-16 pl-10">
+              <h1 className="text-2xl font-bold">Cloud Test Engineering</h1>
+              <p className="">
+                Explore the transformative realm of AI Chatbot Services, where
+                artificial intelligence meets seamless communication.
+              </p>
+            </div>
+            <div className="pr-16 pl-10">
+              <h1 className="text-2xl font-bold">Cloud Ops</h1>
+              <p className="">
+                Explore the transformative realm of AI Chatbot Services, where
+                artificial intelligence meets seamless communication.
+              </p>
+            </div>
           </div>
         </div>
         <Discover title="Discover more ways our team can help." />
