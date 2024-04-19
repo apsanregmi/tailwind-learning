@@ -30,8 +30,8 @@ const Index = () => {
   return (
     <Layout>
       <PageBannerRev
-        title="SERVICES/ GENERATIVE AI AND ML"
-        subtitle="GENERATIVE AI APPLICATIONS"
+        title="SERVICES/DATA ENGINEERING"
+        subtitle="DATA ENGINEERING APPLICATIONS"
       />
       <div className="mb-36 justify-center">
         <div className="container grid grid-cols-1 md:grid-cols-9 gap-4 mt-14 justify-center">

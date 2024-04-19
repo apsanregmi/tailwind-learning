@@ -5,14 +5,14 @@ export const servicesData = {
     image: "cloud_engineering.jpg",
     link:"/services/cloudengineering",
     services: [
-      { id: 1, title: "Data Platform Engineering", link: "#" },
-      { id: 2, title: "Data Lakes & Warehouses", link: "#" },
-      { id: 3, title: "Application Modernization", link: "#" },
-      { id: 4, title: "Architecture Consulting", link: "#" },
-      { id: 5, title: "Cloud Test Engineering", link: "#" },
-      { id: 6, title: "Cloud Ops", link: "#" },
+      { id: 1, title: "Data Platform Engineering", link: "data-platform-engineering" },
+      { id: 2, title: "Data Lakes & Warehouses", link: "data-lakes-and-warehouses" },
+      { id: 3, title: "Application Modernization", link: "application-modernization" },
+      { id: 4, title: "Architecture Consulting", link: "architecture-consulting" },
+      { id: 5, title: "Cloud Test Engineering", link: "cloud-test-engineering" },
+      { id: 6, title: "Cloud Ops", link: "cloud-ops" },
       // { id: 7, title: "Cloud Ops", link: "#" },
-      { id: 8, title: "Private Cloud", link: "#" },
+      { id: 8, title: "Private Cloud", link: "private-cloud" },
     ]
   },
   "Data Engineering": {
