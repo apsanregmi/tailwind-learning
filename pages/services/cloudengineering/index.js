@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import PageBanner from "@/components/PageBanner";
 import Layout from "@/layout";
+import PageBannerRev from "@/src/components/PageBannerRev";
 import { JeenaAccordion2 } from "@/src/components/JeenaAccordion";
+import Image from "next/image";
+import PercentageSection from "@/src/components/services/PercentageSection";
+import ImageWithText from "@/src/components/others/ImageWithText";
+import ServiceCard from "@/src/components/services/ServiceCard";
+// import Discover from "@/src/components/others/Discover";
+import Discover from "@/src/components/contact/Discover";
 // import Link from "next/link";
 const Index = () => {
   const [services, setServices] = useState([]);
@@ -10,10 +16,11 @@ const Index = () => {
   useEffect(() => {
     console.log("useEffect is running ");
 
-    fetch(window.origin + "/api/services/cloudengineering/services")
+    fetch(window.origin + "/api/services/generativeaiandml/services")
       .then((response) => response.json())
       .then((parsed) => {
         setServices(parsed);
+        console.log(parsed);
       })
       .catch((error) => {
         console.error("Error fetching services:", error);
@@ -22,103 +29,209 @@ const Index = () => {
 
   return (
     <Layout>
-      <PageBanner pageName={"Services"} pageTitle={"Cloud Engineering Services"}/>
-      <section className="service-details-area pt-130 rpt-100 pb-115 rpb-85">
-        <div className="container">
-          <div className="row gap-100">
-            <div className="col-lg-8">
-              <div className="service-details-content">
-                <div className="section-title mb-30">
-                  <h2>Cloud Engineering Services</h2>
-                </div>
-                <p>
-                  Cloud engineering services encompass the strategic planning,
-                  implementation, and management of cloud-based solutions to
-                  optimize organizational processes. This includes designing
-                  scalable cloud architectures, employing Infrastructure as Code
-                  (IaC) for efficient deployments, facilitating seamless
-                  migrations, integrating DevOps practices for collaboration,
-                  ensuring robust security measures, optimizing performance and
-                  costs, managing data effectively, implementing monitoring and
-                  analytics tools, and providing comprehensive training and
-                  documentation
-                </p>
-                <div className="image my-40 wow fadeInUp delay-0-2s">
-                  <img
-                    src="/assets/images/services/service-details.jpg"
-                    alt="Service Details"
-                  />
-                </div>
-                <div className="row">
-                  <div className="col-md-6 mb-30 wow fadeInRight delay-0-2s">
-                    <h3>What Are Cloud Services?</h3>
-                  </div>
-                  <div className="col-md-6 mb-30 wow fadeInLeft delay-0-2s">
-                    <ul className="list-style-one">
-                      <li>Flexibility</li>
-                      <li>Scalability</li>
-                      <li>Cost-Efficiency</li>
-                      <li>Security</li>
-                      <li>Collaboration and Remote Work</li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="row pb-30">
-                  <div className="col-md-6 mb-30 wow fadeInLeft delay-0-2s">
-                    <p>
-                      Cloud engineering services encompass a comprehensive suite
-                      of solutions designed to architect, build, and optimize
-                      cloud-based infrastructures. At CloudPro AI, our cloud
-                      engineering expertise extends across platforms like AWS,
-                      Azure, and Google Cloud, offering tailored solutions for
-                      businesses seeking seamless migration, scalable
-                      architectures, and efficient cloud management. From
-                      designing robust cloud architectures to implementing
-                      DevOps practices, our services ensure that clients harness
-                      the full potential of the cloud. With a focus on agility,
-                      security, and cost-effectiveness, we empower organizations
-                      to thrive in the digital era through cutting-edge cloud
-                      engineering solutions.
-                    </p>
-                  </div>
-                  <div className="col-md-6 mb-30 wow fadeInRight delay-0-2s">
-                    <div className="image">
-                      <img
-                        src="/assets/images/services/service-middle.jpg"
-                        alt="Service"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <h3>Service Management</h3>
-                <p>
-                  In the rapidly evolving landscape of technology, Generative
-                  Artificial Intelligence (AI) and Machine Learning (ML) stand
-                  at the forefront, promising groundbreaking innovations that
-                  redefine how businesses operate. As organizations embrace
-                  these advanced technologies, effective service management
-                  becomes paramount to harness their full potential and drive
-                  meaningful outcomes. The collaboration between service
-                  management experts and data science teams is becoming more
-                  pronounced. Service managers bring their domain expertise to
-                  the table, ensuring that AI and ML models not only deliver
-                  accurate predictions but also align with the broader business
-                  context.
-                </p>
+      <PageBannerRev
+        title="SERVICES/ CLOUD ENGINEERING"
+        subtitle="GENERATIVE AI APPLICATIONS"
+      />
+      <div className="mb-36 justify-center">
+        <div className="container grid grid-cols-1 md:grid-cols-9 gap-4 mt-14 justify-center">
+          <div className="left  col-span-5">
+            <h1 className="text-4xl font-bold p-4">
+              Unlock the Power of Cloud Computing for Your Business
+            </h1>
+            <p className="p-4 justify-right">
+              Welcome to our world of cloud computing excellence. With our
+              advanced cloud engineering services, we empower businesses to
+              harness the full potential of the cloud. Explore our range of
+              solutions designed to elevate your operations and propel you
+              towards success.
+            </p>{" "}
+          </div>
+          <div className="right  col-span-4">
+            <div>
+              {" "}
+              <Image
+                src="/assets/images/services/generativeaiandml/Group2506.svg"
+                width={340}
+                height={240}
+              ></Image>{" "}
+            </div>
+          </div>
+        </div>
 
-                <div
-                  className="faq-accordion pt-20 wow fadeInUp delay-0-2s"
-                  id="faq-accordion"
-                >
-                  {/* <JeenaAccordion2 accordionsData={accordionData} /> */}
-                </div>
+        <div className="bg-gray-100 pt-10">
+          <div className=" container 2nddiv col-span-1 row-span-8 mt-28 ">
+            <div className="top  grid grid-cols-1 md:grid-cols-2 ">
+              <div className="cols">
+                <h1 className="text-4xl font-bold p-4">
+                  Reliable Cloud Service Operations and Maintenance  
+                </h1>
+
+                <p className="p-4 justify-right">
+                  Trust us with your cloud infrastructure and experience
+                  unparalleled reliability. Our proven expertise ensures zero
+                  downtime and operational excellence. From maintenance to
+                  optimization, we handle everything seamlessly, allowing you to
+                  focus on your core business.
+                </p>
+              </div>
+              <div className="hidden"></div>
+            </div>
+            <hr></hr>
+            <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
+              <PercentageSection
+                percent="70%"
+                bold="Reduction"
+                description="in time allocated to content creation and design tasks. "
+              />
+              <PercentageSection
+                percent="40%"
+                bold="Increase"
+                description=" in customer engagement through personalized marketing campaigns. "
+              />
+              <PercentageSection
+                percent="50%"
+                bold="Decrease"
+                description=" in operational costs by automating routine tasks.  "
+              />
+              <PercentageSection
+                percent="35%"
+                bold="Uplift"
+                description="in sales conversions with tailored product recommendations. . "
+              />
+            </div>
+          </div>
+
+          <div className="superCharging container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12">
+            <div className="lg:col-span-5">
+              <Image
+                src="/assets/images/services/generativeaiandml/Group2507.svg"
+                height={528}
+                width={400}
+              />
+            </div>
+            <div className="textSection lg:col-span-5">
+              <h1 className="text-4xl font-bold p-4">
+                Cost Optimization for Cloud Infrastructure
+              </h1>
+              <p class="font-inter text-base font-normal leading-6 text-left pt-8">
+                Strategically optimize your cloud infrastructure with our
+                tailored solutions. We strike the perfect balance between cost
+                reduction and exceptional performance, maximizing your
+                investment and boosting your bottom line. Say goodbye to
+                unnecessary expenses and hello to efficiency.
+                {/* <span className="font-bold text-black">
+                  {" "}
+                  Cloud Pro AI ensures the seamless integration and scalability
+                  of AI apps within your business operations.
+                </span> */}
+              </p>
+
+              <p class="font-inter text-base font-normal leading-6 text-left pt-8">
+                Understanding the unique challenges and opportunities each
+                business faces, Cloud Pro AI offers bespoke solutions to
+                automate content creation, streamline product design, or enhance
+                customer interactions, driving substantial improvements in
+                efficiency, customer satisfaction, and overall growth.
+              </p>
+              <p class="font-inter text-base font-normal leading-6 text-left pt-8">
+                Understanding the unique challenges and opportunities each
+                business faces, Cloud Pro AI offers bespoke solutions to
+                automate content creation, streamline product design, or enhance
+                customer interactions, driving substantial improvements in
+                efficiency, customer satisfaction, and overall growth.
+              </p>
+            </div>
+            <div className="hidden lg:col-span-2"></div>
+          </div>
+        </div>
+
+        <div className="bg-[#0C2126] pt-10">
+          <div className=" container ImageSection col-span-1 row-span-8 mt-28 ">
+            <div className="top  grid grid-cols-1 md:grid-cols-2 ">
+              <div className="cols">
+                <h1 className="text-4xl text-white font-bold p-4">
+                  Data Services Best Practices on Cloud
+                </h1>
+
+                <p className="p-4 justify-right text-white">
+                  Unlock the true value of your data with our cloud-based data
+                  services. Our experts guide you through secure and efficient
+                  data handling, transforming raw data into strategic assets.
+                  Leverage our expertise to make informed decisions and stay
+                  ahead of the competition.
+                </p>
+              </div>
+              <div className="hidden"></div>
+            </div>
+            <div className="container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-4">
+              <div className="col-span-3">
+                <ImageWithText
+                  imageUrl="/assets/images/services/generativeaiandml/Group2508.svg"
+                  text="Revolutionizing inventory management with precise demand forecasting, reducing stockouts and overstock by up to 30%. "
+                ></ImageWithText>
+              </div>
+              <div className="col-span-3">
+                <ImageWithText
+                  imageUrl="/assets/images/services/generativeaiandml/Group2508.svg"
+                  text="Revolutionizing inventory management with precise demand forecasting, reducing stockouts and overstock by up to 30%. "
+                ></ImageWithText>
+              </div>
+              <div className="col-span-3">
+                <ImageWithText
+                  imageUrl="/assets/images/services/generativeaiandml/Group2508.svg"
+                  text="Revolutionizing inventory management with precise demand forecasting, reducing stockouts and overstock by up to 30%. "
+                ></ImageWithText>
               </div>
             </div>
-
-            <div className="col-lg-4">
-              <div className="service-sidebar">
-                <div className="widget widget-category wow fadeInUp delay-0-2s">
-                  <h4 className="widget-title">Services Category</h4>
+          </div>
+        </div>
+        <div className="container grid grid-cols-1 md:grid-cols-9 gap-4 mt-14 justify-center">
+          <div className="left  col-span-5">
+            <h1 className="text-4xl font-bold p-4">
+              Information Governance in the Cloud
+            </h1>
+            <p className="p-4 justify-right">
+              Navigate the complexities of information governance in the cloud
+              with confidence. Our comprehensive strategies ensure compliance,
+              data privacy, and security. Trust us to safeguard your valuable
+              information and meet regulatory requirements without compromise.
+            </p>
+            <h1 className="text-4xl font-bold p-4">
+              Seamless On-Prem to Cloud Migrations
+            </h1>
+            <p className="p-4 justify-right">
+              Experience a seamless transition from on-premises to the cloud
+              with our specialized migration services. Minimize downtime and
+              maintain productivity as we securely and swiftly move your
+              operations to the cloud. Embrace the future without missing a
+              beat.
+            </p>
+          </div>
+          <div className="right  col-span-4">
+            <div>
+              {" "}
+              <Image
+                src="/assets/images/services/generativeaiandml/Group.svg"
+                width={486}
+                height={509}
+              ></Image>
+            </div>
+          </div>
+        </div>
+        <div className="ServicesFooter container grid grid-cols-1 xl:grid-cols-3 pt-16">
+          <div>
+            <ServiceCard
+              title="Cloud Engineering"
+              description="Unlock the Power of Intelligent Creation with CloudPro AI In the era of data-driven innovation, Generative Artificial Intelligence (AI)"
+              position="left-96"
+              image="/assets/cloudlogo.svg"
+              link="/services/generativeaiandml"
+            ></ServiceCard>
+          </div>
+          <div className="grid grid-rows-3">
+            <div className="pr-16 pl-10">
+            <h4 className="widget-title">Services Category</h4>
                   <ul>
                     {services.map((service) => (
                       <div key={service.slug}>
@@ -134,248 +247,10 @@ const Index = () => {
                       </div>
                     ))}
                   </ul>
-                </div>
-                <div
-                  className="widget widget-cta"
-                  style={{
-                    backgroundImage:
-                      "url(/assets/images/widgets/cta-widget-bg.jpg)",
-                  }}
-                >
-                  <div className="col-md-6 mb-30 wow fadeInRight delay-0-2s">
-                    <h3 className="benefits" style={{ color: "white" }}>
-                      Benefits
-                    </h3>
-                  </div>
-                  <div className="col-md-6 mb-30 wow fadeInLeft delay-0-2s">
-                    <p>
-                      Cloud engineering services revolutionize the way
-                      organizations manage their IT infrastructure and
-                      applications, bringing a host of transformative benefits.
-                      One of the key advantages is scalability, allowing
-                      businesses to seamlessly expand or contract their
-                      resources based on demand. This scalability translates
-                      into cost efficiency, as companies only pay for the
-                      computing power and storage they actually use, eliminating
-                      the need for substantial upfront investments.
-                    </p>
-                  </div>
-                  <span className="h5">Let's Work Together</span>
-                  <h2>IT Service Agency</h2>
-                  <Link legacyBehavior href="/contact">
-                    <a className="theme-btn style-four">
-                      Contact Us <i className="fas fa-angle-double-right" />
-                    </a>
-                  </Link>
-                  <br />
-                  <a href="callto:+000(123)45688" className="number">
-                    <i className="fas fa-phone" /> +1 415-393-2021
-                  </a>
-                  <img
-                    className="bg-shape"
-                    src="/assets/images/widgets/cta-bg-lines.png"
-                    alt="Shape"
-                  />
-                </div>
               </div>
-            </div>
           </div>
         </div>
-      </section>
-
-      <section className="services-area-six pb-100 rpb-70 rel z-1">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-4 col-md-6">
-              <div className="service-item-six wow fadeInUp delay-0-2s">
-                <div className="icon">
-                  <i className="flaticon-agile" />
-                </div>
-                <h4>
-                  <Link legacyBehavior href="service-details">
-                    Understanding Cloud Services
-                  </Link>
-                </h4>
-                <p>
-                  Cloud services provide on-demand access to a shared pool of
-                  computing resources, including servers, storage, databases,
-                  networking, software, analytics, and more, over the internet.
-                  Users can leverage these resources without the need for
-                  upfront investments in hardware or infrastructure.
-                </p>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6">
-              <div className="service-item-six wow fadeInUp delay-0-4s">
-                <div className="icon">
-                  <i className="flaticon-mission" />
-                </div>
-                <h4>
-                  <Link legacyBehavior href="service-details">
-                    Key Components of Service Management
-                  </Link>
-                </h4>
-                <p>
-                  Service management encompasses various key components to
-                  ensure the effective delivery of services.Service Strategy,
-                  which involves defining the services' goals and aligning them
-                  with business objectives. Service Design focuses on designing
-                  services that meet customer needs, considering aspects like
-                  technology, processes, and people.
-                </p>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6">
-              <div className="service-item-six wow fadeInUp delay-0-6s">
-                <div className="icon">
-                  <i className="flaticon-mission-1" />
-                </div>
-                <h4>
-                  <Link legacyBehavior href="service-details">
-                    Challenges and Solutions
-                  </Link>
-                </h4>
-                <p>
-                  Cloud services face challenges such as security concerns,
-                  downtime, compliance issues, and data integration
-                  complexities. To overcome these challenges, robust security
-                  measures, redundancy systems for reliability, adherence to
-                  compliance frameworks, and effective data management
-                  strategies are essential.
-                </p>
-              </div>
-            </div>
-
-            <div className="col-lg-4 col-md-6">
-              <div className="service-item-six wow fadeInUp delay-0-2s">
-                <div className="icon">
-                  <i className="flaticon-agile" />
-                </div>
-                <h4>
-                  <Link legacyBehavior href="service-details">
-                    Future Outlook
-                  </Link>
-                </h4>
-                <p>
-                  The future outlook of cloud services is promising, with
-                  continuous advancements in technologies like edge computing,
-                  AI, and 5G. As businesses increasingly rely on digital
-                  transformation, cloud services will play a pivotal role in
-                  providing scalable, flexible, and innovative solutions. The
-                  integration of emerging technologies will enhance efficiency,
-                  security, and customization, shaping the future landscape of
-                  cloud services to meet evolving business needs.
-                </p>
-              </div>
-            </div>
-
-            <div className="col-lg-4 col-md-6">
-              <div className="service-item-six wow fadeInUp delay-0-2s">
-                <div className="icon">
-                  <i className="flaticon-agile" />
-                </div>
-                <h4>
-                  <Link legacyBehavior href="service-details">
-                    Strategic Deployment of Cloud Services
-                  </Link>
-                </h4>
-                <p>
-                  Strategic deployment of cloud services involves thoughtfully
-                  aligning business goals with cloud solutions. By leveraging
-                  the scalability, flexibility, and cost-effectiveness of cloud
-                  platforms, organizations can optimize operations, enhance
-                  agility, and drive innovation. This strategic approach ensures
-                  that cloud services contribute to the overall business
-                  strategy, fostering growth and competitive advantage.
-                </p>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6">
-              <div className="service-item-six wow fadeInUp delay-0-2s">
-                <div className="icon">
-                  <i className="flaticon-agile" />
-                </div>
-                <h4>
-                  <Link legacyBehavior href="service-details">
-                    The Evolution of Service Delivery
-                  </Link>
-                </h4>
-                <p>
-                  The evolution of service delivery has undergone a
-                  transformative journey, propelled by technological
-                  advancements. From traditional, on-premise models to the
-                  cloud-driven paradigm, businesses now experience a shift
-                  towards more agile, scalable, and efficient service delivery
-                  mechanisms. This evolution encompasses streamlined processes,
-                  automation, and a heightened focus on user experience,
-                  fostering a responsive and customer-centric approach.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <div className="menu-btns">
-        <Link legacyBehavior href="/others/case-studies">
-          <a className="theme-btn">
-            Learn More About Business use cases
-            <i className="fas fa-long-arrow-right" />
-          </a>
-        </Link>
-      </div>
-
-      {/* Service Details Area end */}
-      {/* Next Prev Service start */}
-      <div className="next-prev-service pb-80 rpb-50">
-        <div className="container">
-          <hr />
-          <div className="next-prev-service mt-80">
-            <div className="next-prev-item wow fadeInLeft delay-0-2s">
-              <div className="image">
-                <img
-                  src="/assets/images/services/service-prev.jpg"
-                  alt="Service"
-                />
-              </div>
-
-              <div className="content">
-                <h4>
-                  <Link legacyBehavior href="/services/dataengineering">
-                    Data Engineering
-                  </Link>
-                </h4>
-                <Link legacyBehavior href="/services/dataengineering">
-                  <a className="read-more">
-                    Read More <i className="fal fa-angle-double-right" />
-                  </a>
-                </Link>
-              </div>
-            </div>
-            <Link legacyBehavior href="/services">
-              <a className="show-all" />
-            </Link>
-            <div className="next-prev-item wow fadeInRight delay-0-2s">
-              <div className="content">
-                <h4>
-                  <Link legacyBehavior href="services/generativeaiandml">
-                    Generative AI And ML
-                  </Link>
-                </h4>
-                <Link legacyBehavior href="/services/generativeaiandml">
-                  <a className="read-more">
-                    Read More <i className="fal fa-angle-double-right" />
-                  </a>
-                </Link>
-              </div>
-              <div className="image">
-                <img
-                  src="/assets/images/services/service-next.jpg"
-                  alt="Service"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
+        <Discover title="Discover more ways our team can help." />
       </div>
     </Layout>
   );

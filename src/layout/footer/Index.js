@@ -34,7 +34,7 @@ const Footer = ({ showCtaSection = true }) => {
 
   return (
     <footer className="main-footer bgc-gray footer-white rel z-1">
-      {showCtaSection && (
+      {/* {showCtaSection && (
       <div className="footer-cta-wrap">
         <div className="container">
           <div
@@ -76,7 +76,7 @@ const Footer = ({ showCtaSection = true }) => {
           </div>
         </div>
       </div>
-      )}
+      )} */}
       <div className="container">
         <div className="row medium-gap">
           <div className="col-xl-3 col-sm-6">

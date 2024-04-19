@@ -93,7 +93,7 @@ const DefaultHeader = () => {
                   showFlyout={showServicesFlyout}
                   setShowFlyout={setShowServicesFlyout}
                   category="Services"
-                  className={`absolute top-28 left-64 z-50 bg-black transition-opacity duration-300 ${
+                  className={`relative right-5   z-50 bg-black transition-opacity duration-300 ${
                     showServicesFlyout ? "opacity-100" : "opacity-0"
                   } ${isScrolled ? "opacity-100" : "opacity-0"}`}
                 />

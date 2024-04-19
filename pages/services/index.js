@@ -11,7 +11,7 @@ import Industries from "@/src/components/Industries/Industries";
 const index = () => {
   return (
     <Layout>
-      <div className="mb-36">
+      <div className="">
         <PageBanner
           title="Data, AI and Software Cloud Services Consultant"
           subtitle="We're Gen AI-Ready and Eager to Collaborate. Let's Assess Your Business and Infrastructure Readiness for the Ultimate Technological Leap."
@@ -19,14 +19,14 @@ const index = () => {
         <container className="bg-white mt-8">
           <Logolist />
         </container>
-        <div className=" container grid grid-cols-1 md:grid-cols-12">
-          <div className="weProvide mt-4 mb-3 col-span-4">
+        <div className=" container">
+          <div className="weProvide mt-4 mb-3 md:w-1/2 lg:w-1/3" >
             <h1 className="text-bold  text-3xl m-4 md:text-3xl xxl:text-5xl">
               We Provide Best Cloud Services
             </h1>
           </div>
         </div>
-        <div className="serviceContainer grid grid-rows-2 gap-4">
+        <div className="serviceContainer grid lg:grid-rows-2 gap-4">
           <div className="container grid lg:grid-cols-12 gap-5">
             <div className="left lg:col-span-4">
               <ServiceCard
