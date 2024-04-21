@@ -72,7 +72,7 @@ const Index = () => {
             </div>
           </div>
         </div>
-        <div className="industries">
+        <div className="industries ">
           <IndustriesImage/>
 
         </div>

@@ -3,7 +3,7 @@ import React from "react";
 const IndustriesImage = () => {
   return (
     <div className="bg-[#0C2126] ">
-      <div className="container">
+      <div className="container pt-16">
         <h4 className="text-[#EDFF6C] font-bold text-sm  md:p-6 p-2 pt-4 md:pt-10">
           Industries
         </h4>

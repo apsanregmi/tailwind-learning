@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Layout from "@/layout";
 import PageBannerRev from "@/src/components/PageBannerRev";
-// import { JeenaAccordion2 } from "@/src/components/JeenaAccordion";
 import Image from "next/image";
 import PercentageSection from "@/src/components/services/PercentageSection";
 import ImageWithText from "@/src/components/others/ImageWithText";

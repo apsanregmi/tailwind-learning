@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import PageBanner from "@/components/PageBanner";
 import Layout from "@/layout";
-// import { JeenaAccordion2 } from "@/src/components/JeenaAccordion";
-// import Link from "next/link";
+
 const Index = () => {
   const [services, setServices] = useState([]);
 
@@ -121,7 +120,7 @@ const Index = () => {
                   className="faq-accordion pt-20 wow fadeInUp delay-0-2s"
                   id="faq-accordion"
                 >
-                  {/* <JeenaAccordion2 accordionsData={accordionData} /> */}
+                 
                 </div>
               </div>
             </div>
@@ -140,7 +139,7 @@ const Index = () => {
                           </Link>
                         </li>
 
-                        {/* <p>{service.description.slice(0.10)}</p> */}
+                       
                       </div>
                     ))}
                   </ul>
