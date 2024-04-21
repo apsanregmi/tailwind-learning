@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import PageBanner from "@/components/PageBanner";
 import Layout from "@/layout";
-import { JeenaAccordion2 } from "@/src/components/JeenaAccordion";
+// import { JeenaAccordion2 } from "@/src/components/JeenaAccordion";
 // import Link from "next/link";
 const Index = () => {
   const [services, setServices] = useState([]);
