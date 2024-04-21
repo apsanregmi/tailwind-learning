@@ -18,8 +18,11 @@ const PageBannerRev = ({ title, subtitle }) => {
               </button>
             </a>
             <p className="font-normal text-white text-xl flex items-center cursor-pointer hover:underline">
+            <a href="/schedule-appointment">
+
               Book a Free Call
               <span className="ml-2 font-extrabold"> ↗</span>
+              </a>
             </p>
           </div>
         </div>
