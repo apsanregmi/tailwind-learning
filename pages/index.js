@@ -4,6 +4,7 @@ import PageBannerMain from "@/src/components/PageBannerMain";
 import Logolist from "@/src/components/others/Logolist";
 import ServiceCard from "@/src/components/services/ServiceCard";
 import ServiceCardLarge from "@/src/components/services/ServiceCardLarge";
+import Testimonials from "@/src/components/testimonials/Testimonials";
 
 const Index = () => {
   return (
@@ -75,6 +76,9 @@ const Index = () => {
         <div className="industries ">
           <IndustriesImage/>
 
+        </div>
+        <div className="testimonials ">
+          <Testimonials/>
         </div>
     </Layout>
   );
